@@ -159,11 +159,12 @@ h4{font-size:1.08rem;}
 
 .nav-cta{display:flex;align-items:center;gap:12px;}
 .lang-toggle{
-  display:flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 10px;
-  border:1px solid var(--line-300);border-radius:100px;font-family:var(--font-mono);font-size:.78rem;font-weight:600;
-  color:var(--ink-700);transition:border-color var(--ease-fast), color var(--ease-fast), background var(--ease-fast);
+  display:flex;align-items:center;justify-content:center;width:34px;height:26px;
+  border:1px solid var(--line-300);border-radius:5px;overflow:hidden;flex:none;
+  transition:transform var(--ease-fast), border-color var(--ease-fast), box-shadow var(--ease-fast);
 }
-.lang-toggle:hover{border-color:var(--brand-500);color:var(--brand-700);background:var(--brand-050);}
+.lang-toggle svg{width:100%;height:100%;display:block;}
+.lang-toggle:hover{transform:translateY(-1px) scale(1.05);border-color:var(--brand-500);box-shadow:var(--shadow-card);}
 .nav-cta .btn{padding:11px 20px;}
 
 /* Menu trigger — used at every breakpoint, opens the full-screen nav overlay */
