@@ -164,6 +164,34 @@ def whatsapp_url(lang):
     return f"https://wa.me/{WHATSAPP_NUMBER}?text={text}"
 
 # ---------------------------------------------------------------------------
+# Language-toggle flag icons (simplified but recognisable, inline SVG)
+# ---------------------------------------------------------------------------
+FLAG_GB = """<svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="28" height="20" fill="#00247D"/>
+  <path d="M0,0 L28,20 M28,0 L0,20" stroke="#fff" stroke-width="4"/>
+  <path d="M0,0 L12,8.6 M28,0 L16,8.6 M0,20 L12,11.4 M28,20 L16,11.4" stroke="#CF142B" stroke-width="1.6"/>
+  <rect x="11" width="6" height="20" fill="#fff"/>
+  <rect y="7" width="28" height="6" fill="#fff"/>
+  <rect x="12.5" width="3" height="20" fill="#CF142B"/>
+  <rect y="8.5" width="28" height="3" fill="#CF142B"/>
+</svg>"""
+
+FLAG_MY = """<svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <rect width="28" height="20" fill="#fff"/>
+  <rect y="0" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="2.86" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="5.71" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="8.57" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="11.43" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="14.29" width="28" height="1.43" fill="#CC0001"/>
+  <rect y="17.14" width="28" height="1.43" fill="#CC0001"/>
+  <rect x="0" y="0" width="14" height="10" fill="#010066"/>
+  <circle cx="7" cy="5" r="4" fill="#FFCC00"/>
+  <circle cx="8.6" cy="5" r="4" fill="#010066"/>
+  <polygon points="10.6,2 11.15,3.55 12.8,3.55 11.45,4.55 11.95,6.1 10.6,5.15 9.25,6.1 9.75,4.55 8.4,3.55 10.05,3.55" fill="#FFCC00"/>
+</svg>"""
+
+# ---------------------------------------------------------------------------
 # Template builders
 # ---------------------------------------------------------------------------
 def nav_overlay_items(lang):
@@ -222,8 +250,9 @@ def head(title, description, canonical, extra_schema="", lang="en", asset_prefix
 
 def header_html(lang, asset_prefix, page_file):
     t = UI[lang]
-    other_label = "BM" if lang == "en" else "EN"
     switch_href = f"ms/{page_file}" if lang == "en" else f"../{page_file}"
+    current_flag = FLAG_GB if lang == "en" else FLAG_MY
+    toggle_label = "Switch to Bahasa Malaysia" if lang == "en" else "Tukar ke Bahasa Inggeris"
     return f"""<header class="site-header">
   <div class="container">
     <a href="index.html" class="brand" aria-label="KLS home">
@@ -231,7 +260,7 @@ def header_html(lang, asset_prefix, page_file):
       <span class="brand-text"><strong>KLS</strong><span>Kejuruteraan Letrik Seri (M) Sdn Bhd</span></span>
     </a>
     <div class="nav-cta">
-      <a href="{switch_href}" class="lang-toggle" aria-label="Switch language / Tukar bahasa">{other_label}</a>
+      <a href="{switch_href}" class="lang-toggle" aria-label="{toggle_label}" title="{toggle_label}">{current_flag}</a>
       <a href="contact.html" class="btn btn-outline">{t['contact_us']}</a>
       <button class="menu-trigger" data-menu-toggle aria-haspopup="dialog" aria-expanded="false">
         <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span>
