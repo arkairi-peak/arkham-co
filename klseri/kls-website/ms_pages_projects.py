@@ -4,7 +4,7 @@ BODY = f"""
 <section class="page-hero">
   <div class="container">
     <h1>Projek Utama</h1>
-    <p class="lead">Kami mengusahakan projek dan membantu menyediakan penyelesaian yang boleh dipercayai dan cekap tenaga untuk kerja, kehidupan dan komuniti. Dengan pengalaman berdekad, kami menggabungkan kepakaran dan kebijaksanaan untuk mencipta masa depan tenaga yang lebih hijau untuk semua.</p>
+    <p class="lead">Setiap projek yang kami ambil bermatlamat menyampaikan penyelesaian yang boleh dipercayai dan cekap tenaga, untuk tempat kerja, rumah dan komuniti yang akhirnya menggunakannya. Pengalaman berdekad membolehkan kami menggabungkan kepakaran praktikal dengan penyelesaian masalah sebenar ke arah masa depan tenaga yang lebih hijau.</p>
   </div>
 </section>
 {breadcrumb('projects.html','Projek', lang='ms')}
@@ -13,18 +13,18 @@ BODY = f"""
   <div class="container">
     <div class="section-head">
       <div class="kicker">Pelanggan Terpilih</div>
-      <h2>Dipercayai oleh pemain industri &amp; tenaga utama Malaysia</h2>
+      <h2>Disokong oleh nama industri &amp; tenaga utama Malaysia</h2>
     </div>
   </div>
   <div class="marquee" data-marquee data-marquee-speed="30">
     <div class="marquee-track">
-      <div class="client-chip">Top Glove Berhad</div>
-      <div class="client-chip">Cenergi SEA Sdn. Bhd.</div>
-      <div class="client-chip">Telekom Malaysia Berhad</div>
-      <div class="client-chip">Sime Darby Berhad</div>
-      <div class="client-chip">Cepat Wawasan Sdn. Bhd.</div>
-      <div class="client-chip">KLK Berhad</div>
-      <div class="client-chip">Cargill Palm Products Sdn. Bhd.</div>
+      <a class="logo-plate logo-plate--text" href="https://www.topglove.com/" target="_blank" rel="noopener" aria-label="Top Glove Berhad">Top Glove<br>Berhad</a>
+      <a class="logo-plate" href="https://www.cenergi-sea.com/" target="_blank" rel="noopener" aria-label="Cenergi SEA Sdn. Bhd."><img src="../assets/img/clients/cenergi.png" alt="Cenergi SEA logo" loading="lazy"></a>
+      <a class="logo-plate" href="https://www.tm.com.my/Pages/Home.aspx" target="_blank" rel="noopener" aria-label="Telekom Malaysia Berhad"><img src="../assets/img/clients/telekom-malaysia.png" alt="Telekom Malaysia logo" loading="lazy"></a>
+      <a class="logo-plate" href="https://www.simedarby.com/" target="_blank" rel="noopener" aria-label="Sime Darby Berhad"><img src="../assets/img/clients/sime-darby.png" alt="Sime Darby logo" loading="lazy"></a>
+      <a class="logo-plate" href="http://cepatgroup.com/" target="_blank" rel="noopener" aria-label="Cepat Wawasan Sdn. Bhd."><img src="../assets/img/clients/cepat-wawasan.png" alt="Cepat Wawasan logo" loading="lazy"></a>
+      <a class="logo-plate" href="https://www.klkoleo.com/" target="_blank" rel="noopener" aria-label="KLK Berhad"><img src="../assets/img/clients/klk-oleo.png" alt="KLK logo" loading="lazy"></a>
+      <a class="logo-plate" href="https://www.cargill.com.my/" target="_blank" rel="noopener" aria-label="Cargill Palm Products Sdn. Bhd."><img src="../assets/img/clients/cargill.png" alt="Cargill logo" loading="lazy"></a>
     </div>
   </div>
 </section>
@@ -34,7 +34,7 @@ BODY = f"""
     <div class="section-head">
       <div class="kicker">Senarai Rujukan Projek</div>
       <h2>Layari senarai rujukan projek penuh</h2>
-      <p class="lead">Setiap entri di bawah diambil daripada senarai rujukan projek KLS yang diterbitkan. Tapis mengikut kategori, cari mengikut pelanggan atau lokasi, atau kembangkan mana-mana pelanggan untuk melihat entri projek individu dengan tahun dan lokasi.</p>
+      <p class="lead">Setiap baris di bawah datang terus daripada senarai rujukan projek KLS sendiri. Tapis mengikut kategori, cari mengikut pelanggan atau lokasi, atau buka mana-mana pelanggan untuk melihat entri projek individu berserta tahun dan lokasi.</p>
     </div>
 
     <div class="stat-band" data-project-stats></div>
@@ -64,7 +64,7 @@ BODY = f"""
 page(
     "projects.html",
     "Projek Utama & Senarai Rujukan Projek | KLS",
-    "KLS menangani projek secara langsung, menyediakan penyelesaian interkoneksi elektrik dan tenaga boleh diperbaharui yang boleh dipercayai dan cekap tenaga untuk tujuan perniagaan, kehidupan dan komuniti.",
+    "KLS menangani projek secara langsung, menyampaikan kerja interkoneksi elektrik dan tenaga boleh diperbaharui yang dibina untuk kebolehpercayaan dan kecekapan merentasi tetapan perniagaan, kediaman dan komuniti.",
     BODY,
     lang="ms",
     alt_url="https://www.klseri.com.my/projects.html",

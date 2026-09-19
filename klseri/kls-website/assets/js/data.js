@@ -2,7 +2,7 @@
    KLS structured data
    Sourced from the current klseri.com.my (Home, Company Overview, Our People,
    Our Services, Key Projects, Certifications & Licenses, Careers, Contact).
-   Only facts published on the source site are included here — nothing here
+   Only facts published on the source site are included here, nothing here
    is invented. Image paths point at the original site's media library;
    replace /assets/img/people/*.jpg and /assets/img/certs/*.png with your own
    locally-hosted copies before deploying (see README.md).
@@ -33,7 +33,7 @@ const KLS_PEOPLE = [
     initials: "TA",
     bio: "One of the founders of KLS, YDM Tengku Dato' Ardy is instrumental in the company's public and government affairs liaison department. An established entrepreneur with extensive networking and excellent public relations skills, he helped build KLS into a company reputable amongst Government Linked Companies.",
     facts: [
-      ["Honour", "Darjah Kebesaran Dato' Sultan Sharafudin Idris Shah (D.S.I.S) — conferred 2012, for the 67th birthday of the Sultan of Selangor"],
+      ["Honour", "Darjah Kebesaran Dato' Sultan Sharafudin Idris Shah (D.S.I.S), conferred 2012, for the 67th birthday of the Sultan of Selangor"],
       ["Board Position", "CB Industrial Products Bhd."],
       ["Focus", "Public affairs & government affairs liaison"]
     ]
@@ -47,7 +47,7 @@ const KLS_PEOPLE = [
     initials: "LYC",
     bio: "Ir. Lim currently oversees all projects undertaken by KLS. As a practising Professional Engineer and registered ASEAN Engineer, he is responsible for the overall tendering, execution and handing over of all major projects, leading an energetic and dedicated technical team to ensure projects are completed exceeding expectations and within budget.",
     facts: [
-      ["Education", "UMIST (University of Manchester Institute of Science and Technology), UK — graduated 2002"],
+      ["Education", "UMIST (University of Manchester Institute of Science and Technology), UK, graduated 2002"],
       ["Registration", "Practising Professional Engineer"],
       ["Registration", "Registered ASEAN Engineer"],
       ["Responsibility", "Tendering, execution and handover of major projects"]
@@ -62,7 +62,7 @@ const KLS_PEOPLE = [
     initials: "JG",
     bio: "Ir. Jeremy Goh joined KLS in 2014 and is the head engineer responsible for the technical and authorities liaison aspect of all KLS projects. An experienced and technical engineer, he has a proven track record in managing projects.",
     facts: [
-      ["Education", "UniTEN (Universiti Tenaga Nasional) — Degree in Electrical and Electronics Engineering (Hons.), 2013"],
+      ["Education", "UniTEN (Universiti Tenaga Nasional), Degree in Electrical and Electronics Engineering (Hons.), 2013"],
       ["Registration", "Registered Professional Engineer"],
       ["Joined KLS", "2014"],
       ["Responsibility", "Technical & authorities liaison, head engineer"]
@@ -85,7 +85,7 @@ const KLS_PEOPLE = [
   }
 ];
 
-/* Project reference list — exactly as published under "Key Projects" /
+/* Project reference list, exactly as published under "Key Projects" /
    "Project Reference List". category used for filtering:
    power = electrical power distribution / general M&E
    biogas / biomass / solar = renewable energy interconnection */
@@ -160,45 +160,45 @@ const KLS_FEATURED_CLIENTS = [
 
 /* Key Clients logo/name grid (as listed on the homepage) */
 const KLS_KEY_CLIENTS = [
-  { name:"KL-Kepong Oleomas", url:"https://www.klkoleo.com/" },
-  { name:"Northport Malaysia", url:"https://www.northport.com.my/npv2/index.html" },
-  { name:"Sabah Electricity (SESB)", url:"https://www.sesb.com.my/" },
-  { name:"Sime Darby Berhad", url:"https://www.simedarby.com/" },
-  { name:"Telekom Malaysia", url:"https://www.tm.com.my/Pages/Home.aspx" },
-  { name:"Cargill Malaysia", url:"https://www.cargill.com.my/" },
-  { name:"Cenergi SEA", url:"https://www.cenergi-sea.com/" },
-  { name:"Cepat Group", url:"http://cepatgroup.com/" },
-  { name:"FELCRA Berhad", url:"https://felcra.com.my/" },
-  { name:"FGV Holdings", url:"https://www.fgvholdings.com/home/" },
-  { name:"Hap Seng", url:"https://www.hapseng.com.my/en/" }
+  { name:"KL-Kepong Oleomas", url:"https://www.klkoleo.com/", logo:"assets/img/clients/klk-oleo.png" },
+  { name:"Northport Malaysia", url:"https://www.northport.com.my/npv2/index.html", logo:"assets/img/clients/northport.png" },
+  { name:"Sabah Electricity (SESB)", url:"https://www.sesb.com.my/", logo:"assets/img/clients/sabah-electricity.png" },
+  { name:"Sime Darby Berhad", url:"https://www.simedarby.com/", logo:"assets/img/clients/sime-darby.png" },
+  { name:"Telekom Malaysia", url:"https://www.tm.com.my/Pages/Home.aspx", logo:"assets/img/clients/telekom-malaysia.png" },
+  { name:"Cargill Malaysia", url:"https://www.cargill.com.my/", logo:"assets/img/clients/cargill.png" },
+  { name:"Cenergi SEA", url:"https://www.cenergi-sea.com/", logo:"assets/img/clients/cenergi.png" },
+  { name:"Cepat Group", url:"http://cepatgroup.com/", logo:"assets/img/clients/cepat-wawasan.png" },
+  { name:"FELCRA Berhad", url:"https://felcra.com.my/", logo:"assets/img/clients/felcra.png" },
+  { name:"FGV Holdings", url:"https://www.fgvholdings.com/home/", logo:"assets/img/clients/fgv-holdings.png" },
+  { name:"Hap Seng", url:"https://www.hapseng.com.my/en/", logo:"assets/img/clients/hap-seng.png" }
 ];
 
 /* Partners & Suppliers, as listed on the homepage */
 const KLS_PARTNERS = [
-  { name:"Viscon", url:"http://www.viscon.com.my/" },
-  { name:"INNIO Jenbacher", url:"https://www.innio.com/en/products/jenbacher" },
-  { name:"Grid Vision T&D", url:"https://www.gridvisiontnd.com/" },
-  { name:"SP Nergy", url:"http://www.spnergy.com/" },
-  { name:"OSK Group", url:"https://www.oskgroup.com/" },
-  { name:"Schneider Electric", url:"https://www.se.com/my/en/" },
-  { name:"Terasaki", url:"https://www.terasaki.com.my/" },
-  { name:"ABB", url:"https://new.abb.com/my" },
-  { name:"Fuji Electric", url:"https://www.fujielectric.com/" },
-  { name:"Tamco", url:"https://www.tamco.com.my/" },
-  { name:"Ekarat", url:"https://www.ekarat.co.th/en/home/" },
-  { name:"Sime Darby Berhad", url:"https://www.simedarby.com/" }
+  { name:"Viscon", url:"http://www.viscon.com.my/", logo:"assets/img/partners/viscon.png" },
+  { name:"INNIO Jenbacher", url:"https://www.innio.com/en/products/jenbacher", logo:"assets/img/partners/innio-jenbacher.png" },
+  { name:"Grid Vision T&D", url:"https://www.gridvisiontnd.com/", logo:"assets/img/partners/grid-vision.png" },
+  { name:"SP Nergy", url:"http://www.spnergy.com/", logo:"assets/img/partners/sp-nergy.png" },
+  { name:"OSK Group", url:"https://www.oskgroup.com/", logo:"assets/img/partners/osk-group.png" },
+  { name:"Schneider Electric", url:"https://www.se.com/my/en/", logo:"assets/img/partners/schneider-electric.png" },
+  { name:"Terasaki", url:"https://www.terasaki.com.my/", logo:"assets/img/partners/terasaki.png" },
+  { name:"ABB", url:"https://new.abb.com/my", logo:"assets/img/partners/abb.png" },
+  { name:"Fuji Electric", url:"https://www.fujielectric.com/", logo:"assets/img/partners/fuji-electric.png" },
+  { name:"Tamco", url:"https://www.tamco.com.my/", logo:"assets/img/partners/tamco.png" },
+  { name:"Ekarat", url:"https://www.ekarat.co.th/en/home/", logo:"assets/img/partners/ekarat.png" },
+  { name:"Sime Darby Berhad", url:"https://www.simedarby.com/", logo:"assets/img/clients/sime-darby.png" }
 ];
 
 /* Advisors & Consultants, as listed on the homepage */
 const KLS_ADVISORS = [
-  { name:"ZP", url:"https://www.zp.com.my/" },
-  { name:"Sistem Konsult", url:"https://sistemkonsult.com.my/" },
-  { name:"Malim", url:"https://www.malim.com.my/" },
-  { name:"Duriane", url:"http://www.duriane.com/" },
-  { name:"UPC", url:"https://upc.com.my/" }
+  { name:"ZP", url:"https://www.zp.com.my/", logo:"assets/img/partners/zp.png" },
+  { name:"Sistem Konsult", url:"https://sistemkonsult.com.my/", logo:"assets/img/partners/sistem-konsult.png" },
+  { name:"Malim", url:"https://www.malim.com.my/", logo:"assets/img/partners/malim.png" },
+  { name:"Duriane", url:"http://www.duriane.com/", logo:"assets/img/partners/duriane.png" },
+  { name:"UPC", url:"https://upc.com.my/", logo:"assets/img/partners/upc.png" }
 ];
 
-/* Certifications & Licenses — the source page displays 12 certificate /
+/* Certifications & Licenses, the source page displays 12 certificate /
    licence images without individual captions; presented here as a numbered
    set matching the order on klseri.com.my/certifications-licenses/ */
 const KLS_CERTS = Array.from({length:12}, (_,i)=>({

@@ -3,7 +3,7 @@
 """
 Builds the KLS static site (bilingual: English + Bahasa Malaysia).
 Run: python3 build.py  (prints usage; actual pages are written by the
-page-builder scripts — pages_*.py for English, ms_pages_*.py for BM —
+page-builder scripts, pages_*.py for English, ms_pages_*.py for BM -
 which import page()/breadcrumb() from this file.)
 
 English pages live at the project root (e.g. index.html).
@@ -20,7 +20,7 @@ os.makedirs(MS_DIR, exist_ok=True)
 SITE_NAME = "Kejuruteraan Letrik Seri (M) Sdn Bhd"
 
 # ---------------------------------------------------------------------------
-# UI chrome strings — English / Bahasa Malaysia
+# UI chrome strings, English / Bahasa Malaysia
 # ---------------------------------------------------------------------------
 UI = {
     "en": {
@@ -29,7 +29,7 @@ UI = {
         "close_menu": "Close menu",
         "nav_dialog_label": "Site navigation",
         "kls_navigation": "KLS Navigation",
-        "footer_desc": "Kejuruteraan Letrik Seri (M) Sdn Bhd — a Class A, CIDB G7 electrical engineering and renewable energy interconnection contractor, in business since 1984.",
+        "footer_desc": "Kejuruteraan Letrik Seri (M) Sdn Bhd, a Class A, CIDB G7 electrical engineering and renewable energy interconnection contractor, in business since 1984.",
         "footer_nav": "Navigation",
         "footer_hq": "Headquarters",
         "footer_branches": "Branch Offices",
@@ -59,7 +59,7 @@ UI = {
         "close_menu": "Tutup menu",
         "nav_dialog_label": "Navigasi laman",
         "kls_navigation": "Navigasi KLS",
-        "footer_desc": "Kejuruteraan Letrik Seri (M) Sdn Bhd — sebuah kontraktor kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui Kelas A, CIDB G7, beroperasi sejak 1984.",
+        "footer_desc": "Kejuruteraan Letrik Seri (M) Sdn Bhd, sebuah kontraktor kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui Kelas A, CIDB G7, beroperasi sejak 1984.",
         "footer_nav": "Navigasi",
         "footer_hq": "Ibu Pejabat",
         "footer_branches": "Pejabat Cawangan",
@@ -133,7 +133,7 @@ NAV_ITEMS = [
 ]
 
 # ---------------------------------------------------------------------------
-# Address / map helpers — real addresses only, no invented coordinates.
+# Address / map helpers, real addresses only, no invented coordinates.
 # Branch offices are geocoded live by Google from the text address; HQ keeps
 # its previously-verified lat/lng (from the site's own Waze link).
 # ---------------------------------------------------------------------------
@@ -350,6 +350,7 @@ def footer_html(lang, asset_prefix):
 
 <div class="modal-overlay" data-person-modal></div>
 <div class="modal-overlay" data-cert-modal></div>
+<div class="modal-overlay" data-list-modal></div>
 
 <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
 <script src="{asset_prefix}assets/js/data.js"></script>

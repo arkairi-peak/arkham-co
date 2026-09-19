@@ -8,7 +8,7 @@ BODY = f"""
 <section class="page-hero">
   <div class="container">
     <h1>Contact Us</h1>
-    <p class="lead">Reach our headquarters in Port Klang, Selangor, or our branch offices in Sabah and Sarawak.</p>
+    <p class="lead">Find us at our Port Klang, Selangor headquarters, or at our branch offices in Sabah and Sarawak.</p>
   </div>
 </section>
 {breadcrumb('contact.html','Contact')}
@@ -19,7 +19,7 @@ BODY = f"""
       <div class="loc-card">
         <h4><span class="dot"></span>Headquarters</h4>
         <address>Lot 10814, Jalan Petai, Pandamaran,<br>42000 Port Klang, Selangor</address>
-        <div class="loc-map"><iframe title="Map — KLS Headquarters, Port Klang" src="{MAPS_HQ_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-map"><iframe title="Map, KLS Headquarters, Port Klang" src="{MAPS_HQ_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="loc-actions">
           <a href="{MAPS_HQ_SEARCH}" target="_blank" rel="noopener">Google Maps</a>
           <a href="{WAZE_HQ}" target="_blank" rel="noopener">Waze</a>
@@ -29,7 +29,7 @@ BODY = f"""
         <h4><span class="dot"></span>Branch Office I</h4>
         <p class="small mono" style="margin-bottom:4px;">Bengkel Felda Engineering Service Sdn. Bhd.</p>
         <address>Jalan Sahabat 16, Kompleks Bandar Sahabat,<br>91129 Lahad Datu, Sabah</address>
-        <div class="loc-map"><iframe title="Map — KLS Branch Office I, Lahad Datu" src="{MAPS_BRANCH1_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-map"><iframe title="Map, KLS Branch Office I, Lahad Datu" src="{MAPS_BRANCH1_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="loc-actions">
           <a href="{MAPS_BRANCH1_SEARCH}" target="_blank" rel="noopener">Google Maps</a>
           <a href="{WAZE_BRANCH1}" target="_blank" rel="noopener">Waze</a>
@@ -38,14 +38,14 @@ BODY = f"""
       <div class="loc-card">
         <h4><span class="dot"></span>Branch Office II</h4>
         <address>No. 113, Lot 3399, 2nd Floor,<br>Parkcity Commerce Square, Jalan Tun Ahmad Zaidi,<br>P.O. Box 90, 97008 Bintulu, Sarawak</address>
-        <div class="loc-map"><iframe title="Map — KLS Branch Office II, Bintulu" src="{MAPS_BRANCH2_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        <div class="loc-map"><iframe title="Map, KLS Branch Office II, Bintulu" src="{MAPS_BRANCH2_EMBED}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
         <div class="loc-actions">
           <a href="{MAPS_BRANCH2_SEARCH}" target="_blank" rel="noopener">Google Maps</a>
           <a href="{WAZE_BRANCH2}" target="_blank" rel="noopener">Waze</a>
         </div>
       </div>
     </div>
-    <p class="small" style="margin-top:18px;">Branch office maps are positioned from their published address via Google's own geocoding (KLS has not published exact coordinates for these two offices).</p>
+    <p class="small" style="margin-top:18px;">Maps for both branch offices are placed using Google's own geocoding of the published address, KLS hasn't published exact coordinates for these two locations.</p>
   </div>
 </section>
 
@@ -98,8 +98,8 @@ BODY = f"""
 
 page(
     "contact.html",
-    "Contact Us | KLS — Kejuruteraan Letrik Seri (M) Sdn Bhd",
-    "Contact KLS at our Port Klang headquarters, or our branch offices in Lahad Datu, Sabah and Bintulu, Sarawak.",
+    "Contact Us | KLS, Kejuruteraan Letrik Seri (M) Sdn Bhd",
+    "Reach KLS at our Port Klang headquarters, or at our branch offices in Lahad Datu, Sabah and Bintulu, Sarawak.",
     BODY,
     alt_url="https://www.klseri.com.my/ms/contact.html",
 )

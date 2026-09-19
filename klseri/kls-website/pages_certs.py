@@ -4,7 +4,7 @@ BODY = f"""
 <section class="page-hero">
   <div class="container">
     <h1>Certifications &amp; Licenses</h1>
-    <p class="lead">Peruse KLS's complete set of certifications &amp; licenses so you can place total confidence in us to provide the best solutions for your business.</p>
+    <p class="lead">Browse KLS's full set of certifications &amp; licenses, the credentials behind our claim to deliver the right solution for your business.</p>
   </div>
 </section>
 {breadcrumb('certifications.html','Certifications &amp; Licenses')}
@@ -12,7 +12,7 @@ BODY = f"""
 <section class="section">
   <div class="container">
     <div class="grid grid-4" data-cert-grid></div>
-    <p class="small" style="margin-top:28px;">Certificate images are reproduced from KLS's published Certifications &amp; Licenses page. Select any certificate to view it enlarged.</p>
+    <p class="small" style="margin-top:28px;">These certificate images are reproduced from KLS's published Certifications &amp; Licenses page. Select any one to view it at full size.</p>
   </div>
 </section>
 
@@ -27,7 +27,7 @@ BODY = f"""
 page(
     "certifications.html",
     "Certifications & Licenses | KLS",
-    "KLS's complete set of certifications and licenses — a Class A, CIDB G7 M&E Contractor certified to deliver electrical engineering and renewable energy interconnection works.",
+    "The full set of certifications and licenses behind KLS, a Class A, CIDB G7 M&E Contractor credentialed to deliver electrical engineering and renewable energy interconnection work.",
     BODY,
     alt_url="https://www.klseri.com.my/ms/certifications.html",
 )

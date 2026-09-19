@@ -5,7 +5,7 @@ BODY = """
   <div class="container">
     <div class="kicker" style="justify-content:center;">Error 404</div>
     <h1 style="max-width:none;font-size:clamp(3.5rem,10vw,6.5rem);">Page not found</h1>
-    <p class="lead" style="margin:0 auto;max-width:52ch;">The page you're looking for may have moved, been renamed, or never existed. Let's get you back on track.</p>
+    <p class="lead" style="margin:0 auto;max-width:52ch;">This page might have moved, been renamed, or just never existed in the first place. Let's point you somewhere useful instead.</p>
     <div class="hero-actions" style="justify-content:center;margin-top:30px;">
       <a href="index.html" class="btn btn-primary">Back to Home</a>
       <a href="contact.html" class="btn btn-outline">Contact Us</a>
@@ -43,8 +43,8 @@ BODY = """
 
 page(
     "404.html",
-    "Page Not Found | KLS — Kejuruteraan Letrik Seri (M) Sdn Bhd",
-    "The page you're looking for could not be found. Return to the KLS homepage or browse our most popular pages.",
+    "Page Not Found | KLS, Kejuruteraan Letrik Seri (M) Sdn Bhd",
+    "This page couldn't be found. Head back to the KLS homepage or check out our most-visited pages instead.",
     BODY,
     alt_url="https://www.klseri.com.my/ms/404.html",
 )

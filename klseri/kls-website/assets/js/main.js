@@ -1,5 +1,5 @@
 /* ==========================================================================
-   KLS site interactivity — vanilla JS, no build step required.
+   KLS site interactivity, vanilla JS, no build step required.
    Progressive: every page works without JS; this layers on the polish.
    ========================================================================== */
 (function () {
@@ -49,14 +49,19 @@
     a.addEventListener("click", () => closeNav());
   });
 
-  /* ---------------- Infinite marquees — JS-driven for a smooth, eased ---------------- */
+  /* ---------------- Infinite marquees, JS-driven for smooth, eased ---------------- */
   /* hover pause/resume (an abrupt CSS animation-play-state toggle looks stiff; */
   /* this lerps the speed toward 0 on hover and back to full speed on leave).   */
-  document.querySelectorAll("[data-marquee]").forEach((wrap) => {
+  function initMarquee(wrap) {
     const track = wrap.querySelector(".marquee-track");
-    if (!track) return;
+    if (!track || wrap.dataset.marqueeInit) return;
+    wrap.dataset.marqueeInit = "1";
     // Duplicate the track content once so a translateX loop is seamless.
     track.innerHTML = track.innerHTML + track.innerHTML;
+    // Stagger any logo-plate children so their idle float bob isn't synchronised.
+    track.querySelectorAll(".logo-plate").forEach((el, i) => {
+      el.style.animationDelay = (i % 11) * -0.45 + "s";
+    });
 
     const baseSpeed = (parseFloat(wrap.getAttribute("data-marquee-speed")) || 45); // px/second
     const reverse = wrap.getAttribute("data-marquee-reverse") === "true";
@@ -76,7 +81,7 @@
       if (lastTime == null) lastTime = now;
       const dt = Math.min(0.05, (now - lastTime) / 1000);
       lastTime = now;
-      // Ease current speed toward target speed — this is what makes the
+      // Ease current speed toward target speed, this is what makes the
       // hover-to-stop (and resume) feel smooth instead of an abrupt cut.
       currentSpeed += (targetSpeed - currentSpeed) * Math.min(1, dt * 2.5);
       const dir = reverse ? 1 : -1;
@@ -87,7 +92,8 @@
       requestAnimationFrame(frame);
     }
     requestAnimationFrame(frame);
-  });
+  }
+  document.querySelectorAll("[data-marquee]").forEach(initMarquee);
 
   /* ---------------- Hero crossfade slider ---------------- */
   (function heroSlider() {
@@ -117,6 +123,38 @@
     if (leadEl) leadEl.style.transition = "opacity .3s ease";
     dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
     setInterval(() => show((idx + 1) % slides.length), 6000);
+  })();
+
+  /* ---------------- Scroll cue + hero parallax (homepage only) ---------------- */
+  (function heroScrollExtras() {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+    const cue = document.querySelector("[data-scroll-cue]");
+    if (cue) {
+      cue.addEventListener("click", () => {
+        const next = hero.nextElementSibling;
+        if (next) next.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    }
+    const slideEls = hero.querySelectorAll(".hero-slide");
+    if (slideEls.length && "IntersectionObserver" in window) {
+      let heroVisible = true;
+      new IntersectionObserver((entries) => { heroVisible = entries[0].isIntersecting; }, { threshold: 0 }).observe(hero);
+      let ticking = false;
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!heroVisible || ticking) return;
+          ticking = true;
+          requestAnimationFrame(() => {
+            const shift = Math.min(60, window.scrollY * 0.18);
+            slideEls.forEach((el) => { el.style.transform = `translateY(${shift}px)`; });
+            ticking = false;
+          });
+        },
+        { passive: true }
+      );
+    }
   })();
 
   /* ---------------- Scroll progress bar + shrinking sticky header ---------------- */
@@ -151,6 +189,7 @@
   (function scrollReveal() {
     if (!("IntersectionObserver" in window)) return;
     const selectors = [
+      ".section",
       ".spec-row", ".value-row", ".re-block", ".t-item", ".logo-cell",
       ".stat-item", ".loc-card", ".hero-stat", ".card", ".section-head",
       ".profile-row",
@@ -318,7 +357,7 @@
     );
     const years = flat.map((e) => e.year).filter(Boolean);
 
-    // Stats strip — computed directly from KLS_PROJECTS, nothing invented.
+    // Stats strip, computed directly from KLS_PROJECTS, nothing invented.
     const statsWrap = document.querySelector("[data-project-stats]");
     if (statsWrap) {
       const reCount = flat.filter((e) => ["biogas", "biomass", "solar"].includes(e.category)).length;
@@ -389,7 +428,7 @@
             .map(
               (e) => `<div class="p-entry">
                 <div>${escapeHtml(e.desc)}${e.capacity ? ` <span class="mono small">(${escapeHtml(e.capacity)})</span>` : ""}<div class="loc">${escapeHtml(e.location || "")}</div></div>
-                <div class="yr">${e.year || "—"}</div>
+                <div class="yr">${e.year || "N/A"}</div>
               </div>`
             )
             .join("");
@@ -457,18 +496,146 @@
 
   /* ---------------- Data-driven strips (Key Clients / Partners / Advisors / People preview) ---------------- */
   /* Rendered here (not as inline <script> in page content) because this file */
-  /* loads after assets/js/data.js — putting the render call inline in the    */
+  /* loads after assets/js/data.js: putting the render call inline in the     */
   /* page body ran it before KLS_KEY_CLIENTS etc. existed, leaving it empty.  */
-  function renderLogoStrip(selector, list) {
-    const el = document.querySelector(selector);
-    if (!el || !list) return;
-    el.innerHTML = list
-      .map((c) => `<div class="logo-cell"><a href="${c.url}" target="_blank" rel="noopener">${escapeHtml(c.name)}</a></div>`)
-      .join("");
+  const ASSET_PREFIX = document.documentElement.getAttribute("lang") === "ms" ? "../" : "";
+  const LIST_LANG = document.documentElement.getAttribute("lang") === "ms" ? "ms" : "en";
+  const VIEW_ALL_LABEL = LIST_LANG === "ms" ? "Lihat Semua" : "View All";
+  const listModal = document.querySelector("[data-list-modal]");
+
+  function plateInner(c) {
+    return c.logo
+      ? `<img src="${ASSET_PREFIX}${c.logo}" alt="${escapeHtml(c.name)} logo" loading="lazy">`
+      : `<span class="txt">${escapeHtml(c.name)}</span>`;
   }
-  renderLogoStrip("[data-key-clients]", typeof KLS_KEY_CLIENTS !== "undefined" ? KLS_KEY_CLIENTS : null);
-  renderLogoStrip("[data-partners]", typeof KLS_PARTNERS !== "undefined" ? KLS_PARTNERS : null);
-  renderLogoStrip("[data-advisors]", typeof KLS_ADVISORS !== "undefined" ? KLS_ADVISORS : null);
+
+  function openListModal(title, list) {
+    if (!listModal) return;
+    const grid = list
+      .map(
+        (c) => `<a class="logo-plate${c.logo ? "" : " logo-plate--text"}" href="${c.url}" target="_blank" rel="noopener" style="animation:none;">${plateInner(c)}</a>`
+      )
+      .join("");
+    listModal.innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-label="${escapeHtml(title)}" style="max-width:820px;">
+      <div style="position:relative;padding:32px;">
+        <button class="modal-close" type="button" data-modal-close aria-label="Close">&times;</button>
+        <h3 style="margin-bottom:20px;">${escapeHtml(title)}</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;">${grid}</div>
+      </div>
+    </div>`;
+    listModal.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+  }
+  listModal &&
+    listModal.addEventListener("click", (e) => {
+      if (e.target === listModal || e.target.closest("[data-modal-close]")) {
+        listModal.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+    });
+
+  // Partners & Suppliers / Advisors & Consultants: a center-focus slidable
+  // carousel (side peeks, prev/next, autoplay, pause on hover) with a
+  // "View All" button opening the full set in a grid lightbox.
+  function initCarousel(root, list, title) {
+    if (!root || !list || !list.length) return;
+    root.innerHTML = `
+      <div class="pcarousel">
+        <button class="pcarousel-arrow prev" type="button" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="pcarousel-viewport">
+          <div class="pcarousel-track">
+            ${list
+              .map(
+                (c, i) => `<div class="pcarousel-item" data-idx="${i}">
+                  <div class="pcarousel-card">${plateInner(c)}</div>
+                  <div class="pcarousel-label">${escapeHtml(c.name)}</div>
+                </div>`
+              )
+              .join("")}
+          </div>
+        </div>
+        <button class="pcarousel-arrow next" type="button" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <div class="pcarousel-foot">
+        <div class="pcarousel-dots">${list.map((_, i) => `<button type="button" data-dot="${i}" aria-label="Go to ${i + 1}"></button>`).join("")}</div>
+        <button type="button" class="pcarousel-viewall" data-view-all>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          ${VIEW_ALL_LABEL}
+        </button>
+      </div>`;
+
+    const track = root.querySelector(".pcarousel-track");
+    const items = Array.from(root.querySelectorAll(".pcarousel-item"));
+    const viewport = root.querySelector(".pcarousel-viewport");
+    const dots = Array.from(root.querySelectorAll("[data-dot]"));
+    let active = 0;
+    let timer = null;
+
+    function render() {
+      items.forEach((el, i) => {
+        const rel = i - active;
+        el.classList.toggle("is-active", rel === 0);
+        el.classList.toggle("is-adjacent", Math.abs(rel) === 1);
+      });
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === active));
+      const itemEl = items[active];
+      if (itemEl) {
+        const offset = viewport.clientWidth / 2 - (itemEl.offsetLeft + itemEl.offsetWidth / 2);
+        track.style.transform = `translateX(${offset}px)`;
+      }
+    }
+    function go(i) {
+      active = ((i % items.length) + items.length) % items.length;
+      render();
+    }
+    function play() {
+      stop();
+      timer = setInterval(() => go(active + 1), 3400);
+    }
+    function stop() {
+      if (timer) clearInterval(timer);
+    }
+
+    root.querySelector(".prev").addEventListener("click", () => { go(active - 1); play(); });
+    root.querySelector(".next").addEventListener("click", () => { go(active + 1); play(); });
+    items.forEach((el) => el.addEventListener("click", () => { go(Number(el.getAttribute("data-idx"))); play(); }));
+    dots.forEach((d) => d.addEventListener("click", () => { go(Number(d.getAttribute("data-dot"))); play(); }));
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", play);
+    root.querySelector("[data-view-all]").addEventListener("click", () => openListModal(title, list));
+    window.addEventListener("resize", render);
+
+    render();
+    play();
+  }
+  initCarousel(document.querySelector("[data-partners]"), typeof KLS_PARTNERS !== "undefined" ? KLS_PARTNERS : null, LIST_LANG === "ms" ? "Rakan Kongsi & Pembekal" : "Partners & Suppliers");
+  initCarousel(document.querySelector("[data-advisors]"), typeof KLS_ADVISORS !== "undefined" ? KLS_ADVISORS : null, LIST_LANG === "ms" ? "Penasihat & Perunding" : "Advisors & Consultants");
+
+  // Key Clients: an animated two-row logo river (opposite-direction scroll,
+  // grayscale-to-colour on hover, staggered idle float) instead of a plain grid.
+  const clientRiverEl = document.querySelector("[data-key-clients]");
+  if (clientRiverEl && typeof KLS_KEY_CLIENTS !== "undefined") {
+    const mid = Math.ceil(KLS_KEY_CLIENTS.length / 2);
+    const rowA = KLS_KEY_CLIENTS.slice(0, mid);
+    const rowB = KLS_KEY_CLIENTS.slice(mid);
+    function plate(c) {
+      const img = c.logo ? `<img src="${ASSET_PREFIX}${c.logo}" alt="${escapeHtml(c.name)} logo" loading="lazy">` : escapeHtml(c.name);
+      return `<a class="logo-plate${c.logo ? "" : " logo-plate--text"}" href="${c.url}" target="_blank" rel="noopener" aria-label="${escapeHtml(c.name)}">${img}</a>`;
+    }
+    clientRiverEl.classList.add("logo-river");
+    clientRiverEl.innerHTML = `
+      <div class="marquee" data-marquee data-marquee-speed="26">
+        <div class="marquee-track">${rowA.map(plate).join("")}</div>
+      </div>
+      <div class="marquee" data-marquee data-marquee-speed="22" data-marquee-reverse="true">
+        <div class="marquee-track">${rowB.map(plate).join("")}</div>
+      </div>`;
+    clientRiverEl.querySelectorAll("[data-marquee]").forEach(initMarquee);
+  }
 
   const peoplePreview = document.querySelector("[data-people-preview]");
   if (peoplePreview && typeof KLS_PEOPLE !== "undefined") {
@@ -497,7 +664,7 @@
         message: "Please enter a message of at least 10 characters.",
         fixFields: "Please fix the highlighted fields before sending.",
         sending: "Sending…",
-        success: "Thank you — your enquiry has been prepared. Connect this form to your email or API backend to deliver it to the KLS team.",
+        success: "Thank you, your enquiry has been prepared. Connect this form to your email or API backend to deliver it to the KLS team.",
       },
       ms: {
         name: "Sila masukkan nama anda.",
@@ -506,7 +673,7 @@
         message: "Sila masukkan mesej sekurang-kurangnya 10 aksara.",
         fixFields: "Sila betulkan ruangan yang ditanda sebelum menghantar.",
         sending: "Menghantar…",
-        success: "Terima kasih — pertanyaan anda telah disediakan. Sambungkan borang ini ke e-mel atau backend API anda untuk menghantarnya kepada pasukan KLS.",
+        success: "Terima kasih, pertanyaan anda telah disediakan. Sambungkan borang ini ke e-mel atau backend API anda untuk menghantarnya kepada pasukan KLS.",
       },
     }[FORM_LANG];
 
@@ -563,11 +730,11 @@
       submitBtn.dataset.originalText = submitBtn.textContent;
       submitBtn.textContent = FSTR.sending;
 
-      // Frontend-only placeholder. Wire this up to your email/API backend —
+      // Frontend-only placeholder. Wire this up to your email/API backend -
       // e.g. POST the FormData below to your endpoint of choice.
       const payload = Object.fromEntries(new FormData(form).entries());
       setTimeout(() => {
-        console.log("KLS contact form — ready to submit to backend:", payload);
+        console.log("KLS contact form, ready to submit to backend:", payload);
         submitBtn.disabled = false;
         submitBtn.textContent = submitBtn.dataset.originalText;
         status.className = "form-status is-success";

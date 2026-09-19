@@ -4,7 +4,7 @@ BODY = f"""
 <section class="page-hero">
   <div class="container">
     <h1>Company Overview</h1>
-    <p class="lead">Same company, same facts, same identity — four decades of electrical engineering and renewable energy interconnection work in Malaysia and beyond.</p>
+    <p class="lead">One company, one set of facts, one identity, and roughly forty years of hands-on electrical engineering and renewable energy interconnection work across Malaysia and further afield.</p>
   </div>
 </section>
 {breadcrumb('company-overview.html','Company Overview')}
@@ -12,126 +12,141 @@ BODY = f"""
 <section class="section" id="we-are-kls">
   <div class="container grid grid-2" style="gap:56px;align-items:center;">
     <div>
-      <div class="kicker">WE ARE KLS</div>
+      <div class="kicker">We Are KLS</div>
       <h2>Kejuruteraan Letrik Seri (M) Sdn Bhd</h2>
-      <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, also known as KLS, was incorporated in 1984, positioning ourselves as a master rewiring service provider. As we continued to grow, we diversified our services to providing supply, installation, testing, commissioning and warranty of High Voltage, Low Voltage and Extra Low Voltage electrical systems for residential, commercial, industrial, infrastructural and marine development.</p>
-      <p>As one of the industry leaders in Malaysia, we embrace natural resources and recognise the need for sustainable development. We demonstrate our commitment by undertaking numerous Renewable Energy Interconnection contracts and initiatives encompassing Biogas, Biomass, Solar and Cogeneration Plants.</p>
+      <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, known to most simply as KLS, was incorporated in 1984 and began life as a master rewiring service provider. Growth brought a wider remit: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine developments.</p>
+      <p>As one of Malaysia's established names in the field, we take the country's natural resources and the case for sustainable development seriously, and back that up with real work: a long line of Renewable Energy Interconnection contracts spanning Biogas, Biomass, Solar and Cogeneration plants.</p>
     </div>
     <img src="https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg" alt="KLS electrical engineering works" style="border-radius:10px;border:1px solid var(--line-300);">
+  </div>
+  <div class="container" style="margin-top:44px;">
+    <div class="stat-band">
+      <div class="stat-item"><b>1984</b><span>Year incorporated</span></div>
+      <div class="stat-item"><b>Class A</b><span>CIDB G7 M&amp;E Contractor</span></div>
+      <div class="stat-item"><b>HV &middot; LV &middot; ELV</b><span>Electrical systems supplied, installed &amp; commissioned</span></div>
+      <div class="stat-item"><b>5</b><span>Development sectors served</span></div>
+    </div>
   </div>
 </section>
 
 <section class="section section--band" id="our-story">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">OUR STORY</div>
-      <h2>From a rewiring workshop to a regional M&amp;E contractor</h2>
-      <p class="lead">Since our humble beginning in 1984, we have strived to provide quality work with an emphasis on client satisfaction. With over 30 years of experience, we have become one of the leading companies in the electrical engineering industry with numerous high-profile projects all over Malaysia.</p>
+      <div class="kicker">How We Got Here</div>
+      <h2>From a small rewiring outfit to a regional M&amp;E contractor</h2>
+      <p class="lead">We've kept one thing constant since 1984: doing the work properly and keeping clients satisfied. Three decades on, that approach has carried us to a leading position in Malaysia's electrical engineering industry, with a long list of high-profile projects to show for it.</p>
     </div>
-    <div class="grid grid-2" style="gap:56px;">
-      <div class="timeline">
-        <div class="t-item">
-          <div class="t-year">1984</div>
-          <h4>Incorporated in Malaysia</h4>
-          <p>KLS begins as a master rewiring service provider, growing out of a humble electrical motor wiring workshop.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-year">1984 — 2000s</div>
-          <h4>Diversification &amp; specialisation</h4>
-          <p>The company develops into an established Class A, CIDB G7 M&amp;E Contractor, gaining immense experience and professional specialisation that earned commendations from valued clients over three decades.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-year">2000</div>
-          <h4>Expansion into East Malaysia</h4>
-          <p>KLS expands its network by venturing into East Malaysia and opening a branch office in Lahad Datu, Sabah.</p>
-        </div>
-        <div class="t-item">
-          <div class="t-year">Beyond Malaysia</div>
-          <h4>Going global</h4>
-          <p>Heeding the call for globalisation, KLS focuses beyond high-profile local projects and ventures out globally, securing international works in countries such as Indonesia, Papua New Guinea and Africa.</p>
-        </div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-year">1984</div>
+        <h4>Incorporated in Malaysia</h4>
+        <p>KLS starts out as a master rewiring service provider, having grown from a small electrical motor wiring workshop.</p>
       </div>
-      <div>
-        <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-          <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-02.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
-          <h3 style="color:#fff;">Business Beyond Professionalism</h3>
-          <p style="color:#DFF6E7;">At KLS, we deliver electrical and engineering solutions with excellent execution and responsibility. With every project undertaken, we provide solutions that endure and bring successful outcomes to their business. We aspire to exceed the expectations of our clients and showcase our commitment to excellence, accountability and professionalism.</p>
-        </div>
-        <div class="card card-pad" style="margin-top:24px;">
-          <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-01.png" alt="" style="width:44px;margin-bottom:16px;">
-          <h3>Your Trusted Partner for Quality</h3>
-          <p>At KLS, it is our technical expertise and understanding of the industry that makes us the trusted partner for quality-conscious companies in the nation. In line with our principles, we strive to provide electrical engineering solutions of the highest standards of quality to our valued clients. Our strong relationship with our clients is a testament to our quality work and solid reputation.</p>
-        </div>
+      <div class="t-item">
+        <div class="t-year">1984-2000s</div>
+        <h4>Growth and specialisation</h4>
+        <p>Over three decades, the company builds into an established Class A, CIDB G7 M&amp;E Contractor, picking up deep experience and technical specialisation along the way, along with steady commendation from the clients it serves.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-year">2000</div>
+        <h4>Reaching East Malaysia</h4>
+        <p>KLS extends its reach into East Malaysia, opening a branch office in Lahad Datu, Sabah.</p>
+      </div>
+      <div class="t-item">
+        <div class="t-year">Beyond Malaysia</div>
+        <h4>Looking outward</h4>
+        <p>KLS looks past its local, high-profile project base and takes on international work, securing contracts in countries including Indonesia, Papua New Guinea and Africa.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="mission-vision">
+<section class="section" id="philosophy">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">How We Work</div>
+      <h2>What guides the work day to day</h2>
+    </div>
+    <div class="grid grid-2" style="gap:24px;">
+      <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
+        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-02.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
+        <h3 style="color:#fff;">Business Beyond Professionalism</h3>
+        <p style="color:#DFF6E7;">We deliver every electrical and engineering solution with careful execution and a real sense of responsibility for the outcome. Each project is built to last and to serve the client's business well after handover. We aim to go beyond what's expected, backed by a genuine commitment to excellence, accountability and professionalism.</p>
+      </div>
+      <div class="card card-pad">
+        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-01.png" alt="" style="width:44px;margin-bottom:16px;">
+        <h3>Your Trusted Partner for Quality</h3>
+        <p>It's our technical expertise and grasp of the industry that has made us a trusted partner for quality-conscious companies across the country. We hold our own work to the highest standard we can, and the relationships we've built with clients over the years reflect that, a direct result of consistent, quality work and a reputation earned rather than claimed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--band" id="mission-vision">
   <div class="container grid grid-2" style="gap:32px;">
     <div class="card card-pad">
-      <div class="kicker">MISSION</div>
+      <div class="kicker">Mission</div>
       <h3>Our Missions</h3>
       <ul class="svc-list" style="margin-top:16px;">
-        <li>To deliver solutions and services that meet international standards.</li>
-        <li>To provide excellent management of projects and quality workforce.</li>
-        <li>To exceed customer expectations with exceptional expertise and performance.</li>
-        <li>To deliver cost-efficient and quality electrical engineering services.</li>
+        <li>Deliver solutions and services that hold up to international standards.</li>
+        <li>Run projects well, with a workforce we can stand behind.</li>
+        <li>Go beyond what customers expect, through real expertise and performance.</li>
+        <li>Keep electrical engineering services cost-efficient without cutting corners on quality.</li>
       </ul>
     </div>
     <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-      <div class="kicker" style="color:var(--amber-500);">VISION</div>
+      <div class="kicker" style="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;">Vision</div>
       <h3 style="color:#fff;">Our Vision</h3>
-      <p style="color:#E9FBEF;font-size:1.08rem;margin-top:16px;">To be the engineering solution provider of choice in South East Asia (SEA) by delivering the best-in-class solution to our customers for them to succeed.</p>
+      <p style="color:#E9FBEF;font-size:1.08rem;margin-top:16px;">To become the engineering solution provider South East Asia (SEA) turns to first, by giving customers the best-in-class solutions they need to succeed.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--band" id="core-values">
+<section class="section" id="core-values">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">OUR CORE VALUES</div>
-      <h2>What governs our people and our business</h2>
-      <p class="lead">As a prominent company in the industry, we adhere to our core values as it governs our people and our business operations. These principles enable us to establish lasting and valuable relationships with clients as we deliver excellent solutions and services to help achieve their business goals.</p>
+      <div class="kicker">Our Core Values</div>
+      <h2>What shapes our people and our business</h2>
+      <p class="lead">As a company with a reputation to keep, we hold ourselves to a set of core values that shape both our people and how we run the business. They're what let us build lasting, worthwhile relationships with clients while helping them get where they're trying to go.</p>
     </div>
     <div class="spec-list">
-      <div class="value-row"><span class="idx mono">01</span><div><h4>Excellent Quality</h4><p>Our standards are unwavering. We ensure that quality is at the core of our work, management and entire company itself.</p></div></div>
-      <div class="value-row"><span class="idx mono">02</span><div><h4>Innovation</h4><p>We strive to continually innovate and educate ourselves to keep up with state-of-the-art technology and the dynamic landscape of the industry.</p></div></div>
-      <div class="value-row"><span class="idx mono">03</span><div><h4>Teamwork</h4><p>We build and foster connections between our people. Our culture is based on mutual respect and harmony between the management and technical departments.</p></div></div>
-      <div class="value-row"><span class="idx mono">04</span><div><h4>Adaptability</h4><p>We adapt and embrace change as part and parcel of the business — resilient and steadfast against the ever-changing financial and economic situations in the world.</p></div></div>
-      <div class="value-row"><span class="idx mono">05</span><div><h4>Professionalism</h4><p>We are consistent and reliable. Our team delivers quality infrastructure and services that exceed expectations in preparation, planning, design, implementation, testing and delivery.</p></div></div>
-      <div class="value-row"><span class="idx mono">06</span><div><h4>Customer Satisfaction</h4><p>We provide continuous guarantee and excellent after-delivery services such as maintenance for all our projects, striving for 100% client satisfaction.</p></div></div>
+      <div class="value-row"><span class="idx mono">01</span><div><h4>Excellent Quality</h4><p>Our standards don't bend. Quality sits at the center of how we work, how we manage projects, and how we run the company as a whole.</p></div></div>
+      <div class="value-row"><span class="idx mono">02</span><div><h4>Innovation</h4><p>We keep learning and keep pushing forward, staying current with the latest technology and the industry's shifting demands.</p></div></div>
+      <div class="value-row"><span class="idx mono">03</span><div><h4>Teamwork</h4><p>We invest in the relationships between our people. Our culture runs on mutual respect and cooperation between management and the technical teams on the ground.</p></div></div>
+      <div class="value-row"><span class="idx mono">04</span><div><h4>Adaptability</h4><p>Change is part of doing business, and we treat it that way, staying resilient through shifting financial and economic conditions rather than being thrown by them.</p></div></div>
+      <div class="value-row"><span class="idx mono">05</span><div><h4>Professionalism</h4><p>We're consistent and dependable. From preparation and planning through design, execution, testing and final delivery, our team holds itself to a standard that exceeds what's expected.</p></div></div>
+      <div class="value-row"><span class="idx mono">06</span><div><h4>Customer Satisfaction</h4><p>Our commitment doesn't end at handover. We back every project with ongoing guarantees and after-delivery support, including maintenance, with full client satisfaction as the goal.</p></div></div>
     </div>
   </div>
 </section>
 
-<section class="section" id="key-clients">
+<section class="section section--band" id="key-clients">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">KEY CLIENTS</div>
+      <div class="kicker">Key Clients</div>
       <h2>Organisations we work with</h2>
     </div>
-    <div class="logo-strip" data-key-clients></div>
+    <div data-key-clients></div>
   </div>
 </section>
 
-<section class="section section--band" id="partners-suppliers">
+<section class="section" id="partners-suppliers">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">PARTNERS &amp; SUPPLIERS</div>
+      <div class="kicker">Partners &amp; Suppliers</div>
       <h2>Our partners &amp; suppliers</h2>
     </div>
-    <div class="logo-strip" data-partners></div>
+    <div data-partners></div>
   </div>
 </section>
 
-<section class="section" id="advisors-consultants">
+<section class="section section--band" id="advisors-consultants">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">ADVISORS &amp; CONSULTANTS</div>
+      <div class="kicker">Advisors &amp; Consultants</div>
       <h2>Our advisors &amp; consultants</h2>
     </div>
-    <div class="logo-strip" data-advisors></div>
+    <div data-advisors></div>
   </div>
 </section>
 
@@ -145,8 +160,8 @@ BODY = f"""
 
 page(
     "company-overview.html",
-    "Company Overview | KLS — Kejuruteraan Letrik Seri (M) Sdn Bhd",
-    "KLS embraces sustainable development and undertakes Renewable Energy Interconnection contracts, as well as electrical power offerings, since 1984.",
+    "Company Overview | KLS, Kejuruteraan Letrik Seri (M) Sdn Bhd",
+    "KLS has backed sustainable development with real Renewable Energy Interconnection contracts, alongside its core electrical power work, since 1984.",
     BODY,
     alt_url="https://www.klseri.com.my/ms/company-overview.html",
 )
