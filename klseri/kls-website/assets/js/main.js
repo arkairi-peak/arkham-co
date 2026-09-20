@@ -5,6 +5,10 @@
 (function () {
   "use strict";
 
+  // Available everywhere in this file: local asset paths need a "../" prefix
+  // on Bahasa Malaysia pages (served from /ms/), none on English pages.
+  const ASSET_PREFIX = document.documentElement.getAttribute("lang") === "ms" ? "../" : "";
+
   /* ---------------- Interactive menu (half-screen sliding panel) ---------------- */
   const menuToggle = document.querySelector("[data-menu-toggle]");
   const navOverlay = document.querySelector("[data-nav-overlay]");
@@ -335,7 +339,7 @@
         stat2: "Individual project entries",
         stat3: "Renewable energy interconnection works",
         stat4: "Years covered in this reference list",
-        cat: { power: "Electrical & Power Distribution", biogas: "Biogas", biomass: "Biomass", solar: "Solar" },
+        cat: { power: "Electrical & Power Distribution", biogas: "Biogas", biomass: "Biomass", solar: "Solar", stadium: "Stadium & Infrastructure" },
         empty: "No projects match your search or filter. Try clearing the search box or choosing “All”.",
         listedOne: "project listed",
         listedMany: "projects listed",
@@ -345,7 +349,7 @@
         stat2: "Entri projek individu",
         stat3: "Kerja interkoneksi tenaga boleh diperbaharui",
         stat4: "Tahun yang diliputi dalam senarai rujukan ini",
-        cat: { power: "Elektrik & Pengagihan Kuasa", biogas: "Biogas", biomass: "Biojisim", solar: "Suria" },
+        cat: { power: "Elektrik & Pengagihan Kuasa", biogas: "Biogas", biomass: "Biojisim", solar: "Suria", stadium: "Stadium & Infrastruktur" },
         empty: "Tiada projek sepadan dengan carian atau penapis anda. Cuba kosongkan kotak carian atau pilih “Semua”.",
         listedOne: "projek disenaraikan",
         listedMany: "projek disenaraikan",
@@ -399,6 +403,20 @@
       return Array.from(cats);
     }
 
+    // Client logo mapping: only entries verified to be the same brand as an
+    // existing logo asset (e.g. Cenergi EPC / Cenergi SEA share the Cenergi
+    // brand mark). Never guess a match between unrelated organisations.
+    const CLIENT_LOGO_MAP = {
+      "Sime Darby": "assets/img/clients/sime-darby.png",
+      "Telekom Malaysia": "assets/img/clients/telekom-malaysia.png",
+      "Cenergi EPC": "assets/img/clients/cenergi.png",
+      "SESB": "assets/img/clients/sabah-electricity.png",
+      "KLK Berhad": "assets/img/clients/klk-oleo.png",
+      "Cepat Wawasan": "assets/img/clients/cepat-wawasan.png",
+      "North Port": "assets/img/clients/northport.png",
+      "Cargill": "assets/img/clients/cargill.png",
+    };
+
     function renderProjects() {
       const term = searchTerm.trim().toLowerCase();
       const filteredClients = KLS_PROJECTS.map((c) => {
@@ -420,7 +438,7 @@
         .map((c, idx) => {
           const cats = projectCategoryOfClient(c);
           const tagHtml = cats
-            .map((cat) => `<span class="tag ${cat !== "power" ? "re" : ""}">${catLabels[cat] || cat}</span>`)
+            .map((cat) => `<span class="tag ${["biogas", "biomass", "solar"].includes(cat) ? "re" : ""}">${catLabels[cat] || cat}</span>`)
             .join("");
           const entriesHtml = c.entries
             .slice()
@@ -432,10 +450,14 @@
               </div>`
             )
             .join("");
+          const logoSrc = CLIENT_LOGO_MAP[c.short];
+          const clientHtml = logoSrc
+            ? `<div class="client client-with-logo"><img src="${ASSET_PREFIX}${logoSrc}" alt="" loading="lazy">${escapeHtml(c.client)}</div>`
+            : `<div class="client">${escapeHtml(c.client)}</div>`;
           return `<div class="project-card ${idx < 3 ? "is-open" : ""}">
             <div class="summary" role="button" tabindex="0" aria-expanded="${idx < 3 ? "true" : "false"}">
               <div>
-                <div class="client">${escapeHtml(c.client)}</div>
+                ${clientHtml}
                 <div class="meta">${tagHtml}<span class="tag">${c.entries.length} ${c.entries.length > 1 ? PSTR.listedMany : PSTR.listedOne}</span></div>
               </div>
               <span class="chevron" aria-hidden="true"></span>
@@ -498,7 +520,6 @@
   /* Rendered here (not as inline <script> in page content) because this file */
   /* loads after assets/js/data.js: putting the render call inline in the     */
   /* page body ran it before KLS_KEY_CLIENTS etc. existed, leaving it empty.  */
-  const ASSET_PREFIX = document.documentElement.getAttribute("lang") === "ms" ? "../" : "";
   const LIST_LANG = document.documentElement.getAttribute("lang") === "ms" ? "ms" : "en";
   const VIEW_ALL_LABEL = LIST_LANG === "ms" ? "Lihat Semua" : "View All";
   const listModal = document.querySelector("[data-list-modal]");
@@ -548,8 +569,8 @@
           <div class="pcarousel-track">
             ${list
               .map(
-                (c, i) => `<div class="pcarousel-item" data-idx="${i}">
-                  <div class="pcarousel-card">${plateInner(c)}</div>
+                (c, i) => `<div class="pcarousel-item${c.featured ? " is-featured" : ""}" data-idx="${i}">
+                  <div class="pcarousel-card">${c.featured ? '<span class="pcarousel-featured-tag">Featured Partner</span>' : ""}${plateInner(c)}</div>
                   <div class="pcarousel-label">${escapeHtml(c.name)}</div>
                 </div>`
               )

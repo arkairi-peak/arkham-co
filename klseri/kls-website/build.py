@@ -45,11 +45,11 @@ UI = {
         "footer_links": [
             ("Home", "index.html"),
             ("Company Overview", "company-overview.html"),
-            ("Our People", "our-people.html"),
             ("Certifications &amp; Licenses", "certifications.html"),
             ("Our Services", "services.html"),
             ("Key Projects", "projects.html"),
             ("Careers", "careers.html"),
+            ("Location", "location.html"),
             ("Contact Us", "contact.html"),
         ],
     },
@@ -75,11 +75,11 @@ UI = {
         "footer_links": [
             ("Laman Utama", "index.html"),
             ("Ikhtisar Syarikat", "company-overview.html"),
-            ("Warga Kerja Kami", "our-people.html"),
             ("Pensijilan &amp; Lesen", "certifications.html"),
             ("Perkhidmatan Kami", "services.html"),
             ("Projek Utama", "projects.html"),
             ("Kerjaya", "careers.html"),
+            ("Lokasi", "location.html"),
             ("Hubungi Kami", "contact.html"),
         ],
     },
@@ -90,7 +90,8 @@ NAV_ITEMS = [
     ("Home", "Laman Utama", "index.html", [],
      "https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg",
      "Electrical engineering & renewable energy since 1984",
-     "Kejuruteraan elektrik & tenaga boleh diperbaharui sejak 1984"),
+     "Kejuruteraan elektrik & tenaga boleh diperbaharui sejak 1984",
+     "assets/img/icons/home.png"),
     ("Company", "Syarikat Kami", "company-overview.html", [
         ("Company Overview", "Ikhtisar Syarikat", "company-overview.html"),
         ("Our Story & History", "Kisah & Sejarah Kami", "company-overview.html#our-story"),
@@ -98,38 +99,30 @@ NAV_ITEMS = [
         ("Core Values", "Nilai Teras", "company-overview.html#core-values"),
     ], "https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg",
      "A Class A, CIDB G7 M&E Contractor, incorporated 1984",
-     "Kontraktor M&E Kelas A, CIDB G7, diperbadankan pada 1984"),
-    ("People", "Warga Kerja Kami", "our-people.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/04/KLS-01.png",
-     "Founders, technical leadership & business development",
-     "Pengasas, kepimpinan teknikal & pembangunan perniagaan"),
-    ("Services", "Perkhidmatan Kami", "services.html", [
-        ("Electrical Power Distribution", "Pengagihan Kuasa Elektrik", "services.html#electrical-power-distribution"),
-        ("Renewable Energy", "Tenaga Boleh Diperbaharui", "services.html#renewable-energy"),
-        ("Biogas", "Biogas", "services.html#biogas"),
-        ("Biomass", "Biojisim", "services.html#biomass"),
-        ("Solar", "Suria", "services.html#solar"),
-    ], "https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg",
-     "Power distribution, plus Biogas, Biomass & Solar interconnection",
-     "Pengagihan kuasa, serta interkoneksi Biogas, Biojisim & Suria"),
-    ("Projects", "Projek Utama", "projects.html", [
+     "Kontraktor M&E Kelas A, CIDB G7, diperbadankan pada 1984",
+     "assets/img/icons/company.png"),
+    ("Certifications", "Pensijilan & Lesen", "certifications.html", [],
+     "https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg",
+     "Class A, CIDB G7 credentials",
+     "Kelayakan Kelas A, CIDB G7",
+     "assets/img/icons/certification.png"),
+    ("Project Ref", "Rujukan Projek", "projects.html", [
         ("Key Projects", "Projek Utama", "projects.html#key-projects"),
         ("Project Reference List", "Senarai Rujukan Projek", "projects.html#reference-list"),
     ], "https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg",
      "Top Glove, Sime Darby, Telekom Malaysia & more",
-     "Top Glove, Sime Darby, Telekom Malaysia & banyak lagi"),
-    ("Certifications", "Pensijilan & Lesen", "certifications.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg",
-     "Class A, CIDB G7 credentials",
-     "Kelayakan Kelas A, CIDB G7"),
-    ("Careers", "Kerjaya", "careers.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/04/KLS-01.png",
-     "Join a young, dynamic technical team",
-     "Sertai pasukan teknikal yang muda dan dinamik"),
+     "Top Glove, Sime Darby, Telekom Malaysia & banyak lagi",
+     "assets/img/icons/projects.png"),
     ("Contact", "Hubungi", "contact.html", [],
      "https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg",
+     "Get in touch with our team",
+     "Hubungi pasukan kami",
+     "assets/img/icons/contact.png"),
+    ("Location", "Lokasi", "location.html", [],
+     "https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg",
      "Port Klang HQ, plus Sabah & Sarawak branches",
-     "Ibu pejabat Port Klang, serta cawangan Sabah & Sarawak"),
+     "Ibu pejabat Port Klang, serta cawangan Sabah & Sarawak",
+     "assets/img/icons/location.png"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -194,9 +187,9 @@ FLAG_MY = """<svg viewBox="0 0 28 20" xmlns="http://www.w3.org/2000/svg" aria-hi
 # ---------------------------------------------------------------------------
 # Template builders
 # ---------------------------------------------------------------------------
-def nav_overlay_items(lang):
+def nav_overlay_items(lang, asset_prefix=""):
     out = []
-    for i, (en, ms, href, sub, img, cap_en, cap_ms) in enumerate(NAV_ITEMS, start=1):
+    for en, ms, href, sub, img, cap_en, cap_ms, icon in NAV_ITEMS:
         label = ms if lang == "ms" else en
         caption = cap_ms if lang == "ms" else cap_en
         sub_html = ""
@@ -206,14 +199,14 @@ def nav_overlay_items(lang):
         out.append(
             f'<li class="nav-overlay-item" data-nav-preview="{img}" data-nav-caption="{caption}">'
             f'<a class="nav-overlay-row" href="{href}" data-nav-link>'
-            f'<span class="idx">{i:02d}</span><span class="label">{label}</span>'
+            f'<img class="idx-icon" src="{asset_prefix}{icon}" alt=""><span class="label">{label}</span>'
             f'</a>{sub_html}</li>'
         )
     return "\n".join(out)
 
 def nav_bg_images():
     seen, out = [], []
-    for en, ms, href, sub, img, cap_en, cap_ms in NAV_ITEMS:
+    for en, ms, href, sub, img, cap_en, cap_ms, icon in NAV_ITEMS:
         if img in seen:
             continue
         seen.append(img)
@@ -283,7 +276,7 @@ def header_html(lang, asset_prefix, page_file):
   </div>
   <div class="nav-overlay-body">
     <nav aria-label="Primary"><ul class="nav-overlay-links">
-      {nav_overlay_items(lang)}
+      {nav_overlay_items(lang, asset_prefix)}
     </ul></nav>
   </div>
   <div class="nav-overlay-foot">

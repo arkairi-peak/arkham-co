@@ -3,7 +3,105 @@
 A complete rebuild of https://www.klseri.com.my/, same company, same facts,
 same green + gold identity, a modern premium engineering-firm UI/UX.
 
-## Latest session: paraphrased copy, restructured Company Overview, RE card photos
+## Latest session: hero-jump fix v2, lighter photo overlay, value icons, tidier spacing
+
+- **Hero jump fix, take two.** The previous fix (em-based min-heights on the
+  title/lead individually) wasn't generous enough for every real-world line
+  wrap. Replaced it with a single fixed-height wrapper (`.hero-copy`,
+  `min-height:460px` desktop / `320px` mobile) around the whole title+lead
+  block, sized with real buffer for the longest slide. This is a harder
+  guarantee than the previous per-element estimate.
+- **Re-block photos were too dark to read.** The green overlay on Solar/
+  Biogas/Biomass/Grid Utilities/Semiconductor/Petrochem/Hospital panels was
+  sitting at 90%/82% opacity, nearly blacking out the photo underneath.
+  Dropped it to 52%/36% so the photo actually shows, and added a subtle
+  text-shadow to the headline and project-example text so legibility holds
+  up against brighter photos now that the overlay is lighter.
+- **Core Values now has icons.** Added a small custom SVG icon (quality
+  checkmark, lightbulb, two-person teamwork mark, refresh/adapt arrows,
+  briefcase, heart) to each of the 6 value rows, sitting next to the
+  existing numbered index rather than replacing it.
+- **Project examples restyled as a tidy stacked card deck** instead of
+  plain text lines separated by a divider, each example is now its own
+  small rounded card, progressively inset to read as a stack (matching
+  your sketch) rather than a flat list.
+- **Tightened the gap between short subsections.** Grid Utilities,
+  Semiconductor & Electronic, Petrochemical & Oleochemical, Hospital &
+  Stadium, and Renovation & Restoration now use the tighter section padding
+  (`section--tight`) since each holds only one re-block, the old full
+  100px top/bottom padding was leaving a lot of dead space between them.
+
+### Previous session: 4 bug fixes + Home page industries rebuilt into full subsections
+
+- **Fixed unreadable industry-card tags**: the amber label text was sitting
+  on an inherited near-white pill background (the global `.tag` class's
+  background wasn't being overridden), making it nearly invisible. Now uses
+  its own dark glass pill so the label is readable against any photo.
+- **Logos now show full color by default everywhere**, the Trusted-by
+  marquee and Key Clients river no longer gate color behind hover
+  (`filter:grayscale(1)` removed from the default state), hover now only
+  does the lift/scale.
+- **Fixed the blank space in the menu** that pushed the HQ address/contact
+  footer below the fold: `.nav-overlay-body` had a forced
+  `min-height:calc(100vh - 86px)` regardless of how much content it held.
+  Converted the panel to a proper flex column so the footer sits right
+  after the nav links, with only the body scrolling if it ever needs to.
+- **Fixed the homepage jump on hero slide change**: the title/lead text
+  swap via JS was changing box height slightly differently per slide
+  (different line-wrap counts), which shifted everything below it. Gave
+  the title and lead a fixed `min-height` sized for the longest slide, so
+  swapping slides no longer moves the page.
+- **Home page industries rebuilt from a compact 5-card grid into full
+  subsections**, matching your mind-map structure directly: Clean Energy
+  (with Solar, Biogas and Biomass each getting their own mini re-block,
+  brief description, project reference examples and a photo, same pattern
+  already used on the Services page), then standalone subsections for Grid
+  Utilities, Semiconductor & Electronic, Petrochemical & Oleochemical,
+  Hospital & Stadium (featuring Larkin), and a lighter Renovation &
+  Restoration callout. Each is its own named, anchored section rather than
+  one dense grid.
+
+### Previous session: nav overhaul, People removed, new Location page, Home rebuild
+
+- **Navigation renewed to match your sketch**: 6 items (Home, Company,
+  Certifications, Project Ref, Contact, Location), your uploaded icons in
+  place of the old numbered index, People and Services/Careers dropped from
+  the primary menu (Services and Careers pages still exist, just reachable
+  via the footer instead).
+- **People page removed entirely**, source files, generated HTML, footer
+  links, and the homepage preview strip. No dangling references left.
+- **New Location page** (EN + BM): pulled the HQ/branch maps out of Contact
+  into their own dedicated page; Contact is now just the form + direct
+  contact info, linking over to Location.
+- **Kelington Group added as the featured partner**, confirmed their real
+  site (kelington-group.com) before linking it, placed first in the
+  Partners carousel with a distinct gold "Featured Partner" badge.
+- **Larkin Stadium added as a project** (Stadium Tan Sri Dato' Haj Hassan
+  Yunos, home of Johor Darul Ta'zim), lighting works, under a new "Stadium
+  & Infrastructure" category with its own filter chip. Honest gap: no year
+  was given for this project, so none was invented, it's listed undated
+  until you confirm one.
+- **Home page rebuilt** around your mind-map: a brief "What We Do" strip
+  (HV/MV/LV, ACMV, fire fighting, ELV), then a photo-forward "Industries We
+  Serve" grid (Renewable & Clean Energy shown wide/featured since biogas
+  has the deepest project history in the data, Grid Utilities, Semiconductor
+  & Electronic with an AI-growth framing, Petrochemical & Oleochemical,
+  Hospital & Stadium featuring Larkin), then client logos and the trusted-by
+  marquee moved up well before the historical milestone timeline, per
+  "jump straight to clients and photos, cut the history." One honest note:
+  Melexis (Kuching), Renesas and SICK AG (JB) are listed as clients per your
+  sketch, but the accompanying photos are generic illustrative semiconductor
+  photography, not verified photos of their specific facilities.
+- **Projects page**: client logos now show next to the company name for
+  every project group where I have a verified matching brand asset (Sime
+  Darby, Telekom Malaysia, Cenergi, SESB, KLK, Cepat Wawasan, North Port,
+  Cargill), giving each client group a more branded, detailed presence.
+- Fixed a real bug along the way: a `const ASSET_PREFIX` was being used
+  before its declaration executed (temporal dead zone), which would have
+  thrown a runtime error on every Projects page load. Moved the declaration
+  to the top of the script.
+
+### Previous session: paraphrased copy, restructured Company Overview, RE card photos
 
 - **Every piece of narrative copy on the English site has been paraphrased**,
   hero taglines, About/Company Overview text, service descriptions, all

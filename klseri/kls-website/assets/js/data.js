@@ -90,6 +90,9 @@ const KLS_PEOPLE = [
    power = electrical power distribution / general M&E
    biogas / biomass / solar = renewable energy interconnection */
 const KLS_PROJECTS = [
+  { client:"Johor Darul Ta'zim (Stadium Tan Sri Dato' Haj Hassan Yunos, Larkin)", short:"Larkin Stadium", entries:[
+    { desc:"Stadium lighting works", location:"Larkin, Johor Bahru, Johor", category:"stadium" }
+  ]},
   { client:"FELDA Global Venture Holdings Berhad", short:"FELDA", entries:[
     { desc:"Mechanical & Electrical works for power generation plant (DP2B) at MSM Sugar Refinery (Johor) Sdn Bhd", year:2016, location:"Johor", category:"power" },
     { desc:"Electrical works for Kilang Baja FPM, Kuantan, Pahang", year:2016, location:"Kuantan, Pahang", category:"power" },
@@ -175,6 +178,7 @@ const KLS_KEY_CLIENTS = [
 
 /* Partners & Suppliers, as listed on the homepage */
 const KLS_PARTNERS = [
+  { name:"Kelington Group Berhad", url:"https://www.kelington-group.com/", logo:"assets/img/partners/kelington-wide.png", featured:true },
   { name:"Viscon", url:"http://www.viscon.com.my/", logo:"assets/img/partners/viscon.png" },
   { name:"INNIO Jenbacher", url:"https://www.innio.com/en/products/jenbacher", logo:"assets/img/partners/innio-jenbacher.png" },
   { name:"Grid Vision T&D", url:"https://www.gridvisiontnd.com/", logo:"assets/img/partners/grid-vision.png" },

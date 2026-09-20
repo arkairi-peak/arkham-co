@@ -37,7 +37,7 @@ BODY = """
     </div>
   </div>
   <div class="container hero-inner">
-    <div>
+    <div class="hero-copy">
       <div class="hero-eyebrow reveal" style="animation-delay:.55s">Kejuruteraan Elektrik &amp; Tenaga Boleh Diperbaharui, Sejak 1984</div>
       <h1 class="reveal" style="animation-delay:.68s" data-hero-title-el>Tenaga Yang Menggerakkan Perniagaan Anda</h1>
       <p class="lead reveal" style="animation-delay:.8s" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 sebagai penyedia perkhidmatan pendawaian semula utama. Apabila perniagaan berkembang, skop perkhidmatan turut berkembang: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi projek kediaman, komersial, industri, infrastruktur dan marin.</p>
@@ -65,64 +65,170 @@ BODY = """
 </section>
 
 <section class="section">
-  <div class="container grid grid-2" style="align-items:center;gap:56px;">
-    <div>
-      <div class="kicker">Tentang KLS</div>
-      <h2>Daripada pakar pendawaian semula kepada kontraktor elektrik &amp; tenaga boleh diperbaharui bersepadu</h2>
-      <p class="lead">KLS telah berkembang menjadi salah sebuah nama industri yang mantap di Malaysia, mengambil serius pembangunan mampan sehingga menyokongnya dengan projek sebenar: kontrak Interkoneksi Tenaga Boleh Diperbaharui merangkumi loji Biogas, Biojisim, Suria dan Kogenerasi.</p>
-      <a href="company-overview.html" class="btn-ghost">Lihat Kisah Penuh Syarikat</a>
+  <div class="container">
+    <div class="kicker">Apa Yang Kami Lakukan</div>
+    <h2 style="max-width:26ch;">Kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui, hujung ke hujung</h2>
+    <p class="lead" style="max-width:70ch;">Daripada bekalan dan pemasangan sehingga pengujian, pentauliahan dan waranti, merangkumi kerja elektrik HV/MV/LV, ACMV, pencegahan kebakaran dan sistem ELV.</p>
+    <div class="svc-chip-row">
+      <span class="svc-chip">Kerja Elektrik HV / MV / LV</span>
+      <span class="svc-chip">ACMV</span>
+      <span class="svc-chip">Pencegahan Kebakaran</span>
+      <span class="svc-chip">Sistem ELV</span>
     </div>
-    <div class="grid" style="gap:16px;">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg" alt="Pertumbuhan mampan, KLS menerajui tenaga boleh diperbaharui dan pembangunan mampan" style="border-radius:10px;border:1px solid var(--line-300);">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg" alt="Mentol lampu di atas tanah di bawah cahaya matahari, tenaga bersih di KLS" style="border-radius:10px;border:1px solid var(--line-300);">
-    </div>
+    <a href="services.html" class="btn-ghost" style="margin-top:16px;display:inline-block;">Lihat semua perkhidmatan</a>
   </div>
 </section>
 
 <section class="section section--band">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Apa Yang Kami Lakukan</div>
-      <h2>Perkhidmatan Kami</h2>
-      <p class="lead">Berbekalkan pengalaman industri bertahun-tahun, kami menyampaikan perkhidmatan, produk dan kerja yang diperlukan pelanggan untuk mencapai matlamat perniagaan mereka, merangkumi bekalan, pemasangan, pengujian dan pentauliahan untuk:</p>
+      <div class="kicker">Industri Yang Kami Khidmati</div>
+      <h2>Di mana kerja kami dapat dilihat</h2>
+      <p class="lead">Enam sektor di mana kerja elektrik dan interkoneksi KLS paling banyak dilihat, daripada loji tenaga boleh diperbaharui sehingga pencahayaan stadium.</p>
     </div>
-    <div class="spec-list">
-      <div class="spec-row">
-        <span class="num mono">01</span>
-        <div>
-          <h4>Sistem Pengagihan Kuasa Elektrik</h4>
-          <p style="margin-top:8px;">Sistem kuasa Voltan Sederhana/Tinggi dan Voltan Rendah, papan AMF, MCC, transformer, kabel kuasa, sistem penjana diesel, serta sistem ELV/ICT yang menghubungkan kesemuanya.</p>
-          <a href="services.html#electrical-power-distribution" class="btn-ghost">Ketahui Lebih Lanjut</a>
+  </div>
+</section>
+
+<section class="section section--band" id="home-clean-energy">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Tenaga Bersih</div>
+      <h2>Interkoneksi Suria, Biogas &amp; Biojisim</h2>
+      <p class="lead">Biogas adalah bidang dengan sejarah projek paling mendalam bagi kami, merangkumi kilang kelapa sawit di seluruh Semenanjung dan Malaysia Timur, di samping kerja interkoneksi biojisim dan suria.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+        <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Suria</div></div>
+        <div class="examples"><div>Tenaga Suria 1MW untuk ERS Energy Sdn. Bhd.</div></div>
+      </div>
+      <div class="re-body">
+        <p>Bekalan, pemasangan dan penyelenggaraan kabel serta sistem elektrik yang menghubungkan panel solar, loji kuasa solar dan grid nasional.</p>
+        <a href="services.html#solar" class="btn-ghost">Butiran penuh suria</a>
+      </div>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg')">
+        <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Biogas</div></div>
+        <div class="examples">
+          <div>Biogas 1.5MW untuk Cenergi FJP Sdn. Bhd.</div>
+          <div>Biogas 3.5MW untuk Mistral Engineering Sdn. Bhd.</div>
+          <div>Ditambah pelbagai projek biogas Cenergi EPC, Sime Darby &amp; Worldwide Holdings</div>
         </div>
       </div>
-      <div class="spec-row">
-        <span class="num mono">02</span>
-        <div>
-          <h4>Tenaga Boleh Diperbaharui</h4>
-          <p style="margin-top:8px;">Kemudahan interkoneksi yang menyalurkan kuasa Biogas, Biojisim dan Suria dengan cekap ke grid nasional, dengan gangguan yang seminimum mungkin.</p>
-          <a href="services.html#renewable-energy" class="btn-ghost">Ketahui Lebih Lanjut</a>
-        </div>
+      <div class="re-body">
+        <p>Bidang tenaga boleh diperbaharui kami yang paling aktif: kerja interkoneksi yang menukar efluen kilang kelapa sawit (POME) kepada kuasa grid yang boleh dieksport, merentasi lebih banyak projek berdokumen daripada kategori lain yang kami khidmati.</p>
+        <a href="services.html#biogas" class="btn-ghost">Butiran penuh biogas</a>
+      </div>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+        <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Biojisim</div></div>
+        <div class="examples"><div>Biojisim 10MW untuk Cepat Wawasan Sdn. Bhd.</div></div>
+      </div>
+      <div class="re-body">
+        <p>Kejuruteraan, bekalan, pemasangan dan pentauliahan kabel serta peralatan elektrik untuk loji kuasa biojisim.</p>
+        <a href="services.html#biomass" class="btn-ghost">Butiran penuh biojisim</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--forest">
+<section class="section section--tight" id="home-grid-utilities">
   <div class="container">
-    <div class="section-head" style="margin-bottom:0;">
-      <div class="kicker">1984-Kini</div>
-      <h2 style="max-width:18ch;">Empat dekad dalam kejuruteraan Malaysia</h2>
-      <p style="max-width:60ch;">Kami bermula sebagai bengkel pendawaian motor elektrik yang kecil dan berkembang menjadi Kontraktor M&amp;E Kelas A, CIDB G7 yang mantap, beroperasi di seluruh Malaysia dan luar negara.</p>
-      <a href="company-overview.html#our-story" class="btn btn-outline" style="margin:6px 0 40px;display:inline-block;">Kisah &amp; Garis Masa Kami</a>
+    <div class="section-head">
+      <div class="kicker">Utiliti Grid</div>
+      <h2>Pencawang &amp; Utiliti Grid</h2>
+      <p class="lead">Kerja HV/MV/LV untuk infrastruktur utiliti dan telekomunikasi.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+        <div><span class="tag">UTILITI GRID</span><div class="headline">Kerja Pencawang</div></div>
+        <div class="examples">
+          <div>Kerja elektrik Unit Terminal Jauh untuk SESB, Sabah</div>
+          <div>Kerja naik taraf elektrik untuk Telekom Malaysia</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>Kerja pencawang dan suis-gear untuk operator utiliti dan telekomunikasi, termasuk pemasangan unit terminal jauh dan naik taraf suis-gear 11kV.</p>
+        <a href="projects.html" class="btn-ghost">Lihat senarai rujukan projek</a>
+      </div>
     </div>
   </div>
-  <div class="marquee" data-marquee data-marquee-speed="26">
-    <div class="marquee-track">
-      <div class="milestone-chip"><b>1984</b><span>Diperbadankan di Malaysia sebagai penyedia perkhidmatan pendawaian semula utama</span></div>
-      <div class="milestone-chip"><b>1984-2000-an</b><span>Menjadi Kontraktor M&amp;E Kelas A, CIDB G7 yang mantap</span></div>
-      <div class="milestone-chip"><b>2000</b><span>Membuka pejabat cawangan di Lahad Datu, Sabah</span></div>
-      <div class="milestone-chip"><b>Ke Luar Negara</b><span>Mengambil projek antarabangsa di Indonesia, Papua New Guinea &amp; Afrika</span></div>
+</section>
+
+<section class="section section--tight section--band" id="home-semiconductor">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Fokus Masa Depan</div>
+      <h2>Semikonduktor &amp; Elektronik</h2>
+      <p class="lead">Fokus yang berkembang bagi KLS, mengikuti ledakan didorong AI dalam pembuatan cip dan pemasangan elektronik di seluruh Malaysia.</p>
     </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('../assets/img/industries/semiconductor-1.jpg')">
+        <div><span class="tag">FOKUS MASA DEPAN</span><div class="headline">Semikonduktor &amp; Elektronik</div></div>
+        <div class="examples">
+          <div>Melexis (Kuching)</div>
+          <div>Renesas</div>
+          <div>SICK AG (Johor Bahru)</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>Seiring sektor semikonduktor dan elektronik Malaysia berkembang bersama permintaan global didorong AI, KLS sedang membina keupayaan untuk khidmat kemudahan pembuatan cip dan pemasangan elektronik.</p>
+        <a href="contact.html" class="btn-ghost">Bincangkan projek anda dengan kami</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="home-petrochem">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Pembuatan</div>
+      <h2>Petrokimia &amp; Oleokimia</h2>
+      <p class="lead">Loji pembuatan, kilang kelapa sawit dan kemudahan proses.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('../assets/img/industries/petrochem-2.jpg')">
+        <div><span class="tag">PEMBUATAN</span><div class="headline">Petrokimia &amp; Oleokimia</div></div>
+        <div class="examples">
+          <div>Kerja kemudahan marin untuk Dialog Group, Pengerang</div>
+          <div>Kerja elektrik kilang penapisan untuk Cargill, Port Klang</div>
+          <div>Kerja GTG Cogen untuk KLK Berhad, Rawang</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>Kerja elektrik, mekanikal dan ELV untuk kilang penapisan, loji oleokimia dan kemudahan pemprosesan kelapa sawit.</p>
+        <a href="projects.html" class="btn-ghost">Lihat senarai rujukan projek</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight section--band" id="home-hospital-stadium">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Infrastruktur Awam</div>
+      <h2>Hospital &amp; Stadium</h2>
+      <p class="lead">Daripada pencahayaan stadium sehingga sistem elektrik kemudahan penjagaan kesihatan.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('../assets/img/projects/larkin-3.jpg')">
+        <div><span class="tag">INFRASTRUKTUR AWAM</span><div class="headline">Stadium Larkin</div></div>
+        <div class="examples"><div>Kerja pencahayaan stadium untuk Stadium Tan Sri Dato' Haj Hassan Yunos, Larkin</div></div>
+      </div>
+      <div class="re-body">
+        <p>KLS menyampaikan pencahayaan stadium untuk Stadium Tan Sri Dato' Haj Hassan Yunos di Larkin, Johor Bahru, tempat asal Johor Darul Ta'zim (JDT).</p>
+        <a href="location.html" class="btn-ghost">Lebih lanjut tentang KLS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight text-center" id="home-renovation">
+  <div class="container">
+    <div class="kicker" style="justify-content:center;">Pengubahsuaian &amp; Pemulihan</div>
+    <h3 style="max-width:40ch;margin:0 auto 10px;">Kerja naik taraf dan pemulihan bagi infrastruktur elektrik sedia ada</h3>
+    <a href="contact.html" class="btn-ghost">Hubungi kami untuk membincangkan projek</a>
   </div>
 </section>
 
@@ -152,11 +258,29 @@ BODY = """
 <section class="section section--band">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Warga Kerja Kami</div>
-      <h2>Individu yang menerajui KLS</h2>
+      <div class="kicker">Pelanggan Utama</div>
+      <h2>Organisasi yang bekerjasama dengan kami</h2>
     </div>
-    <div class="grid grid-4" data-people-preview></div>
-    <div style="margin-top:30px;"><a href="our-people.html" class="btn btn-outline">Kenali Pasukan Penuh Kami</a></div>
+    <div data-key-clients></div>
+  </div>
+</section>
+
+<section class="section section--forest">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="kicker">1984-Kini</div>
+      <h2 style="max-width:18ch;">Empat dekad dalam kejuruteraan Malaysia</h2>
+      <p style="max-width:60ch;">Kami bermula sebagai bengkel pendawaian motor elektrik yang kecil dan berkembang menjadi Kontraktor M&amp;E Kelas A, CIDB G7 yang mantap, beroperasi di seluruh Malaysia dan luar negara.</p>
+      <a href="company-overview.html#our-story" class="btn btn-outline" style="margin:6px 0 40px;display:inline-block;">Kisah &amp; Garis Masa Kami</a>
+    </div>
+  </div>
+  <div class="marquee" data-marquee data-marquee-speed="26">
+    <div class="marquee-track">
+      <div class="milestone-chip"><b>1984</b><span>Diperbadankan di Malaysia sebagai penyedia perkhidmatan pendawaian semula utama</span></div>
+      <div class="milestone-chip"><b>1984-2000-an</b><span>Menjadi Kontraktor M&amp;E Kelas A, CIDB G7 yang mantap</span></div>
+      <div class="milestone-chip"><b>2000</b><span>Membuka pejabat cawangan di Lahad Datu, Sabah</span></div>
+      <div class="milestone-chip"><b>Ke Luar Negara</b><span>Mengambil projek antarabangsa di Indonesia, Papua New Guinea &amp; Afrika</span></div>
+    </div>
   </div>
 </section>
 
@@ -168,16 +292,6 @@ BODY = """
       <p class="lead" style="margin:0 auto;">Kontraktor M&amp;E Kelas A, CIDB G7, memegang pensijilan merentasi setiap bidang elektrik dan pembinaan yang kami ceburi.</p>
     </div>
     <div style="text-align:center;"><a href="certifications.html" class="btn btn-primary">Lihat Semua Pensijilan &amp; Lesen</a></div>
-  </div>
-</section>
-
-<section class="section section--band">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Pelanggan Utama</div>
-      <h2>Organisasi yang bekerjasama dengan kami</h2>
-    </div>
-    <div data-key-clients></div>
   </div>
 </section>
 

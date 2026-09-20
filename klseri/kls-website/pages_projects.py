@@ -46,6 +46,7 @@ BODY = f"""
         <button class="chip" data-project-filter="power">Electrical &amp; Power Distribution</button>
         <button class="chip" data-project-filter="biogas">Biogas</button>
         <button class="chip" data-project-filter="biomass">Biomass</button>
+        <button class="chip" data-project-filter="stadium">Stadium &amp; Infrastructure</button>
       </div>
     </div>
 

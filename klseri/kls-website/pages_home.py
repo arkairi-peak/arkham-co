@@ -37,7 +37,7 @@ BODY = """
     </div>
   </div>
   <div class="container hero-inner">
-    <div>
+    <div class="hero-copy">
       <div class="hero-eyebrow reveal" style="animation-delay:.55s">Electrical Engineering &amp; Renewable Energy, Since 1984</div>
       <h1 class="reveal" style="animation-delay:.68s" data-hero-title-el>Energy That Keeps Your Business Running</h1>
       <p class="lead reveal" style="animation-delay:.8s" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, known simply as KLS, was incorporated in 1984 as a master rewiring service provider. As the business grew, so did what we offered: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine projects.</p>
@@ -65,64 +65,170 @@ BODY = """
 </section>
 
 <section class="section">
-  <div class="container grid grid-2" style="align-items:center;gap:56px;">
-    <div>
-      <div class="kicker">About KLS</div>
-      <h2>From rewiring specialist to full-scope electrical &amp; renewable energy contractor</h2>
-      <p class="lead">KLS has grown into one of Malaysia's established industry names, taking sustainable development seriously enough to back it with real projects: Renewable Energy Interconnection contracts across Biogas, Biomass, Solar and Cogeneration plants.</p>
-      <a href="company-overview.html" class="btn-ghost">See the full company story</a>
+  <div class="container">
+    <div class="kicker">What We Do</div>
+    <h2 style="max-width:26ch;">Electrical engineering and renewable energy interconnection, end to end</h2>
+    <p class="lead" style="max-width:70ch;">From supply and installation through to testing, commissioning and warranty, across HV/MV/LV electrical work, ACMV, fire fighting and ELV systems.</p>
+    <div class="svc-chip-row">
+      <span class="svc-chip">HV / MV / LV Electrical Work</span>
+      <span class="svc-chip">ACMV</span>
+      <span class="svc-chip">Fire Fighting</span>
+      <span class="svc-chip">ELV Systems</span>
     </div>
-    <div class="grid" style="gap:16px;">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg" alt="Sustainable growth, KLS embraces renewable energy and sustainable development" style="border-radius:10px;border:1px solid var(--line-300);">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg" alt="Light bulb placed on soil in sunlight, clean energy at KLS" style="border-radius:10px;border:1px solid var(--line-300);">
-    </div>
+    <a href="services.html" class="btn-ghost" style="margin-top:16px;display:inline-block;">See all services</a>
   </div>
 </section>
 
 <section class="section section--band">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">What We Do</div>
-      <h2>Our Services</h2>
-      <p class="lead">Drawing on years of hands-on industry experience, we deliver the services, products and work our clients need to hit their business goals, covering supply, installation, testing and commissioning across:</p>
+      <div class="kicker">Industries We Serve</div>
+      <h2>Where our work shows up</h2>
+      <p class="lead">Six sectors where KLS's electrical and interconnection work shows up most, from renewable energy plants to stadium lighting.</p>
     </div>
-    <div class="spec-list">
-      <div class="spec-row">
-        <span class="num mono">01</span>
-        <div>
-          <h4>Electrical Power Distribution Systems</h4>
-          <p style="margin-top:8px;">Medium/High Voltage and Low Voltage power systems, AMF boards, MCCs, transformers, power cabling, diesel generator systems, plus the ELV/ICT systems that tie it all together.</p>
-          <a href="services.html#electrical-power-distribution" class="btn-ghost">Learn more</a>
+  </div>
+</section>
+
+<section class="section section--band" id="home-clean-energy">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Clean Energy</div>
+      <h2>Solar, Biogas &amp; Biomass Interconnection</h2>
+      <p class="lead">Biogas is where our project history runs deepest, spanning palm oil mills across Peninsular and East Malaysia, alongside biomass and solar interconnection work.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+        <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Solar</div></div>
+        <div class="examples"><div>1MW Solar Energy for ERS Energy Sdn. Bhd.</div></div>
+      </div>
+      <div class="re-body">
+        <p>Supply, installation and maintenance of cables and electrical systems interconnecting solar panels, solar power plants and the national grid.</p>
+        <a href="services.html#solar" class="btn-ghost">Full solar detail</a>
+      </div>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg')">
+        <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Biogas</div></div>
+        <div class="examples">
+          <div>1.5MW Biogas for Cenergi FJP Sdn. Bhd.</div>
+          <div>3.5MW Biogas for Mistral Engineering Sdn. Bhd.</div>
+          <div>Plus multiple Cenergi EPC, Sime Darby &amp; Worldwide Holdings biogas projects</div>
         </div>
       </div>
-      <div class="spec-row">
-        <span class="num mono">02</span>
-        <div>
-          <h4>Renewable Energy</h4>
-          <p style="margin-top:8px;">Interconnection facilities that move Biogas, Biomass and Solar power efficiently onto the national grid, with as little downtime as possible.</p>
-          <a href="services.html#renewable-energy" class="btn-ghost">Learn more</a>
-        </div>
+      <div class="re-body">
+        <p>Our most active renewable energy vertical: interconnection work that turns palm oil mill effluent (POME) into exportable grid power, across more documented projects than any other category we serve.</p>
+        <a href="services.html#biogas" class="btn-ghost">Full biogas detail</a>
+      </div>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+        <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Biomass</div></div>
+        <div class="examples"><div>10MW Biomass for Cepat Wawasan Sdn. Bhd.</div></div>
+      </div>
+      <div class="re-body">
+        <p>Engineering, supply, installation and commissioning of cables and electrical equipment for biomass power plants.</p>
+        <a href="services.html#biomass" class="btn-ghost">Full biomass detail</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--forest">
+<section class="section section--tight" id="home-grid-utilities">
   <div class="container">
-    <div class="section-head" style="margin-bottom:0;">
-      <div class="kicker">1984-Today</div>
-      <h2 style="max-width:18ch;">Four decades in Malaysian engineering</h2>
-      <p style="max-width:60ch;">We started as a small electrical motor wiring workshop and grew into an established Class A, CIDB G7 M&amp;E Contractor working across Malaysia and beyond.</p>
-      <a href="company-overview.html#our-story" class="btn btn-outline" style="margin:6px 0 40px;display:inline-block;">Our story &amp; timeline</a>
+    <div class="section-head">
+      <div class="kicker">Grid Utilities</div>
+      <h2>Substation &amp; Grid Utilities</h2>
+      <p class="lead">HV/MV/LV works for utility and telecommunications infrastructure.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+        <div><span class="tag">GRID UTILITIES</span><div class="headline">Substation Works</div></div>
+        <div class="examples">
+          <div>Remote Terminal Unit electrical works for SESB, Sabah</div>
+          <div>Electrical upgrading works for Telekom Malaysia</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>Substation and switchgear works for utility and telecommunications operators, including remote terminal unit installations and 11kV switchgear upgrades.</p>
+        <a href="projects.html" class="btn-ghost">See project reference list</a>
+      </div>
     </div>
   </div>
-  <div class="marquee" data-marquee data-marquee-speed="26">
-    <div class="marquee-track">
-      <div class="milestone-chip"><b>1984</b><span>Incorporated in Malaysia as a master rewiring service provider</span></div>
-      <div class="milestone-chip"><b>1984-2000s</b><span>Became an established Class A, CIDB G7 M&amp;E Contractor</span></div>
-      <div class="milestone-chip"><b>2000</b><span>Opened a branch office in Lahad Datu, Sabah</span></div>
-      <div class="milestone-chip"><b>Beyond MY</b><span>Took on international projects in Indonesia, Papua New Guinea &amp; Africa</span></div>
+</section>
+
+<section class="section section--tight section--band" id="home-semiconductor">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Future Focus</div>
+      <h2>Semiconductor &amp; Electronic</h2>
+      <p class="lead">A growing focus for KLS, tracking the AI-driven boom in chip manufacturing and electronics assembly across Malaysia.</p>
     </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('assets/img/industries/semiconductor-1.jpg')">
+        <div><span class="tag">FUTURE FOCUS</span><div class="headline">Semiconductor &amp; Electronic</div></div>
+        <div class="examples">
+          <div>Melexis (Kuching)</div>
+          <div>Renesas</div>
+          <div>SICK AG (Johor Bahru)</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>As Malaysia's semiconductor and electronics sector expands alongside global AI-driven demand, KLS is building out capability to serve chip manufacturing and electronics assembly facilities.</p>
+        <a href="contact.html" class="btn-ghost">Talk to us about a project</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="home-petrochem">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Manufacturing</div>
+      <h2>Petrochemical &amp; Oleochemical</h2>
+      <p class="lead">Manufacturing plants, palm oil mills and process facilities.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('assets/img/industries/petrochem-2.jpg')">
+        <div><span class="tag">MANUFACTURING</span><div class="headline">Petrochemical &amp; Oleochemical</div></div>
+        <div class="examples">
+          <div>Marine facilities works for Dialog Group, Pengerang</div>
+          <div>Refinery electrical works for Cargill, Port Klang</div>
+          <div>GTG Cogen works for KLK Berhad, Rawang</div>
+        </div>
+      </div>
+      <div class="re-body">
+        <p>Electrical, mechanical and ELV works for refineries, oleochemical plants and palm oil processing facilities.</p>
+        <a href="projects.html" class="btn-ghost">See project reference list</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight section--band" id="home-hospital-stadium">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">Public Infrastructure</div>
+      <h2>Hospital &amp; Stadium</h2>
+      <p class="lead">From stadium lighting to healthcare facility electrical systems.</p>
+    </div>
+    <div class="re-block">
+      <div class="re-media" style="--panel-img:url('assets/img/projects/larkin-3.jpg')">
+        <div><span class="tag">PUBLIC INFRASTRUCTURE</span><div class="headline">Larkin Stadium</div></div>
+        <div class="examples"><div>Stadium lighting works for Stadium Tan Sri Dato' Haj Hassan Yunos, Larkin</div></div>
+      </div>
+      <div class="re-body">
+        <p>KLS delivered the stadium lighting for Stadium Tan Sri Dato' Haj Hassan Yunos in Larkin, Johor Bahru, home ground of Johor Darul Ta'zim (JDT).</p>
+        <a href="location.html" class="btn-ghost">More about KLS</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight text-center" id="home-renovation">
+  <div class="container">
+    <div class="kicker" style="justify-content:center;">Renovation &amp; Restoration</div>
+    <h3 style="max-width:40ch;margin:0 auto 10px;">Upgrades and restoration works for existing electrical infrastructure</h3>
+    <a href="contact.html" class="btn-ghost">Get in touch to discuss a project</a>
   </div>
 </section>
 
@@ -152,11 +258,29 @@ BODY = """
 <section class="section section--band">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Our People</div>
-      <h2>The people leading KLS</h2>
+      <div class="kicker">Key Clients</div>
+      <h2>Organisations that work with us</h2>
     </div>
-    <div class="grid grid-4" data-people-preview></div>
-    <div style="margin-top:30px;"><a href="our-people.html" class="btn btn-outline">Meet the full team</a></div>
+    <div data-key-clients></div>
+  </div>
+</section>
+
+<section class="section section--forest">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="kicker">1984-Today</div>
+      <h2 style="max-width:18ch;">Four decades in Malaysian engineering</h2>
+      <p style="max-width:60ch;">We started as a small electrical motor wiring workshop and grew into an established Class A, CIDB G7 M&amp;E Contractor working across Malaysia and beyond.</p>
+      <a href="company-overview.html#our-story" class="btn btn-outline" style="margin:6px 0 40px;display:inline-block;">Our story &amp; timeline</a>
+    </div>
+  </div>
+  <div class="marquee" data-marquee data-marquee-speed="26">
+    <div class="marquee-track">
+      <div class="milestone-chip"><b>1984</b><span>Incorporated in Malaysia as a master rewiring service provider</span></div>
+      <div class="milestone-chip"><b>1984-2000s</b><span>Became an established Class A, CIDB G7 M&amp;E Contractor</span></div>
+      <div class="milestone-chip"><b>2000</b><span>Opened a branch office in Lahad Datu, Sabah</span></div>
+      <div class="milestone-chip"><b>Beyond MY</b><span>Took on international projects in Indonesia, Papua New Guinea &amp; Africa</span></div>
+    </div>
   </div>
 </section>
 
@@ -168,16 +292,6 @@ BODY = """
       <p class="lead" style="margin:0 auto;">A Class A, CIDB G7 M&amp;E Contractor, holding certification across every electrical and construction discipline we operate in.</p>
     </div>
     <div style="text-align:center;"><a href="certifications.html" class="btn btn-primary">View all certifications &amp; licenses</a></div>
-  </div>
-</section>
-
-<section class="section section--band">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Key Clients</div>
-      <h2>Organisations that work with us</h2>
-    </div>
-    <div data-key-clients></div>
   </div>
 </section>
 
