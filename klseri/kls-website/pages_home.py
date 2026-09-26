@@ -63,12 +63,36 @@ BODY = """
   </div>
 </section>
 
-<section class="section section--band">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Industries We Serve</div>
-      <h2>Where our work shows up</h2>
-      <p class="lead">Six sectors where KLS's electrical and interconnection work shows up most, from renewable energy plants to stadium lighting.</p>
+<section class="trust-band">
+  <div class="container trust-grid">
+    <div class="trust-stat"><b data-count-to="42" data-count-suffix="+">0</b><span>Years in operation</span></div>
+    <div class="trust-stat"><b data-count-to="35" data-count-suffix="+">0</b><span>Documented projects</span></div>
+    <div class="trust-stat"><b data-count-to="12">0</b><span>Certificates &amp; licenses</span></div>
+    <div class="trust-stat"><b data-count-to="3">0</b><span>Offices: Port Klang, Lahad Datu, Bintulu</span></div>
+  </div>
+</section>
+
+<section class="showcase" id="industries" data-showcase>
+  <div class="container showcase-head">
+    <div class="kicker">Industries We Serve</div>
+    <h2>Where our work shows up</h2>
+    <p class="lead">Five sectors where KLS's electrical and interconnection work shows up most, from renewable energy plants to stadium lighting.</p>
+  </div>
+  <div class="container showcase-stage">
+    <ol class="showcase-list">
+      <li class="showcase-item" data-showcase-item><a href="#home-clean-energy"><span class="n">01</span><span class="t">Clean Energy</span><span class="d">Interconnection for solar, biogas and biomass plants, where our project history runs deepest.</span><img class="thumb" src="assets/img/industries/solar.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-grid-utilities"><span class="n">02</span><span class="t">Substation &amp; Grid Utilities</span><span class="d">HV/MV/LV works for utility and telecommunications infrastructure.</span><img class="thumb" src="assets/img/industries/biomass.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-semiconductor"><span class="n">03</span><span class="t">Semiconductor &amp; Electronic</span><span class="d">A growing focus, tracking the boom in chip manufacturing and electronics assembly.</span><img class="thumb" src="assets/img/industries/semiconductor-2.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-petrochem"><span class="n">04</span><span class="t">Petrochemical &amp; Oleochemical</span><span class="d">Manufacturing plants, palm oil mills and process facilities.</span><img class="thumb" src="assets/img/industries/petrochem-1.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-hospital-stadium"><span class="n">05</span><span class="t">Hospital &amp; Stadium</span><span class="d">From stadium lighting to healthcare facility electrical systems.</span><img class="thumb" src="assets/img/projects/larkin-2.webp" alt="" loading="lazy"></a></li>
+    </ol>
+    <div class="showcase-media" aria-hidden="true">
+        <img src="assets/img/industries/solar.webp" alt="" loading="lazy">
+        <img src="assets/img/industries/biomass.webp" alt="" loading="lazy">
+        <img src="assets/img/industries/semiconductor-2.webp" alt="" loading="lazy">
+        <img src="assets/img/industries/petrochem-1.webp" alt="" loading="lazy">
+        <img src="assets/img/projects/larkin-2.webp" alt="" loading="lazy">
+      <div class="showcase-bar"><i></i></div>
     </div>
   </div>
 </section>

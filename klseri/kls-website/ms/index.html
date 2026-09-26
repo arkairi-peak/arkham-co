@@ -19,6 +19,8 @@
 
 </head>
 <body>
+<div class="page-wipe" data-page-wipe aria-hidden="true"></div>
+<script>try{if(sessionStorage.getItem('klsWipe')==='1'){document.documentElement.classList.add('wipe-in');}}catch(e){}</script>
 <div class="scroll-progress" data-scroll-progress></div>
 <header class="site-header">
   <div class="container">
@@ -142,12 +144,36 @@
   </div>
 </section>
 
-<section class="section section--band">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Industri Yang Kami Khidmati</div>
-      <h2>Di mana kerja kami dapat dilihat</h2>
-      <p class="lead">Enam sektor di mana kerja elektrik dan interkoneksi KLS paling banyak dilihat, daripada loji tenaga boleh diperbaharui sehingga pencahayaan stadium.</p>
+<section class="trust-band">
+  <div class="container trust-grid">
+    <div class="trust-stat"><b data-count-to="42" data-count-suffix="+">0</b><span>Tahun beroperasi</span></div>
+    <div class="trust-stat"><b data-count-to="35" data-count-suffix="+">0</b><span>Projek didokumenkan</span></div>
+    <div class="trust-stat"><b data-count-to="12">0</b><span>Sijil &amp; lesen</span></div>
+    <div class="trust-stat"><b data-count-to="3">0</b><span>Pejabat: Port Klang, Lahad Datu, Bintulu</span></div>
+  </div>
+</section>
+
+<section class="showcase" id="industries" data-showcase>
+  <div class="container showcase-head">
+    <div class="kicker">Industri Yang Kami Khidmati</div>
+    <h2>Di mana kerja kami dapat dilihat</h2>
+    <p class="lead">Lima sektor di mana kerja elektrik dan interkoneksi KLS paling banyak dilihat, daripada loji tenaga boleh diperbaharui sehingga pencahayaan stadium.</p>
+  </div>
+  <div class="container showcase-stage">
+    <ol class="showcase-list">
+      <li class="showcase-item" data-showcase-item><a href="#home-clean-energy"><span class="n">01</span><span class="t">Tenaga Bersih</span><span class="d">Interkoneksi untuk loji suria, biogas dan biojisim, bidang dengan sejarah projek paling mendalam.</span><img class="thumb" src="../assets/img/industries/solar.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-grid-utilities"><span class="n">02</span><span class="t">Pencawang &amp; Utiliti Grid</span><span class="d">Kerja HV/MV/LV untuk infrastruktur utiliti dan telekomunikasi.</span><img class="thumb" src="../assets/img/industries/biomass.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-semiconductor"><span class="n">03</span><span class="t">Semikonduktor &amp; Elektronik</span><span class="d">Fokus yang berkembang, mengikuti ledakan pembuatan cip dan pemasangan elektronik.</span><img class="thumb" src="../assets/img/industries/semiconductor-2.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-petrochem"><span class="n">04</span><span class="t">Petrokimia &amp; Oleokimia</span><span class="d">Loji pembuatan, kilang kelapa sawit dan kemudahan proses.</span><img class="thumb" src="../assets/img/industries/petrochem-1.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-hospital-stadium"><span class="n">05</span><span class="t">Hospital &amp; Stadium</span><span class="d">Daripada pencahayaan stadium sehingga sistem elektrik kemudahan penjagaan kesihatan.</span><img class="thumb" src="../assets/img/projects/larkin-2.webp" alt="" loading="lazy"></a></li>
+    </ol>
+    <div class="showcase-media" aria-hidden="true">
+        <img src="../assets/img/industries/solar.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/biomass.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/semiconductor-2.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/petrochem-1.webp" alt="" loading="lazy">
+        <img src="../assets/img/projects/larkin-2.webp" alt="" loading="lazy">
+      <div class="showcase-bar"><i></i></div>
     </div>
   </div>
 </section>
@@ -416,6 +442,12 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<nav class="mobile-bar" aria-label="Telefon / WhatsApp / Pertanyaan">
+  <a href="tel:+60331671818"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Telefon</a>
+  <a href="https://wa.me/60196203780?text=Hai+KLS%2C+saya+ingin+bertanya+tentang+perkhidmatan+anda." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="is-primary" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Pertanyaan</a>
+</nav>
+
 <div class="modal-overlay" data-person-modal></div>
 <div class="modal-overlay" data-cert-modal></div>
 <div class="modal-overlay" data-list-modal></div>
@@ -426,6 +458,8 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/scroll.js"></script>
+<script src="../assets/js/grid-bg.js"></script>
+<script src="../assets/js/transitions.js"></script>
 
 <script src="../assets/js/entrance.js"></script>
 </body>

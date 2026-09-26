@@ -29,6 +29,26 @@ BODY = f"""
   </div>
 </section>
 
+<section class="section" id="project-map">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">PROJECT MAP</div>
+      <h2>Where we have worked across Malaysia</h2>
+      <p class="lead">Every pin is built from the reference list below. Click a pin for its projects, or pick a location from the list.</p>
+    </div>
+    <div class="chip-group" style="margin-bottom:16px;"><button class="chip is-active" data-map-filter="all">All</button><button class="chip" data-map-filter="power">Electrical &amp; Power Distribution</button><button class="chip" data-map-filter="biogas">Biogas</button><button class="chip" data-map-filter="biomass">Biomass</button><button class="chip" data-map-filter="stadium">Stadium &amp; Infrastructure</button></div>
+    <div class="map-wrap">
+      <div class="map-canvas" data-project-map role="application" aria-label="PROJECT MAP"></div>
+      <aside class="map-panel">
+        <div class="map-panel-head" data-map-summary></div>
+        <ul class="map-places" data-map-places></ul>
+        <div class="map-note">* Pins for state-level entries are approximate. Diamonds mark KLS offices.</div>
+      </aside>
+    </div>
+    <div class="map-legend"><span><i style="background:#009447"></i>Electrical &amp; power</span><span><i style="background:#E3A73B"></i>Biogas</span><span><i style="background:#7A5C2E"></i>Biomass</span><span><i style="background:#182922"></i>Stadium</span></div>
+  </div>
+</section>
+
 <section class="section section--band" id="reference-list">
   <div class="container">
     <div class="section-head">
@@ -67,5 +87,6 @@ page(
     "Key Projects & Project Reference List | KLS",
     "KLS takes projects head-on, delivering electrical and renewable-energy interconnection work built for reliability and efficiency across business, residential and community settings.",
     BODY,
+    scripts='<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">\n<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>\n<script src="assets/js/map.js"></script>\n',
     alt_url="https://www.klseri.com.my/ms/projects.html",
 )

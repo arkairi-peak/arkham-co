@@ -19,6 +19,8 @@
 
 </head>
 <body>
+<div class="page-wipe" data-page-wipe aria-hidden="true"></div>
+<script>try{if(sessionStorage.getItem('klsWipe')==='1'){document.documentElement.classList.add('wipe-in');}}catch(e){}</script>
 <div class="scroll-progress" data-scroll-progress></div>
 <header class="site-header">
   <div class="container">
@@ -100,6 +102,26 @@
       <a class="logo-plate" href="https://www.klkoleo.com/" target="_blank" rel="noopener" aria-label="KLK Berhad"><img src="assets/img/clients/klk-oleo.png" alt="KLK logo" loading="lazy"></a>
       <a class="logo-plate" href="https://www.cargill.com.my/" target="_blank" rel="noopener" aria-label="Cargill Palm Products Sdn. Bhd."><img src="assets/img/clients/cargill.png" alt="Cargill logo" loading="lazy"></a>
     </div>
+  </div>
+</section>
+
+<section class="section" id="project-map">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">PROJECT MAP</div>
+      <h2>Where we have worked across Malaysia</h2>
+      <p class="lead">Every pin is built from the reference list below. Click a pin for its projects, or pick a location from the list.</p>
+    </div>
+    <div class="chip-group" style="margin-bottom:16px;"><button class="chip is-active" data-map-filter="all">All</button><button class="chip" data-map-filter="power">Electrical &amp; Power Distribution</button><button class="chip" data-map-filter="biogas">Biogas</button><button class="chip" data-map-filter="biomass">Biomass</button><button class="chip" data-map-filter="stadium">Stadium &amp; Infrastructure</button></div>
+    <div class="map-wrap">
+      <div class="map-canvas" data-project-map role="application" aria-label="PROJECT MAP"></div>
+      <aside class="map-panel">
+        <div class="map-panel-head" data-map-summary></div>
+        <ul class="map-places" data-map-places></ul>
+        <div class="map-note">* Pins for state-level entries are approximate. Diamonds mark KLS offices.</div>
+      </aside>
+    </div>
+    <div class="map-legend"><span><i style="background:#009447"></i>Electrical &amp; power</span><span><i style="background:#E3A73B"></i>Biogas</span><span><i style="background:#7A5C2E"></i>Biomass</span><span><i style="background:#182922"></i>Stadium</span></div>
   </div>
 </section>
 
@@ -185,6 +207,12 @@
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<nav class="mobile-bar" aria-label="Call / WhatsApp / Enquire">
+  <a href="tel:+60331671818"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+  <a href="https://wa.me/60196203780?text=Hi+KLS%2C+I%27d+like+to+enquire+about+your+services." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="is-primary" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Enquire</a>
+</nav>
+
 <div class="modal-overlay" data-person-modal></div>
 <div class="modal-overlay" data-cert-modal></div>
 <div class="modal-overlay" data-list-modal></div>
@@ -195,6 +223,11 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/scroll.js"></script>
+<script src="assets/js/grid-bg.js"></script>
+<script src="assets/js/transitions.js"></script>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/js/map.js"></script>
 </body>
 </html>

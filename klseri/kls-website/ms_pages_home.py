@@ -63,12 +63,36 @@ BODY = """
   </div>
 </section>
 
-<section class="section section--band">
-  <div class="container">
-    <div class="section-head">
-      <div class="kicker">Industri Yang Kami Khidmati</div>
-      <h2>Di mana kerja kami dapat dilihat</h2>
-      <p class="lead">Enam sektor di mana kerja elektrik dan interkoneksi KLS paling banyak dilihat, daripada loji tenaga boleh diperbaharui sehingga pencahayaan stadium.</p>
+<section class="trust-band">
+  <div class="container trust-grid">
+    <div class="trust-stat"><b data-count-to="42" data-count-suffix="+">0</b><span>Tahun beroperasi</span></div>
+    <div class="trust-stat"><b data-count-to="35" data-count-suffix="+">0</b><span>Projek didokumenkan</span></div>
+    <div class="trust-stat"><b data-count-to="12">0</b><span>Sijil &amp; lesen</span></div>
+    <div class="trust-stat"><b data-count-to="3">0</b><span>Pejabat: Port Klang, Lahad Datu, Bintulu</span></div>
+  </div>
+</section>
+
+<section class="showcase" id="industries" data-showcase>
+  <div class="container showcase-head">
+    <div class="kicker">Industri Yang Kami Khidmati</div>
+    <h2>Di mana kerja kami dapat dilihat</h2>
+    <p class="lead">Lima sektor di mana kerja elektrik dan interkoneksi KLS paling banyak dilihat, daripada loji tenaga boleh diperbaharui sehingga pencahayaan stadium.</p>
+  </div>
+  <div class="container showcase-stage">
+    <ol class="showcase-list">
+      <li class="showcase-item" data-showcase-item><a href="#home-clean-energy"><span class="n">01</span><span class="t">Tenaga Bersih</span><span class="d">Interkoneksi untuk loji suria, biogas dan biojisim, bidang dengan sejarah projek paling mendalam.</span><img class="thumb" src="../assets/img/industries/solar.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-grid-utilities"><span class="n">02</span><span class="t">Pencawang &amp; Utiliti Grid</span><span class="d">Kerja HV/MV/LV untuk infrastruktur utiliti dan telekomunikasi.</span><img class="thumb" src="../assets/img/industries/biomass.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-semiconductor"><span class="n">03</span><span class="t">Semikonduktor &amp; Elektronik</span><span class="d">Fokus yang berkembang, mengikuti ledakan pembuatan cip dan pemasangan elektronik.</span><img class="thumb" src="../assets/img/industries/semiconductor-2.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-petrochem"><span class="n">04</span><span class="t">Petrokimia &amp; Oleokimia</span><span class="d">Loji pembuatan, kilang kelapa sawit dan kemudahan proses.</span><img class="thumb" src="../assets/img/industries/petrochem-1.webp" alt="" loading="lazy"></a></li>
+      <li class="showcase-item" data-showcase-item><a href="#home-hospital-stadium"><span class="n">05</span><span class="t">Hospital &amp; Stadium</span><span class="d">Daripada pencahayaan stadium sehingga sistem elektrik kemudahan penjagaan kesihatan.</span><img class="thumb" src="../assets/img/projects/larkin-2.webp" alt="" loading="lazy"></a></li>
+    </ol>
+    <div class="showcase-media" aria-hidden="true">
+        <img src="../assets/img/industries/solar.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/biomass.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/semiconductor-2.webp" alt="" loading="lazy">
+        <img src="../assets/img/industries/petrochem-1.webp" alt="" loading="lazy">
+        <img src="../assets/img/projects/larkin-2.webp" alt="" loading="lazy">
+      <div class="showcase-bar"><i></i></div>
     </div>
   </div>
 </section>

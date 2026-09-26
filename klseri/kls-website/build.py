@@ -41,6 +41,8 @@ UI = {
         "incorporated_line": "Incorporated 1984 &middot; Port Klang, Selangor, Malaysia",
         "back_to_top": "Back to top",
         "whatsapp_label": "Chat with us on WhatsApp",
+        "bar_call": "Call",
+        "bar_enquire": "Enquire",
         "breadcrumb_home": "Home",
         "footer_links": [
             ("Home", "index.html"),
@@ -71,6 +73,8 @@ UI = {
         "incorporated_line": "Diperbadankan 1984 &middot; Port Klang, Selangor, Malaysia",
         "back_to_top": "Kembali ke atas",
         "whatsapp_label": "Berbual dengan kami di WhatsApp",
+        "bar_call": "Telefon",
+        "bar_enquire": "Pertanyaan",
         "breadcrumb_home": "Laman Utama",
         "footer_links": [
             ("Laman Utama", "index.html"),
@@ -286,6 +290,8 @@ def header_html(lang, asset_prefix, page_file):
 </div>
 """
 
+WIPE = ("<div class=\"page-wipe\" data-page-wipe aria-hidden=\"true\"></div>\n"
+        "<script>try{if(sessionStorage.getItem('klsWipe')==='1'){document.documentElement.classList.add('wipe-in');}}catch(e){}</script>\n")
 SCROLL_PROGRESS = '<div class="scroll-progress" data-scroll-progress></div>\n'
 
 def footer_html(lang, asset_prefix):
@@ -341,6 +347,12 @@ def footer_html(lang, asset_prefix):
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
+<nav class="mobile-bar" aria-label="{t['bar_call']} / WhatsApp / {t['bar_enquire']}">
+  <a href="tel:+60331671818"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>{t['bar_call']}</a>
+  <a href="{whatsapp_url(lang)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.6-5.4A8.4 8.4 0 1 1 21 11.5z"/></svg>WhatsApp</a>
+  <a class="is-primary" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>{t['bar_enquire']}</a>
+</nav>
+
 <div class="modal-overlay" data-person-modal></div>
 <div class="modal-overlay" data-cert-modal></div>
 <div class="modal-overlay" data-list-modal></div>
@@ -351,6 +363,8 @@ def footer_html(lang, asset_prefix):
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="{asset_prefix}assets/js/main.js"></script>
 <script src="{asset_prefix}assets/js/scroll.js"></script>
+<script src="{asset_prefix}assets/js/grid-bg.js"></script>
+<script src="{asset_prefix}assets/js/transitions.js"></script>
 """
 
 def breadcrumb(current, current_label, lang="en"):
@@ -363,6 +377,7 @@ def page(filename, title, description, body, schema="", lang="en", alt_url=None,
     html = (
         head(title, description, filename, schema, lang=lang, asset_prefix=asset_prefix, alt_url=alt_url)
         + "<body>\n"
+        + WIPE
         + SCROLL_PROGRESS
         + header_html(lang, asset_prefix, filename)
         + "\n" + body + "\n"

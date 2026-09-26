@@ -8,7 +8,7 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  const inHero = (el) => el.closest(".hero");
+  const inHero = (el) => el.closest(".hero, .showcase");
   const pick = (sel) => [...document.querySelectorAll(sel)].filter((el) => !inHero(el));
   const start = "top 88%";
 
@@ -71,6 +71,43 @@
       scrollTrigger: { trigger: sec, start: "top bottom", end: "bottom top", scrub: true },
     });
   });
+
+  // 6. Pinned industries showcase (desktop): scroll steps through the sectors.
+  const showcase = document.querySelector("[data-showcase]");
+  if (showcase) {
+    const items = [...showcase.querySelectorAll("[data-showcase-item]")];
+    const imgs = [...showcase.querySelectorAll(".showcase-media img")];
+    const bar = showcase.querySelector(".showcase-bar i");
+    const setActive = (i) => {
+      items.forEach((it, n) => it.classList.toggle("is-active", n === i));
+      imgs.forEach((im, n) => im.classList.toggle("is-active", n === i));
+    };
+    setActive(0);
+    gsap.matchMedia().add("(min-width: 900px)", () => {
+      ScrollTrigger.create({
+        trigger: showcase, start: "top top", end: () => "+=" + Math.round(window.innerHeight * items.length * 0.7), invalidateOnRefresh: true,
+        pin: true, scrub: true, anticipatePin: 1,
+        onUpdate: (self) => {
+          setActive(Math.min(items.length - 1, Math.floor(self.progress * items.length)));
+          if (bar) gsap.set(bar, { scaleX: self.progress });
+        },
+      });
+      return () => setActive(0);
+    });
+    items.forEach((it, n) => it.addEventListener("mouseenter", () => { if (window.innerWidth >= 900) setActive(n); }));
+  }
+
+  // 7. Full-screen menu: links stagger in when it opens.
+  const overlay = document.querySelector("[data-nav-overlay]");
+  if (overlay) {
+    const rows = overlay.querySelectorAll(".nav-overlay-item");
+    let wasOpen = false;
+    new MutationObserver(() => {
+      const open = overlay.classList.contains("is-open");
+      if (open && !wasOpen) gsap.fromTo(rows, { x: 28, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.55, stagger: 0.05, ease: "power3.out", delay: 0.12, clearProps: "transform,opacity,visibility" });
+      wasOpen = open;
+    }).observe(overlay, { attributes: true, attributeFilter: ["class"] });
+  }
 
   window.addEventListener("load", () => ScrollTrigger.refresh());
   window.addEventListener("kls:entrance-done", () => ScrollTrigger.refresh());

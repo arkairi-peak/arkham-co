@@ -29,6 +29,26 @@ BODY = f"""
   </div>
 </section>
 
+<section class="section" id="project-map">
+  <div class="container">
+    <div class="section-head">
+      <div class="kicker">PETA PROJEK</div>
+      <h2>Di mana kami telah bekerja di seluruh Malaysia</h2>
+      <p class="lead">Setiap pin dibina daripada senarai rujukan di bawah. Klik pin untuk melihat projeknya, atau pilih lokasi daripada senarai.</p>
+    </div>
+    <div class="chip-group" style="margin-bottom:16px;"><button class="chip is-active" data-map-filter="all">Semua</button><button class="chip" data-map-filter="power">Elektrik &amp; Pengagihan Kuasa</button><button class="chip" data-map-filter="biogas">Biogas</button><button class="chip" data-map-filter="biomass">Biojisim</button><button class="chip" data-map-filter="stadium">Stadium &amp; Infrastruktur</button></div>
+    <div class="map-wrap">
+      <div class="map-canvas" data-project-map role="application" aria-label="PETA PROJEK"></div>
+      <aside class="map-panel">
+        <div class="map-panel-head" data-map-summary></div>
+        <ul class="map-places" data-map-places></ul>
+        <div class="map-note">* Pin bagi entri peringkat negeri adalah anggaran. Berlian menandakan pejabat KLS.</div>
+      </aside>
+    </div>
+    <div class="map-legend"><span><i style="background:#009447"></i>Elektrik &amp; kuasa</span><span><i style="background:#E3A73B"></i>Biogas</span><span><i style="background:#7A5C2E"></i>Biojisim</span><span><i style="background:#182922"></i>Stadium</span></div>
+  </div>
+</section>
+
 <section class="section section--band" id="reference-list">
   <div class="container">
     <div class="section-head">
@@ -68,5 +88,6 @@ page(
     "KLS menangani projek secara langsung, menyampaikan kerja interkoneksi elektrik dan tenaga boleh diperbaharui yang dibina untuk kebolehpercayaan dan kecekapan merentasi tetapan perniagaan, kediaman dan komuniti.",
     BODY,
     lang="ms",
+    scripts='<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">\n<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>\n<script src="../assets/js/map.js"></script>\n',
     alt_url="https://www.klseri.com.my/projects.html",
 )
