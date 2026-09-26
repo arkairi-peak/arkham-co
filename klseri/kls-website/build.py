@@ -88,7 +88,7 @@ UI = {
 # label_en, label_ms, href, sub[(en,ms,href)], preview image, caption_en, caption_ms
 NAV_ITEMS = [
     ("Home", "Laman Utama", "index.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg",
+     "assets/img/industries/biogas.webp",
      "Electrical engineering & renewable energy since 1984",
      "Kejuruteraan elektrik & tenaga boleh diperbaharui sejak 1984",
      "assets/img/icons/home.png"),
@@ -97,29 +97,29 @@ NAV_ITEMS = [
         ("Our Story & History", "Kisah & Sejarah Kami", "company-overview.html#our-story"),
         ("Mission & Vision", "Misi & Wawasan", "company-overview.html#mission-vision"),
         ("Core Values", "Nilai Teras", "company-overview.html#core-values"),
-    ], "https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg",
+    ], "assets/img/industries/solar.webp",
      "A Class A, CIDB G7 M&E Contractor, incorporated 1984",
      "Kontraktor M&E Kelas A, CIDB G7, diperbadankan pada 1984",
      "assets/img/icons/company.png"),
     ("Certifications", "Pensijilan & Lesen", "certifications.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg",
+     "assets/img/industries/solar.webp",
      "Class A, CIDB G7 credentials",
      "Kelayakan Kelas A, CIDB G7",
      "assets/img/icons/certification.png"),
     ("Project Ref", "Rujukan Projek", "projects.html", [
         ("Key Projects", "Projek Utama", "projects.html#key-projects"),
         ("Project Reference List", "Senarai Rujukan Projek", "projects.html#reference-list"),
-    ], "https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg",
+    ], "assets/img/industries/biogas.webp",
      "Top Glove, Sime Darby, Telekom Malaysia & more",
      "Top Glove, Sime Darby, Telekom Malaysia & banyak lagi",
      "assets/img/icons/projects.png"),
     ("Contact", "Hubungi", "contact.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg",
+     "assets/img/industries/biomass.webp",
      "Get in touch with our team",
      "Hubungi pasukan kami",
      "assets/img/icons/contact.png"),
     ("Location", "Lokasi", "location.html", [],
-     "https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg",
+     "assets/img/industries/biomass.webp",
      "Port Klang HQ, plus Sabah & Sarawak branches",
      "Ibu pejabat Port Klang, serta cawangan Sabah & Sarawak",
      "assets/img/icons/location.png"),
@@ -197,20 +197,20 @@ def nav_overlay_items(lang, asset_prefix=""):
             links = "".join(f'<a href="{h}">{ms_s if lang == "ms" else en_s}</a>' for en_s, ms_s, h in sub)
             sub_html = f'<div class="nav-overlay-sub">{links}</div>'
         out.append(
-            f'<li class="nav-overlay-item" data-nav-preview="{img}" data-nav-caption="{caption}">'
+            f'<li class="nav-overlay-item" data-nav-preview="{asset_prefix}{img}" data-nav-caption="{caption}">'
             f'<a class="nav-overlay-row" href="{href}" data-nav-link>'
             f'<img class="idx-icon" src="{asset_prefix}{icon}" alt=""><span class="label">{label}</span>'
             f'</a>{sub_html}</li>'
         )
     return "\n".join(out)
 
-def nav_bg_images():
+def nav_bg_images(asset_prefix=""):
     seen, out = [], []
     for en, ms, href, sub, img, cap_en, cap_ms, icon in NAV_ITEMS:
         if img in seen:
             continue
         seen.append(img)
-        out.append(f'<img src="{img}" alt="" data-preview-src="{img}">')
+        out.append(f'<img src="{asset_prefix}{img}" alt="" data-preview-src="{asset_prefix}{img}">')
     return "\n".join(out)
 
 def head(title, description, canonical, extra_schema="", lang="en", asset_prefix="", alt_url=None):
@@ -266,7 +266,7 @@ def header_html(lang, asset_prefix, page_file):
 <div class="nav-overlay-backdrop" data-nav-backdrop></div>
 <div class="nav-overlay" data-nav-overlay role="dialog" aria-modal="true" aria-label="{t['nav_dialog_label']}">
   <div class="nav-overlay-bg" aria-hidden="true">
-    {nav_bg_images()}
+    {nav_bg_images(asset_prefix)}
   </div>
   <div class="nav-overlay-head">
     <span class="brand-text"><strong style="font-family:var(--font-display);color:var(--brand-900);">{t['kls_navigation']}</strong></span>
@@ -347,14 +347,17 @@ def footer_html(lang, asset_prefix):
 
 <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
 <script src="{asset_prefix}assets/js/data.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="{asset_prefix}assets/js/main.js"></script>
+<script src="{asset_prefix}assets/js/scroll.js"></script>
 """
 
 def breadcrumb(current, current_label, lang="en"):
     home_label = UI[lang]["breadcrumb_home"]
     return f"""<div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">{home_label}</a><span class="sep">/</span><span class="current">{current_label}</span></nav></div>"""
 
-def page(filename, title, description, body, schema="", lang="en", alt_url=None):
+def page(filename, title, description, body, schema="", lang="en", alt_url=None, scripts=""):
     asset_prefix = "../" if lang == "ms" else ""
     out_dir = MS_DIR if lang == "ms" else OUT_DIR
     html = (
@@ -364,7 +367,8 @@ def page(filename, title, description, body, schema="", lang="en", alt_url=None)
         + header_html(lang, asset_prefix, filename)
         + "\n" + body + "\n"
         + footer_html(lang, asset_prefix)
-        + "\n</body>\n</html>\n"
+        + "\n" + scripts
+        + "</body>\n</html>\n"
     )
     with open(os.path.join(out_dir, filename), "w", encoding="utf-8") as f:
         f.write(html)

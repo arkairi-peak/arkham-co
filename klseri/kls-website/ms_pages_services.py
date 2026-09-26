@@ -79,7 +79,7 @@ BODY = f"""
   </div>
 </section>
 
-<section class="section section--forest" id="renewable-energy" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+<section class="section section--forest" id="renewable-energy" style="--panel-img:url('../img/industries/solar.webp')">
   <div class="container">
     <div class="section-head">
       <div class="kicker">02 &middot; Tenaga Boleh Diperbaharui</div>
@@ -92,7 +92,7 @@ BODY = f"""
 <section class="section" id="biogas">
   <div class="container">
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biogas.webp')">
         <div>
           <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
           <div class="headline">Biogas</div>
@@ -114,7 +114,7 @@ BODY = f"""
 <section class="section section--band" id="biomass">
   <div class="container">
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div>
           <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
           <div class="headline">Biojisim</div>
@@ -136,7 +136,7 @@ BODY = f"""
 <section class="section" id="solar">
   <div class="container">
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/solar.webp')">
         <div>
           <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
           <div class="headline">Suria</div>

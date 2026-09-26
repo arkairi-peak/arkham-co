@@ -17,7 +17,7 @@ BODY = f"""
       <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 dan bermula sebagai penyedia perkhidmatan pendawaian semula utama. Pertumbuhan membawa skop yang lebih luas: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi pembangunan kediaman, komersial, industri, infrastruktur dan marin.</p>
       <p>Sebagai salah sebuah nama industri yang mantap di Malaysia, kami mengambil serius sumber semula jadi negara dan keperluan pembangunan mampan, dan menyokongnya dengan kerja sebenar: satu senarai panjang kontrak Interkoneksi Tenaga Boleh Diperbaharui merangkumi loji Biogas, Biojisim, Suria dan Kogenerasi.</p>
     </div>
-    <img src="https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg" alt="Kerja kejuruteraan elektrik KLS" style="border-radius:10px;border:1px solid var(--line-300);">
+    <img src="../assets/img/industries/biomass.webp" alt="Kerja kejuruteraan elektrik KLS" style="border-radius:10px;border:1px solid var(--line-300);">
   </div>
   <div class="container" style="margin-top:44px;">
     <div class="stat-band">

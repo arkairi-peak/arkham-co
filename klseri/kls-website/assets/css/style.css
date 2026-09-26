@@ -1,12 +1,12 @@
 /* ==========================================================================
    KLS, Kejuruteraan Letrik Seri (M) Sdn Bhd
    Design system v3, light theme, brand green (#009447), editorial/
-   engineering-spec typography (Source Sans 3 / Roboto Condensed / Roboto
+   engineering-spec typography (Archivo / IBM Plex Sans / IBM Plex
    Mono), de-templated components (hairline rows instead of uniform boxed
    cards), infinite marquees, and a full-screen interactive menu.
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Condensed:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
 :root{
   --brand-900:#00381D;
@@ -45,9 +45,25 @@
   --shadow-card:0 1px 2px rgba(9,40,23,.04), 0 10px 26px -14px rgba(9,40,23,.16);
   --shadow-pop:0 18px 48px -12px rgba(6,35,20,.28);
 
-  --font-display:'Roboto Condensed', Arial, sans-serif;
-  --font-body:'Source Sans 3', system-ui, -apple-system, sans-serif;
-  --font-mono:'Roboto Mono', ui-monospace, monospace;
+  --font-display:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:'Archivo', 'Helvetica Neue', Arial, sans-serif; /* legacy name: labels now use Archivo, not a monospace */
+
+  /* type scale (fluid) */
+  --fs-xs:.78rem;
+  --fs-sm:.9rem;
+  --fs-base:1rem;
+  --fs-lg:clamp(1.1rem,1.05rem + .25vw,1.25rem);
+  --fs-h4:clamp(1.05rem,1rem + .2vw,1.15rem);
+  --fs-h3:clamp(1.2rem,1.1rem + .5vw,1.5rem);
+  --fs-h2:clamp(1.8rem,1.3rem + 2.2vw,2.75rem);
+  --fs-h1:clamp(2.3rem,1.4rem + 4vw,4rem);
+
+  /* spacing scale (8px base) */
+  --sp-1:8px;  --sp-2:16px;  --sp-3:24px;  --sp-4:32px;
+  --sp-5:48px; --sp-6:64px;  --sp-7:96px;
+  --section-y:clamp(64px,8vw,104px);
+  --section-y-tight:clamp(40px,5vw,64px);
 
   --container:1240px;
   --nav-h:78px;
@@ -73,7 +89,7 @@ body{
   background:var(--paper-0);
   color:var(--ink-900);
   line-height:1.65;
-  font-size:16.5px;
+  font-size:16px;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -81,21 +97,21 @@ img{max-width:100%;display:block;height:auto;}
 a{color:inherit;text-decoration:none;}
 ul{margin:0;padding:0;list-style:none;}
 button{font:inherit;}
-h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;line-height:1.1;margin:0 0 .5em;color:var(--brand-900);letter-spacing:-0.005em;}
-p{margin:0 0 1.1em;color:var(--ink-700);max-width:70ch;}
-.mono{font-family:var(--font-mono);}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;line-height:1.12;margin:0 0 .5em;color:var(--brand-900);letter-spacing:-0.02em;text-wrap:balance;}
+p{margin:0 0 1.1em;color:var(--ink-700);max-width:70ch;text-wrap:pretty;}
+.mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
 
-h1{font-size:clamp(2.2rem,4.6vw,3.8rem);}
-h2{font-size:clamp(1.7rem,2.9vw,2.5rem);}
-h3{font-size:1.32rem;}
-h4{font-size:1.08rem;}
+h1{font-size:var(--fs-h1);}
+h2{font-size:var(--fs-h2);}
+h3{font-size:var(--fs-h3);}
+h4{font-size:var(--fs-h4);}
 
 .container{max-width:var(--container);margin:0 auto;padding:0 24px;}
-.section{padding:100px 0;}
-.section--tight{padding:60px 0;}
+.section{padding:var(--section-y) 0;}
+.section--tight{padding:var(--section-y-tight) 0;}
 .section--band{background:var(--paper-50);border-top:1px solid var(--line-300);border-bottom:1px solid var(--line-300);}
 .section--forest{
-  --panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg');
+  --panel-img:url('../img/industries/biogas.webp');
   background-image:linear-gradient(155deg,rgba(0,56,29,.92),rgba(0,107,54,.86) 55%,rgba(18,168,84,.78)), var(--panel-img);
   background-size:cover;background-position:center;background-repeat:no-repeat;background-attachment:scroll;
   color:#EAFBF1;position:relative;
@@ -105,17 +121,14 @@ h4{font-size:1.08rem;}
 .section--forest p{color:#DBF3E4;}
 
 .kicker{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:7px 16px 7px 12px;border-radius:100px;
-  background:var(--brand-050);border:1px solid var(--brand-100);
-  font-family:var(--font-body);font-size:.82rem;font-weight:700;letter-spacing:.01em;
-  color:var(--brand-700);margin-bottom:18px;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:0 0 0 14px;border-left:2px solid var(--amber-500);
+  font-family:var(--font-mono);font-size:var(--fs-xs);font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--brand-700);margin-bottom:18px;line-height:1.2;
 }
-.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber-500);display:inline-block;flex:none;}
-.section--forest .kicker{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;}
-.section--forest .kicker::before{background:#FFE3A8;}
+.section--forest .kicker{color:#fff;border-left-color:#FFE3A8;}
 
-.lead{font-size:1.16rem;color:var(--ink-700);max-width:62ch;}
+.lead{font-size:var(--fs-lg);color:var(--ink-700);max-width:62ch;}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -255,49 +268,21 @@ h4{font-size:1.08rem;}
 /* never depends on JS to complete.                                          */
 @keyframes bannerSlideUp{from{opacity:0;transform:translateY(34px);}to{opacity:1;transform:none;}}
 
-/* ---------- Homepage load curtain: glassmorphism blob wipe (home page only) ---------- */
-/* Pure-CSS timed (animation-delay + forwards): it always lifts itself even */
-/* if JS never runs. The inline script next to it (in the page HTML) only   */
-/* skips it instantly on repeat visits this session, or under reduced-motion.*/
-.page-curtain{
-  position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;
-  overflow:hidden;
-  animation:curtainHide 0s linear 1.27s forwards;
-}
-.page-curtain-blobs{
-  position:absolute;inset:-25%;z-index:0;
-  background:
-    radial-gradient(circle at 18% 28%, rgba(0,148,71,.55), transparent 55%),
-    radial-gradient(circle at 78% 18%, rgba(18,168,84,.5), transparent 52%),
-    radial-gradient(circle at 65% 78%, rgba(227,167,59,.38), transparent 55%),
-    radial-gradient(circle at 12% 78%, rgba(60,190,114,.45), transparent 52%),
-    radial-gradient(circle at 50% 50%, rgba(0,82,42,.28), transparent 60%);
-  filter:blur(70px);
-  animation:curtainDrift 7s ease-in-out infinite alternate, curtainBlobsOut .6s var(--ease) 1s forwards;
-}
-@keyframes curtainDrift{from{transform:translate3d(-2%,-1%,0) scale(1);}to{transform:translate3d(2%,2%,0) scale(1.08);}}
-@keyframes curtainBlobsOut{to{opacity:0;}}
-@keyframes curtainHide{to{opacity:0;visibility:hidden;}}
-
-/* The glass panel shatters into a 4x4 grid on exit, each tile fading out on */
-/* its own delay (set inline per tile) instead of the whole panel at once.  */
-.page-curtain-tiles{position:absolute;inset:0;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(4,1fr);}
-.page-curtain-tiles span{
-  background:rgba(247,250,248,.72);
-  backdrop-filter:blur(26px) saturate(150%);-webkit-backdrop-filter:blur(26px) saturate(150%);
-  animation:tileOut .45s var(--ease) forwards;
-}
-@keyframes tileOut{to{opacity:0;}}
-
-.page-curtain-mark{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;animation:curtainMarkIn .6s var(--ease) both, curtainMarkOut .35s var(--ease) .5s forwards;}
-.page-curtain-mark img{width:64px;height:64px;object-fit:contain;filter:drop-shadow(0 8px 20px rgba(6,35,20,.35));}
-@keyframes curtainMarkIn{from{opacity:0;transform:scale(.7);}to{opacity:1;transform:scale(1);}}
-@keyframes curtainMarkOut{to{opacity:0;transform:scale(.9);}}
-@media (prefers-reduced-motion: reduce){
-  .page-curtain{animation:none;opacity:0;visibility:hidden;}
-  .page-curtain-blobs{animation:none;}
-  .page-curtain-mark{animation:none;}
-}
+/* ---------- Homepage entrance: "power-up" (driven by assets/js/entrance.js) ---------- */
+html.intro-lock{overflow:hidden;scrollbar-gutter:stable;background:var(--brand-900);}
+.intro{position:fixed;inset:0;z-index:9999;background:var(--brand-900);display:grid;place-items:center;overflow:hidden;pointer-events:none;
+  animation:introFailsafe 0s linear 8s forwards;}
+html.no-intro .intro{display:none;}
+@keyframes introFailsafe{to{opacity:0;visibility:hidden;}}
+.intro-meta{position:absolute;top:28px;left:32px;right:32px;display:flex;justify-content:space-between;gap:16px;color:rgba(255,255,255,.7);font-family:var(--font-display);font-weight:500;font-size:var(--fs-sm);letter-spacing:.02em;}
+.intro-year{position:absolute;left:0;right:0;bottom:6vh;text-align:center;font-family:var(--font-display);font-weight:700;font-size:clamp(5.5rem,22vw,20rem);line-height:.85;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(255,227,168,.75);font-variant-numeric:tabular-nums;}
+.intro-card{position:fixed;left:50%;top:50%;width:min(300px,58vw);height:min(400px,48vh);transform:translate(-50%,-50%);overflow:hidden;background:var(--brand-800);will-change:width,height;}
+.intro-card img{width:100%;height:100%;object-fit:cover;}
+.intro-line{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.1);}
+.intro-line i{display:block;height:100%;background:var(--amber-500);transform:scaleX(0);transform-origin:left;}
+@media (max-width:600px){.intro-meta span:last-child{display:none;}}
+.hero-copy h1 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;}
+.hero-copy h1 .w>span{display:inline-block;will-change:transform;}
 
 .hero{position:relative;color:#fff;overflow:hidden;min-height:600px;display:flex;align-items:flex-end;}
 .hero-slides{position:absolute;inset:0;}
@@ -309,6 +294,9 @@ h4{font-size:1.08rem;}
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;padding:130px 0 72px;width:100%;}
 .hero-eyebrow{font-family:var(--font-mono);font-size:.8rem;color:#FFE3A8;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
 .hero-eyebrow::before{content:"";width:28px;height:1px;background:#FFE3A8;}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px;}
+.hero-chips span{font-family:var(--font-display);font-size:var(--fs-sm);font-weight:600;letter-spacing:.02em;color:#fff;padding:6px 12px;border:1px solid rgba(255,255,255,.4);border-radius:var(--radius-sm);background:rgba(0,30,15,.28);backdrop-filter:blur(6px);}
+.hero-chips span:first-child{border-color:#FFE3A8;color:#FFE3A8;}
 .hero h1{color:#fff;font-size:clamp(2.5rem,5.2vw,4.2rem);max-width:17ch;}
 .hero-copy{min-height:460px;display:flex;flex-direction:column;justify-content:center;}
 .hero h1[data-hero-title-el],.hero .lead[data-hero-lead-el]{transition:opacity .3s ease;}
@@ -412,11 +400,11 @@ h4{font-size:1.08rem;}
 .re-block:nth-child(even) .re-media{order:2;}
 .re-media{
   color:#fff;padding:36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;
-  --panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg');
+  --panel-img:url('../img/industries/biogas.webp');
   background-image:linear-gradient(160deg,rgba(0,86,44,.52),rgba(0,148,71,.36)), var(--panel-img);
   background-size:cover;background-position:center;background-repeat:no-repeat;
 }
-.re-media .tag{font-family:var(--font-mono);font-size:.76rem;color:#FFE3A8;}
+.re-media .tag{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#FFE3A8;background:rgba(0,30,15,.55);border:1px solid rgba(255,227,168,.35);backdrop-filter:blur(6px);}
 .re-media .headline{font-family:var(--font-display);font-weight:700;font-size:1.6rem;margin-top:14px;text-shadow:0 2px 10px rgba(0,20,10,.55);}
 .re-media .examples{margin-top:20px;display:flex;flex-direction:column;gap:8px;}
 .re-media .examples div{
@@ -743,7 +731,7 @@ h4{font-size:1.08rem;}
 /* ---------- Page hero (non-home) ---------- */
 .page-hero{
   position:relative;color:#fff;padding:62px 0 70px;overflow:hidden;
-  --panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg');
+  --panel-img:url('../img/industries/biomass.webp');
   background-image:linear-gradient(150deg,rgba(0,82,42,.93),rgba(0,148,71,.86) 60%,rgba(60,190,114,.78)), var(--panel-img);
   background-size:cover;background-position:center;background-repeat:no-repeat;
   animation:bannerSlideUp .8s var(--ease) both;

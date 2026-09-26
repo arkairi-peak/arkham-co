@@ -126,7 +126,10 @@
     if (titleEl) titleEl.style.transition = "opacity .3s ease";
     if (leadEl) leadEl.style.transition = "opacity .3s ease";
     dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
-    setInterval(() => show((idx + 1) % slides.length), 6000);
+    // Autoplay starts once the home entrance has finished (immediately if there is none).
+    const startAutoplay = () => setInterval(() => show((idx + 1) % slides.length), 6000);
+    if (window.__klsEntranceDone || !document.querySelector("[data-intro]")) startAutoplay();
+    else window.addEventListener("kls:entrance-done", startAutoplay, { once: true });
   })();
 
   /* ---------------- Scroll cue + hero parallax (homepage only) ---------------- */
@@ -192,6 +195,8 @@
   /* ---------------- Generic scroll-reveal (smooth, staggered) ---------------- */
   (function scrollReveal() {
     if (!("IntersectionObserver" in window)) return;
+    // assets/js/scroll.js (GSAP ScrollTrigger) takes over when available and motion is allowed.
+    if (window.gsap && window.ScrollTrigger && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const selectors = [
       ".section",
       ".spec-row", ".value-row", ".re-block", ".t-item", ".logo-cell",

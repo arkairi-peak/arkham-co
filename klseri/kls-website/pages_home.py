@@ -1,52 +1,36 @@
 from build import page
 
 BODY = """
-<div class="page-curtain" data-page-curtain aria-hidden="true">
-  <div class="page-curtain-blobs"></div>
-  <div class="page-curtain-tiles">
-    <span style="animation-delay:0.550s"></span>
-    <span style="animation-delay:0.595s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.595s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.775s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.775s"></span>
-    <span style="animation-delay:0.820s"></span>
-  </div>
-  <div class="page-curtain-mark"><img src="assets/img/logo/kls-icon.png" alt=""></div>
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro-meta"><span>Kejuruteraan Letrik Seri (M) Sdn Bhd</span><span>Port Klang, Malaysia</span></div>
+  <div class="intro-year" data-intro-count>1950</div>
+  <div class="intro-card"><img src="assets/img/industries/biogas.webp" alt=""></div>
+  <div class="intro-line"><i></i></div>
 </div>
-<script>try{if(sessionStorage.getItem('klsCurtainSeen')==='1'||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.currentScript.previousElementSibling.style.display='none';}else{sessionStorage.setItem('klsCurtainSeen','1');}}catch(e){}</script>
+<script>try{var d=document.documentElement;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||sessionStorage.getItem('klsIntroSeen')==='1'){d.classList.add('no-intro');}else{sessionStorage.setItem('klsIntroSeen','1');d.classList.add('intro-lock');}}catch(e){}</script>
 <section class="hero">
   <div class="hero-slides">
     <div class="hero-slide is-active" data-hero-title="Energy That Keeps Your Business Running" data-hero-lead="Kejuruteraan Letrik Seri (M) Sdn Bhd, known simply as KLS, was incorporated in 1984 as a master rewiring service provider. As the business grew, so did what we offered: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine projects.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg" alt="KLS electrical engineering, powering your business">
+      <img src="assets/img/industries/biogas.webp" alt="KLS electrical engineering, powering your business">
     </div>
     <div class="hero-slide" data-hero-title="Backing Clean, Sustainable Energy" data-hero-lead="As one of Malaysia's established industry names, we put real weight behind sustainable development, taking on Renewable Energy Interconnection contracts and initiatives across Biogas, Biomass, Solar and Cogeneration plants.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg" alt="Clean energy, light bulb placed on soil in sunlight">
+      <img src="assets/img/industries/solar.webp" alt="Clean energy, light bulb placed on soil in sunlight">
     </div>
     <div class="hero-slide" data-hero-title="Powering Through Biomass" data-hero-lead="From engineering and supply through to installing and commissioning cables and electrical equipment, KLS builds specialised interconnection solutions for biomass power plants, including a 10MW project for Cepat Wawasan Sdn. Bhd.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg" alt="KLS renewable energy interconnection works">
+      <img src="assets/img/industries/biomass.webp" alt="KLS renewable energy interconnection works">
     </div>
   </div>
   <div class="container hero-inner">
     <div class="hero-copy">
-      <div class="hero-eyebrow reveal" style="animation-delay:.55s">Electrical Engineering &amp; Renewable Energy, Since 1984</div>
+      <div class="hero-chips"><span>Est. 1984</span><span>CIDB G7</span><span>Class A</span></div>
       <h1 class="reveal" style="animation-delay:.68s" data-hero-title-el>Energy That Keeps Your Business Running</h1>
-      <p class="lead reveal" style="animation-delay:.8s" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, known simply as KLS, was incorporated in 1984 as a master rewiring service provider. As the business grew, so did what we offered: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine projects.</p>
-      <div class="hero-actions reveal" style="animation-delay:.95s">
+      <p class="lead" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, known simply as KLS, was incorporated in 1984 as a master rewiring service provider. As the business grew, so did what we offered: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine projects.</p>
+      <div class="hero-actions">
         <a href="company-overview.html" class="btn btn-primary">See the full company story</a>
         <a href="services.html#renewable-energy" class="btn btn-outline">Our renewable energy work</a>
       </div>
     </div>
-    <div class="hero-stats reveal" style="animation-delay:1.05s">
+    <div class="hero-stats">
       <div class="hero-stat"><b data-count-to="1984" data-count-suffix="">0</b><span>Year incorporated</span></div>
       <div class="hero-stat"><b data-count-to="4" data-count-suffix="">0</b><span>Renewable energy focus areas: Biogas, Biomass, Solar, Cogeneration</span></div>
       <div class="hero-stat"><b>Class A</b><span>CIDB G7 M&amp;E Contractor</span></div>
@@ -97,7 +81,7 @@ BODY = """
       <p class="lead">Biogas is where our project history runs deepest, spanning palm oil mills across Peninsular and East Malaysia, alongside biomass and solar interconnection work.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/solar.webp')">
         <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Solar</div></div>
         <div class="examples"><div>1MW Solar Energy for ERS Energy Sdn. Bhd.</div></div>
       </div>
@@ -107,7 +91,7 @@ BODY = """
       </div>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biogas.webp')">
         <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Biogas</div></div>
         <div class="examples">
           <div>1.5MW Biogas for Cenergi FJP Sdn. Bhd.</div>
@@ -121,7 +105,7 @@ BODY = """
       </div>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div><span class="tag">RENEWABLE ENERGY</span><div class="headline">Biomass</div></div>
         <div class="examples"><div>10MW Biomass for Cepat Wawasan Sdn. Bhd.</div></div>
       </div>
@@ -141,7 +125,7 @@ BODY = """
       <p class="lead">HV/MV/LV works for utility and telecommunications infrastructure.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div><span class="tag">GRID UTILITIES</span><div class="headline">Substation Works</div></div>
         <div class="examples">
           <div>Remote Terminal Unit electrical works for SESB, Sabah</div>
@@ -164,7 +148,7 @@ BODY = """
       <p class="lead">A growing focus for KLS, tracking the AI-driven boom in chip manufacturing and electronics assembly across Malaysia.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('assets/img/industries/semiconductor-1.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/semiconductor-1.webp')">
         <div><span class="tag">FUTURE FOCUS</span><div class="headline">Semiconductor &amp; Electronic</div></div>
         <div class="examples">
           <div>Melexis (Kuching)</div>
@@ -188,7 +172,7 @@ BODY = """
       <p class="lead">Manufacturing plants, palm oil mills and process facilities.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('assets/img/industries/petrochem-2.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/petrochem-2.webp')">
         <div><span class="tag">MANUFACTURING</span><div class="headline">Petrochemical &amp; Oleochemical</div></div>
         <div class="examples">
           <div>Marine facilities works for Dialog Group, Pengerang</div>
@@ -212,7 +196,7 @@ BODY = """
       <p class="lead">From stadium lighting to healthcare facility electrical systems.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('assets/img/projects/larkin-3.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/projects/larkin-3.webp')">
         <div><span class="tag">PUBLIC INFRASTRUCTURE</span><div class="headline">Larkin Stadium</div></div>
         <div class="examples"><div>Stadium lighting works for Stadium Tan Sri Dato' Haj Hassan Yunos, Larkin</div></div>
       </div>
@@ -309,5 +293,6 @@ page(
     "KLS | Electrical Engineering & Renewable Energy Interconnection, Kejuruteraan Letrik Seri",
     "Kejuruteraan Letrik Seri (M) Sdn Bhd (KLS) has operated as a Class A, CIDB G7 electrical engineering contractor and renewable energy interconnection specialist in Malaysia since 1984.",
     BODY,
+    scripts='<script src="assets/js/entrance.js"></script>\n',
     alt_url="https://www.klseri.com.my/ms/index.html",
 )

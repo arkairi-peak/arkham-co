@@ -1,52 +1,36 @@
 from build import page
 
 BODY = """
-<div class="page-curtain" data-page-curtain aria-hidden="true">
-  <div class="page-curtain-blobs"></div>
-  <div class="page-curtain-tiles">
-    <span style="animation-delay:0.550s"></span>
-    <span style="animation-delay:0.595s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.595s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.640s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.775s"></span>
-    <span style="animation-delay:0.685s"></span>
-    <span style="animation-delay:0.730s"></span>
-    <span style="animation-delay:0.775s"></span>
-    <span style="animation-delay:0.820s"></span>
-  </div>
-  <div class="page-curtain-mark"><img src="../assets/img/logo/kls-icon.png" alt=""></div>
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro-meta"><span>Kejuruteraan Letrik Seri (M) Sdn Bhd</span><span>Port Klang, Malaysia</span></div>
+  <div class="intro-year" data-intro-count>1950</div>
+  <div class="intro-card"><img src="../assets/img/industries/biogas.webp" alt=""></div>
+  <div class="intro-line"><i></i></div>
 </div>
-<script>try{if(sessionStorage.getItem('klsCurtainSeen')==='1'||window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.currentScript.previousElementSibling.style.display='none';}else{sessionStorage.setItem('klsCurtainSeen','1');}}catch(e){}</script>
+<script>try{var d=document.documentElement;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||sessionStorage.getItem('klsIntroSeen')==='1'){d.classList.add('no-intro');}else{sessionStorage.setItem('klsIntroSeen','1');d.classList.add('intro-lock');}}catch(e){}</script>
 <section class="hero">
   <div class="hero-slides">
     <div class="hero-slide is-active" data-hero-title="Tenaga Yang Menggerakkan Perniagaan Anda" data-hero-lead="Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 sebagai penyedia perkhidmatan pendawaian semula utama. Apabila perniagaan berkembang, skop perkhidmatan turut berkembang: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi projek kediaman, komersial, industri, infrastruktur dan marin.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg" alt="Kejuruteraan elektrik KLS, menggerakkan perniagaan anda">
+      <img src="../assets/img/industries/biogas.webp" alt="Kejuruteraan elektrik KLS, menggerakkan perniagaan anda">
     </div>
     <div class="hero-slide" data-hero-title="Menyokong Tenaga Bersih dan Mampan" data-hero-lead="Sebagai salah sebuah nama industri yang mantap di Malaysia, kami memberikan sokongan sebenar kepada pembangunan mampan, melaksanakan kontrak dan inisiatif Interkoneksi Tenaga Boleh Diperbaharui merangkumi loji Biogas, Biojisim, Suria dan Kogenerasi.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg" alt="Tenaga bersih, mentol lampu di atas tanah di bawah cahaya matahari">
+      <img src="../assets/img/industries/solar.webp" alt="Tenaga bersih, mentol lampu di atas tanah di bawah cahaya matahari">
     </div>
     <div class="hero-slide" data-hero-title="Kuasa Melalui Biojisim" data-hero-lead="Daripada kejuruteraan dan bekalan sehingga pemasangan dan pentauliahan kabel serta peralatan elektrik, KLS membina penyelesaian interkoneksi khusus untuk loji kuasa biojisim, termasuk projek 10MW untuk Cepat Wawasan Sdn. Bhd.">
-      <img src="https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg" alt="Kerja interkoneksi tenaga boleh diperbaharui KLS">
+      <img src="../assets/img/industries/biomass.webp" alt="Kerja interkoneksi tenaga boleh diperbaharui KLS">
     </div>
   </div>
   <div class="container hero-inner">
     <div class="hero-copy">
-      <div class="hero-eyebrow reveal" style="animation-delay:.55s">Kejuruteraan Elektrik &amp; Tenaga Boleh Diperbaharui, Sejak 1984</div>
+      <div class="hero-chips"><span>Sejak 1984</span><span>CIDB G7</span><span>Kelas A</span></div>
       <h1 class="reveal" style="animation-delay:.68s" data-hero-title-el>Tenaga Yang Menggerakkan Perniagaan Anda</h1>
-      <p class="lead reveal" style="animation-delay:.8s" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 sebagai penyedia perkhidmatan pendawaian semula utama. Apabila perniagaan berkembang, skop perkhidmatan turut berkembang: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi projek kediaman, komersial, industri, infrastruktur dan marin.</p>
-      <div class="hero-actions reveal" style="animation-delay:.95s">
+      <p class="lead" data-hero-lead-el>Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 sebagai penyedia perkhidmatan pendawaian semula utama. Apabila perniagaan berkembang, skop perkhidmatan turut berkembang: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi projek kediaman, komersial, industri, infrastruktur dan marin.</p>
+      <div class="hero-actions">
         <a href="company-overview.html" class="btn btn-primary">Lihat Kisah Penuh Syarikat</a>
         <a href="services.html#renewable-energy" class="btn btn-outline">Kerja Tenaga Boleh Diperbaharui Kami</a>
       </div>
     </div>
-    <div class="hero-stats reveal" style="animation-delay:1.05s">
+    <div class="hero-stats">
       <div class="hero-stat"><b data-count-to="1984" data-count-suffix="">0</b><span>Tahun diperbadankan</span></div>
       <div class="hero-stat"><b data-count-to="4" data-count-suffix="">0</b><span>Bidang fokus tenaga boleh diperbaharui: Biogas, Biojisim, Suria, Kogenerasi</span></div>
       <div class="hero-stat"><b>Kelas A</b><span>Kontraktor M&amp;E CIDB G7</span></div>
@@ -97,7 +81,7 @@ BODY = """
       <p class="lead">Biogas adalah bidang dengan sejarah projek paling mendalam bagi kami, merangkumi kilang kelapa sawit di seluruh Semenanjung dan Malaysia Timur, di samping kerja interkoneksi biojisim dan suria.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/light-bulb-placed-on-soil-in-sun-light.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/solar.webp')">
         <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Suria</div></div>
         <div class="examples"><div>Tenaga Suria 1MW untuk ERS Energy Sdn. Bhd.</div></div>
       </div>
@@ -107,7 +91,7 @@ BODY = """
       </div>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/03/sustainable_growth_istock.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biogas.webp')">
         <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Biogas</div></div>
         <div class="examples">
           <div>Biogas 1.5MW untuk Cenergi FJP Sdn. Bhd.</div>
@@ -121,7 +105,7 @@ BODY = """
       </div>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div><span class="tag">TENAGA BOLEH DIPERBAHARUI</span><div class="headline">Biojisim</div></div>
         <div class="examples"><div>Biojisim 10MW untuk Cepat Wawasan Sdn. Bhd.</div></div>
       </div>
@@ -141,7 +125,7 @@ BODY = """
       <p class="lead">Kerja HV/MV/LV untuk infrastruktur utiliti dan telekomunikasi.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div><span class="tag">UTILITI GRID</span><div class="headline">Kerja Pencawang</div></div>
         <div class="examples">
           <div>Kerja elektrik Unit Terminal Jauh untuk SESB, Sabah</div>
@@ -164,7 +148,7 @@ BODY = """
       <p class="lead">Fokus yang berkembang bagi KLS, mengikuti ledakan didorong AI dalam pembuatan cip dan pemasangan elektronik di seluruh Malaysia.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('../assets/img/industries/semiconductor-1.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/semiconductor-1.webp')">
         <div><span class="tag">FOKUS MASA DEPAN</span><div class="headline">Semikonduktor &amp; Elektronik</div></div>
         <div class="examples">
           <div>Melexis (Kuching)</div>
@@ -188,7 +172,7 @@ BODY = """
       <p class="lead">Loji pembuatan, kilang kelapa sawit dan kemudahan proses.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('../assets/img/industries/petrochem-2.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/industries/petrochem-2.webp')">
         <div><span class="tag">PEMBUATAN</span><div class="headline">Petrokimia &amp; Oleokimia</div></div>
         <div class="examples">
           <div>Kerja kemudahan marin untuk Dialog Group, Pengerang</div>
@@ -212,7 +196,7 @@ BODY = """
       <p class="lead">Daripada pencahayaan stadium sehingga sistem elektrik kemudahan penjagaan kesihatan.</p>
     </div>
     <div class="re-block">
-      <div class="re-media" style="--panel-img:url('../assets/img/projects/larkin-3.jpg')">
+      <div class="re-media" style="--panel-img:url('../img/projects/larkin-3.webp')">
         <div><span class="tag">INFRASTRUKTUR AWAM</span><div class="headline">Stadium Larkin</div></div>
         <div class="examples"><div>Kerja pencahayaan stadium untuk Stadium Tan Sri Dato' Haj Hassan Yunos, Larkin</div></div>
       </div>
@@ -309,6 +293,7 @@ page(
     "KLS | Kejuruteraan Elektrik & Interkoneksi Tenaga Boleh Diperbaharui, Kejuruteraan Letrik Seri",
     "Kejuruteraan Letrik Seri (M) Sdn Bhd (KLS) telah beroperasi sebagai kontraktor kejuruteraan elektrik Kelas A, CIDB G7 dan pakar interkoneksi tenaga boleh diperbaharui di Malaysia sejak 1984.",
     BODY,
+    scripts='<script src="../assets/js/entrance.js"></script>\n',
     lang="ms",
     alt_url="https://www.klseri.com.my/index.html",
 )

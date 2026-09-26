@@ -17,7 +17,7 @@ BODY = f"""
       <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, known to most simply as KLS, was incorporated in 1984 and began life as a master rewiring service provider. Growth brought a wider remit: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine developments.</p>
       <p>As one of Malaysia's established names in the field, we take the country's natural resources and the case for sustainable development seriously, and back that up with real work: a long line of Renewable Energy Interconnection contracts spanning Biogas, Biomass, Solar and Cogeneration plants.</p>
     </div>
-    <img src="https://www.klseri.com.my/wp-content/uploads/2021/05/2021-05-10-015217938.jpg" alt="KLS electrical engineering works" style="border-radius:10px;border:1px solid var(--line-300);">
+    <img src="assets/img/industries/biomass.webp" alt="KLS electrical engineering works" style="border-radius:10px;border:1px solid var(--line-300);">
   </div>
   <div class="container" style="margin-top:44px;">
     <div class="stat-band">
