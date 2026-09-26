@@ -126,6 +126,27 @@
     if (titleEl) titleEl.style.transition = "opacity .3s ease";
     if (leadEl) leadEl.style.transition = "opacity .3s ease";
     dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
+    // Reserve the height of the tallest slide's copy so swapping slides never moves the page.
+    const copyEl = document.querySelector(".hero-copy");
+    function lockCopyHeight() {
+      if (!copyEl || !titleEl || !leadEl || copyEl.querySelector(".w")) return; // skip mid-entrance
+      const keepT = titleEl.textContent, keepL = leadEl.textContent;
+      copyEl.style.minHeight = "0px";
+      let max = 0;
+      slides.forEach((s) => {
+        titleEl.textContent = s.getAttribute("data-hero-title") || keepT;
+        leadEl.textContent = s.getAttribute("data-hero-lead") || keepL;
+        max = Math.max(max, copyEl.offsetHeight);
+      });
+      titleEl.textContent = keepT; leadEl.textContent = keepL;
+      copyEl.style.minHeight = max + "px";
+    }
+    let lockTimer;
+    const relock = () => { clearTimeout(lockTimer); lockTimer = setTimeout(lockCopyHeight, 120); };
+    window.addEventListener("resize", relock);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(relock);
+    window.addEventListener("load", relock);
+    window.addEventListener("kls:entrance-done", relock);
     // Autoplay starts once the home entrance has finished (immediately if there is none).
     const startAutoplay = () => setInterval(() => show((idx + 1) % slides.length), 6000);
     if (window.__klsEntranceDone || !document.querySelector("[data-intro]")) startAutoplay();
