@@ -8,6 +8,22 @@ BODY = """
   <div class="intro-line"><i></i></div>
 </div>
 <script>try{var d=document.documentElement;if(window.matchMedia('(prefers-reduced-motion: reduce)').matches||sessionStorage.getItem('klsIntroSeen')==='1'){d.classList.add('no-intro');}else{sessionStorage.setItem('klsIntroSeen','1');d.classList.add('intro-lock');}}catch(e){}</script>
+<section class="section">
+  <div class="container">
+    <div class="kicker">Apa Yang Kami Lakukan</div>
+    <h2 style="max-width:26ch;">Kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui, hujung ke hujung</h2>
+    <p class="lead" style="max-width:70ch;">Daripada bekalan dan pemasangan sehingga pengujian, pentauliahan dan waranti, merangkumi kerja elektrik HV/MV/LV, ACMV, pencegahan kebakaran dan sistem ELV.</p>
+    <div class="svc-chip-row">
+      <span class="svc-chip">Kerja Elektrik HV / MV / LV</span>
+      <span class="svc-chip">ACMV</span>
+      <span class="svc-chip">Pencegahan Kebakaran</span>
+      <span class="svc-chip">Sistem ELV</span>
+    </div>
+    <a href="services.html" class="btn-ghost" style="margin-top:16px;display:inline-block;">Lihat semua perkhidmatan</a>
+  </div>
+</section>
+
+
 <section class="hero">
   <div class="hero-slides">
     <div class="hero-slide is-active" data-hero-title="Tenaga Yang Menggerakkan Perniagaan Anda" data-hero-lead="Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 sebagai penyedia perkhidmatan pendawaian semula utama. Apabila perniagaan berkembang, skop perkhidmatan turut berkembang: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi projek kediaman, komersial, industri, infrastruktur dan marin.">
@@ -45,21 +61,6 @@ BODY = """
     <button data-hero-dot class="is-active" aria-label="Slaid 1: Tenaga Yang Menggerakkan Perniagaan Anda"></button>
     <button data-hero-dot aria-label="Slaid 2: Menyokong Tenaga Bersih dan Mampan"></button>
     <button data-hero-dot aria-label="Slaid 3: Kuasa Melalui Biojisim"></button>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="kicker">Apa Yang Kami Lakukan</div>
-    <h2 style="max-width:26ch;">Kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui, hujung ke hujung</h2>
-    <p class="lead" style="max-width:70ch;">Daripada bekalan dan pemasangan sehingga pengujian, pentauliahan dan waranti, merangkumi kerja elektrik HV/MV/LV, ACMV, pencegahan kebakaran dan sistem ELV.</p>
-    <div class="svc-chip-row">
-      <span class="svc-chip">Kerja Elektrik HV / MV / LV</span>
-      <span class="svc-chip">ACMV</span>
-      <span class="svc-chip">Pencegahan Kebakaran</span>
-      <span class="svc-chip">Sistem ELV</span>
-    </div>
-    <a href="services.html" class="btn-ghost" style="margin-top:16px;display:inline-block;">Lihat semua perkhidmatan</a>
   </div>
 </section>
 
