@@ -56,6 +56,17 @@
     "uniform float uWakeAmp;",
     "uniform sampler2D uMask;",
     "uniform float uUseMask;",
+    "uniform vec4 uClip;",
+    "uniform float uClipR;",
+    "uniform float uUseClip;",
+
+    // Signed distance to a box with its own radius per corner (Inigo Quilez). r = (top-right, bottom-right, top-left, bottom-left).
+    "float sdRoundBox(vec2 p,vec2 b,vec4 r){",
+    "  r.xy=(p.x>0.0)?r.xy:r.zw;",
+    "  r.x=(p.y>0.0)?r.x:r.y;",
+    "  vec2 q=abs(p)-b+r.x;",
+    "  return min(max(q.x,q.y),0.0)+length(max(q,0.0))-r.x;",
+    "}",
 
     // 2D simplex noise (Ashima Arts / Stefan Gustavson, MIT)
     "vec3 permute(vec3 x){return mod(((x*34.0)+1.0)*x,289.0);}",
@@ -130,6 +141,14 @@
     "    col+=pale*smoothstep(9.0*uScale,0.0,abs(frag.y-s))*0.8*k;",
     "  }",
     "  if(uUseMask>0.5){alpha*=texture2D(uMask,uv).a;}",
+    // The arch is cut out here as well as by CSS: when Chrome hands the canvas to the GPU as an overlay layer,
+    // CSS rounded clipping can be dropped and the gold would show as a plain rectangle.
+    "  if(uUseClip>0.5){",
+    "    vec2 hb=uClip.zw*0.5;",
+    "    float rr=min(uClipR,min(hb.x,hb.y));",
+    "    float d=sdRoundBox(frag-(uClip.xy+hb),hb,vec4(rr,0.0,rr,0.0));",
+    "    alpha*=clamp(0.5-d,0.0,1.0);",
+    "  }",
     "  gl_FragColor=vec4(col*alpha,alpha);",
     "}",
   ].join("\n");
@@ -184,7 +203,7 @@
     if (!gl) throw new Error("WebGL unavailable");
     this.gl = gl;
 
-    this.main = program(gl, FRAG, ["uRes", "uTime", "uCool", "uZoom", "uFill", "uBright", "uScale", "uArch", "uLight", "uWake", "uWakeAmp", "uMask", "uUseMask"]);
+    this.main = program(gl, FRAG, ["uRes", "uTime", "uCool", "uZoom", "uFill", "uBright", "uScale", "uArch", "uLight", "uWake", "uWakeAmp", "uMask", "uUseMask", "uClip", "uClipR", "uUseClip"]);
     this.sim = program(gl, SIM_FRAG, ["uPrev", "uSimRes", "uSize", "uMouse", "uVel", "uRadius", "uDecay"]);
 
     var buf = gl.createBuffer();
@@ -198,7 +217,8 @@
     this.zoom = o.zoom || 1.5;
     this.fill = o.fill == null ? 2 : o.fill;
     this.bright = o.bright || 0;
-    this.arch = { left: 0, top: 0, width: 0, height: 0 }; // CSS px, relative to the canvas
+    this.arch = { left: 0, top: 0, width: 0, height: 0 }; // CSS px, relative to the canvas: where the pour happens
+    this.clip = null; // { left, top, width, height, radius } in CSS px: the shape the gold is cut to, if any
     this.light = [-0.4, 0.6];
     this.lightTarget = [-0.4, 0.6];
 
@@ -392,6 +412,12 @@
     gl.uniform2f(m.loc.uLight, this.light[0], this.light[1]);
     gl.uniform1f(m.loc.uWakeAmp, this.wakeAmp);
     gl.uniform1f(m.loc.uUseMask, this.useMask ? 1 : 0);
+    var c = this.clip;
+    gl.uniform1f(m.loc.uUseClip, c ? 1 : 0);
+    if (c) {
+      gl.uniform4f(m.loc.uClip, c.left * s, (this.cssH - c.top - c.height) * s, c.width * s, c.height * s);
+      gl.uniform1f(m.loc.uClipR, c.radius * s);
+    }
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, this.maskTex);
     gl.uniform1i(m.loc.uMask, 0);

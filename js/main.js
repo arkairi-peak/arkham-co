@@ -13,6 +13,22 @@
   const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
   const lerp = (a, b, t) => a + (b - a) * t;
   const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  // The Google Fonts stylesheet loads without blocking the page, so "fonts ready" must first wait for the stylesheet
+  // itself, then for Fraunces to arrive. Everything that measures text waits on this.
+  const fontsLoaded = (() => {
+    const link = document.querySelector('link[href*="fonts.googleapis.com/css2"]');
+    const sheet = new Promise((resolve) => {
+      if (!link || (link.rel === "stylesheet" && link.sheet)) return resolve();
+      link.addEventListener("load", resolve, { once: true });
+      link.addEventListener("error", resolve, { once: true });
+    });
+    if (!document.fonts) return sheet;
+    return sheet
+      .then(() => Promise.all([document.fonts.load('300 64px "Fraunces"'), document.fonts.load('400 16px "Inter"')]))
+      .then(() => document.fonts.ready)
+      .catch(() => {});
+  })();
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 
   const INK = "#f3efe6";
@@ -172,7 +188,11 @@
       P.labelH.setAttribute("text-anchor", "middle");
       P.labelH.setAttribute("transform", `translate(${dx + 16} ${g.top + g.H / 2}) rotate(90)`);
 
-      if (hero.gold) hero.gold.arch = { left: g.left, top: g.top, width: g.W, height: g.H };
+      if (hero.gold) {
+        hero.gold.arch = { left: g.left, top: g.top, width: g.W, height: g.H };
+        hero.gold.clip = { left, top, width: W, height: H, radius: r };
+        if (!hero.gold.running) hero.gold.render();
+      }
       else fallback.style.clipPath = hero.fill >= 1 ? "none" : `inset(${(g.top + g.H * (1 - clamp(hero.fill, 0, 1))).toFixed(1)}px 0px 0px 0px)`;
     }
 
@@ -209,6 +229,8 @@
     };
     measure();
     window.addEventListener("resize", measure);
+    // While pinned, the stage keeps its old size until ScrollTrigger refreshes, so measure again after every refresh.
+    ScrollTrigger.addEventListener("refresh", measure);
 
     // Two copies of the headline: ivory on black, ink on gold (clipped to the arch). Split them identically.
     const lightChars = [];
@@ -369,7 +391,7 @@
   async function runIntro() {
     const P = hero.paths;
     const lines = [P.baseL, P.baseR, P.outer, P.inner, P.dimW, P.dimH];
-    const fontsReady = Promise.race([document.fonts ? document.fonts.ready : Promise.resolve(), wait(3500)]);
+    const fontsReady = Promise.race([fontsLoaded, wait(3500)]);
     const cleanLines = () => lines.forEach((p) => {
       p.style.strokeDasharray = "";
       p.style.strokeDashoffset = "";
@@ -1030,7 +1052,7 @@
         }
       });
     measure();
-    if (document.fonts) document.fonts.ready.then(measure);
+    fontsLoaded.then(measure);
     window.addEventListener("resize", measure);
 
     let active = false;
@@ -1236,7 +1258,7 @@
       },
     });
     if ("ResizeObserver" in window) new ResizeObserver(draw).observe(canvas);
-    if (document.fonts) document.fonts.ready.then(draw);
+    fontsLoaded.then(draw);
 
     if (reduced) return;
     ScrollTrigger.create({
@@ -1555,7 +1577,7 @@
 
     root.classList.add("ready");
     ScrollTrigger.refresh();
-    if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
+    fontsLoaded.then(() => ScrollTrigger.refresh());
     window.addEventListener("load", () => ScrollTrigger.refresh());
 
     runIntro().then(() => {
