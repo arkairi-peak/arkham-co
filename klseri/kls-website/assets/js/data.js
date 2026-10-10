@@ -173,7 +173,11 @@ const KLS_KEY_CLIENTS = [
   { name:"Cepat Group", url:"http://cepatgroup.com/", logo:"assets/img/clients/cepat-wawasan.png" },
   { name:"FELCRA Berhad", url:"https://felcra.com.my/", logo:"assets/img/clients/felcra.png" },
   { name:"FGV Holdings", url:"https://www.fgvholdings.com/home/", logo:"assets/img/clients/fgv-holdings.png" },
-  { name:"Hap Seng", url:"https://www.hapseng.com.my/en/", logo:"assets/img/clients/hap-seng.png" }
+  { name:"Hap Seng", url:"https://www.hapseng.com.my/en/", logo:"assets/img/clients/hap-seng.png" },
+  { name:"Top Glove", url:"https://www.topglove.com/", logo:"assets/img/clients/top-glove.png" },
+  { name:"United Plantations", url:"https://www.unitedplantations.com/", logo:"assets/img/clients/united-plantations.png" },
+  { name:"Dialog Group", url:"https://www.dialogasia.com/", logo:"assets/img/clients/dialog-group.svg" },
+  { name:"Worldwide Holdings", url:"https://www.worldwide.com.my/", logo:"assets/img/clients/worldwide-holdings.png" }
 ];
 
 /* Partners & Suppliers, as listed on the homepage */
@@ -203,9 +207,9 @@ const KLS_ADVISORS = [
 ];
 
 /* Certifications & Licenses, the source page displays 12 certificate /
-   licence images without individual captions; presented here as a numbered
+   licence images without individual captions (local copies in assets/img/certs/); presented here as a numbered
    set matching the order on klseri.com.my/certifications-licenses/ */
 const KLS_CERTS = Array.from({length:12}, (_,i)=>({
   n: i+1,
-  image: `https://www.klseri.com.my/wp-content/uploads/2021/02/${i+1}.png`
+  image: `${document.documentElement.lang === "ms" ? "../" : ""}assets/img/certs/cert-${i+1}.webp`
 }));

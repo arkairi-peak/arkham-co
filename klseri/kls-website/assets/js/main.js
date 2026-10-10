@@ -99,104 +99,13 @@
   }
   document.querySelectorAll("[data-marquee]").forEach(initMarquee);
 
-  /* ---------------- Hero crossfade slider ---------------- */
-  (function heroSlider() {
-    const slides = document.querySelectorAll(".hero-slide");
-    const dots = document.querySelectorAll("[data-hero-dot]");
-    const titleEl = document.querySelector("[data-hero-title-el]");
-    const leadEl = document.querySelector("[data-hero-lead-el]");
-    if (!slides.length) return;
-    let idx = 0;
-    function show(i) {
-      slides.forEach((s, n) => s.classList.toggle("is-active", n === i));
-      dots.forEach((d, n) => d.classList.toggle("is-active", n === i));
-      const active = slides[i];
-      if (active && titleEl && leadEl) {
-        titleEl.style.opacity = "0";
-        leadEl.style.opacity = "0";
-        setTimeout(() => {
-          titleEl.textContent = active.getAttribute("data-hero-title") || titleEl.textContent;
-          leadEl.textContent = active.getAttribute("data-hero-lead") || leadEl.textContent;
-          titleEl.style.opacity = "1";
-          leadEl.style.opacity = "1";
-        }, 260);
-      }
-      idx = i;
-    }
-    if (titleEl) titleEl.style.transition = "opacity .3s ease";
-    if (leadEl) leadEl.style.transition = "opacity .3s ease";
-    dots.forEach((d, n) => d.addEventListener("click", () => show(n)));
-    // Reserve the height of the tallest slide's copy so swapping slides never moves the page.
-    const copyEl = document.querySelector(".hero-copy");
-    function lockCopyHeight() {
-      if (!copyEl || !titleEl || !leadEl || copyEl.querySelector(".w")) return; // skip mid-entrance
-      const keepT = titleEl.textContent, keepL = leadEl.textContent;
-      copyEl.style.minHeight = "0px";
-      let max = 0;
-      slides.forEach((s) => {
-        titleEl.textContent = s.getAttribute("data-hero-title") || keepT;
-        leadEl.textContent = s.getAttribute("data-hero-lead") || keepL;
-        max = Math.max(max, copyEl.offsetHeight);
-      });
-      titleEl.textContent = keepT; leadEl.textContent = keepL;
-      copyEl.style.minHeight = max + "px";
-    }
-    let lockTimer;
-    const relock = () => { clearTimeout(lockTimer); lockTimer = setTimeout(lockCopyHeight, 120); };
-    window.addEventListener("resize", relock);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(relock);
-    window.addEventListener("load", relock);
-    window.addEventListener("kls:entrance-done", relock);
-    // Autoplay starts once the home entrance has finished (immediately if there is none).
-    const startAutoplay = () => setInterval(() => show((idx + 1) % slides.length), 6000);
-    if (window.__klsEntranceDone || !document.querySelector("[data-intro]")) startAutoplay();
-    else window.addEventListener("kls:entrance-done", startAutoplay, { once: true });
-  })();
-
-  /* ---------------- Scroll cue + hero parallax (homepage only) ---------------- */
-  (function heroScrollExtras() {
-    const hero = document.querySelector(".hero");
-    if (!hero) return;
-    const cue = document.querySelector("[data-scroll-cue]");
-    if (cue) {
-      cue.addEventListener("click", () => {
-        const next = hero.nextElementSibling;
-        if (next) next.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    }
-    const slideEls = hero.querySelectorAll(".hero-slide");
-    if (slideEls.length && "IntersectionObserver" in window) {
-      let heroVisible = true;
-      new IntersectionObserver((entries) => { heroVisible = entries[0].isIntersecting; }, { threshold: 0 }).observe(hero);
-      let ticking = false;
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!heroVisible || ticking) return;
-          ticking = true;
-          requestAnimationFrame(() => {
-            const shift = Math.min(60, window.scrollY * 0.18);
-            slideEls.forEach((el) => { el.style.transform = `translateY(${shift}px)`; });
-            ticking = false;
-          });
-        },
-        { passive: true }
-      );
-    }
-  })();
-
-  /* ---------------- Scroll progress bar + shrinking sticky header ---------------- */
+  /* ---------------- Sticky header shadow once the page scrolls ---------------- */
   (function scrollChrome() {
-    const progress = document.querySelector("[data-scroll-progress]");
     const header = document.querySelector(".site-header");
     let ticking = false;
 
     function update() {
-      const doc = document.documentElement;
-      const scrollTop = window.scrollY || doc.scrollTop;
-      const max = doc.scrollHeight - doc.clientHeight;
-      const pct = max > 0 ? (scrollTop / max) * 100 : 0;
-      if (progress) progress.style.width = pct + "%";
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       if (header) header.classList.toggle("is-scrolled", scrollTop > 8);
       ticking = false;
     }
@@ -274,7 +183,8 @@
       { passive: true }
     );
     backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      if (window.__lenis) window.__lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
 
@@ -312,7 +222,7 @@
     const certLabel = CERT_LANG === "ms" ? "Sijil" : "Certificate";
     const certOf = CERT_LANG === "ms" ? "daripada 12" : "of 12";
     certGrid.innerHTML = KLS_CERTS.map(
-      (c) => `<div class="cert-card reveal" data-cert="${c.n}" tabindex="0" role="button" aria-haspopup="dialog">
+      (c) => `<div class="cert-card" data-cert="${c.n}" tabindex="0" role="button" aria-haspopup="dialog">
         <div class="cert-thumb"><img src="${c.image}" alt="KLS certification / licence document ${c.n}" loading="lazy"></div>
         <div class="cert-label">${certLabel} ${String(c.n).padStart(2, "0")}</div>
       </div>`
@@ -441,6 +351,12 @@
       "Cepat Wawasan": "assets/img/clients/cepat-wawasan.png",
       "North Port": "assets/img/clients/northport.png",
       "Cargill": "assets/img/clients/cargill.png",
+      "Larkin Stadium": "assets/img/clients/jdt.png",
+      "FELDA": "assets/img/clients/fgv-holdings.png",
+      "Top Glove": "assets/img/clients/top-glove.png",
+      "Worldwide Holdings": "assets/img/clients/worldwide-holdings.png",
+      "Dialog Group": "assets/img/clients/dialog-group.svg",
+      "United Plantations": "assets/img/clients/united-plantations.png",
     };
 
     function renderProjects() {
@@ -711,7 +627,10 @@
         message: "Please enter a message of at least 10 characters.",
         fixFields: "Please fix the highlighted fields before sending.",
         sending: "Sending…",
-        success: "Thank you, your enquiry has been prepared. Connect this form to your email or API backend to deliver it to the KLS team.",
+        success: "Thanks, your message has been sent. The KLS team will reply by email or phone.",
+        failed: "Your message couldn't be sent. Please try again, or email info@klseri.com.my or call +603 3167 1818.",
+        mailto: "Your email app should now open with the message filled in. Press send there to reach us. If nothing opened, email info@klseri.com.my or call +603 3167 1818.",
+        subject: "Website enquiry from",
       },
       ms: {
         name: "Sila masukkan nama anda.",
@@ -720,7 +639,10 @@
         message: "Sila masukkan mesej sekurang-kurangnya 10 aksara.",
         fixFields: "Sila betulkan ruangan yang ditanda sebelum menghantar.",
         sending: "Menghantar…",
-        success: "Terima kasih, pertanyaan anda telah disediakan. Sambungkan borang ini ke e-mel atau backend API anda untuk menghantarnya kepada pasukan KLS.",
+        success: "Terima kasih, mesej anda telah dihantar. Pasukan KLS akan membalas melalui e-mel atau telefon.",
+        failed: "Mesej anda tidak dapat dihantar. Sila cuba lagi, atau e-mel info@klseri.com.my atau hubungi +603 3167 1818.",
+        mailto: "Aplikasi e-mel anda sepatutnya dibuka dengan mesej yang telah diisi. Tekan hantar di sana untuk menghubungi kami. Jika tiada apa yang dibuka, e-mel info@klseri.com.my atau hubungi +603 3167 1818.",
+        subject: "Pertanyaan laman web daripada",
       },
     }[FORM_LANG];
 
@@ -777,17 +699,39 @@
       submitBtn.dataset.originalText = submitBtn.textContent;
       submitBtn.textContent = FSTR.sending;
 
-      // Frontend-only placeholder. Wire this up to your email/API backend -
-      // e.g. POST the FormData below to your endpoint of choice.
-      const payload = Object.fromEntries(new FormData(form).entries());
-      setTimeout(() => {
-        console.log("KLS contact form, ready to submit to backend:", payload);
+      const data = Object.fromEntries(new FormData(form).entries());
+      const key = form.getAttribute("data-form-key");
+      const done = (cls, text, reset) => {
         submitBtn.disabled = false;
         submitBtn.textContent = submitBtn.dataset.originalText;
-        status.className = "form-status is-success";
-        status.textContent = FSTR.success;
-        form.reset();
-      }, 700);
+        status.className = "form-status " + cls;
+        status.textContent = text;
+        if (reset) form.reset();
+      };
+      if (data.botcheck) return done("is-success", FSTR.success, true); // honeypot: quietly drop bots
+      const subject = `${FSTR.subject} ${data.name.trim()}`;
+
+      if (!key) {
+        // No delivery service configured yet: hand the message to the visitor's email app.
+        const to = form.getAttribute("data-form-fallback") || "info@klseri.com.my";
+        const lines = [data.message.trim(), "", data.name.trim(), data.email.trim(), (data.phone || "").trim()];
+        const body = lines.filter((l, n) => n < 2 || l).join(String.fromCharCode(10));
+        window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        return done("is-success", FSTR.mailto, false);
+      }
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: key, subject, from_name: "KLS website",
+          name: data.name, email: data.email, phone: data.phone || "-", message: data.message,
+          page: location.href, botcheck: "",
+        }),
+      })
+        .then((r) => r.json().catch(() => ({})).then((j) => ({ ok: r.ok && j.success !== false })))
+        .then(({ ok }) => (ok ? done("is-success", FSTR.success, true) : done("is-error", FSTR.failed, false)))
+        .catch(() => done("is-error", FSTR.failed, false));
     });
   }
 

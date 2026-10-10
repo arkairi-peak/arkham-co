@@ -99,7 +99,7 @@
         title: `${label}: ${g.items.length}`,
       });
       const shown = g.items.slice(0, 8).map((i) =>
-        `<li>${i.year ? `<b>${esc(i.year)}</b> · ` : ""}${esc(i.client)}: ${esc(i.desc.length > 90 ? i.desc.slice(0, 88) + "…" : i.desc)}${i.capacity ? ` (${esc(i.capacity)})` : ""}</li>`).join("");
+        `<li>${i.year ? `<b>${esc(i.year)}</b> ` : ""}${esc(i.client)}: ${esc(i.desc.length > 90 ? i.desc.slice(0, 88) + "…" : i.desc)}${i.capacity ? ` (${esc(i.capacity)})` : ""}</li>`).join("");
       const extra = g.items.length > 8 ? `<li>+${g.items.length - 8} ${T.more}</li>` : "";
       marker.bindPopup(`<div class="map-pop"><h4>${esc(label)}${approx ? " *" : ""}</h4><ul>${shown}${extra}</ul></div>`, { maxWidth: 320 });
       marker.addTo(layer);
