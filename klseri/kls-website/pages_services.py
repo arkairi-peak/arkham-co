@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-11.webp')">
   <div class="container">
     <h1>Our Services</h1>
     <p class="lead">Years of hands-on industry experience sit behind everything we deliver, quality services, products and work that help our clients reach their business goals. That covers supply, installation, testing and commissioning across:</p>
@@ -12,12 +12,10 @@ BODY = f"""
 <section class="section" id="electrical-power-distribution">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">01 &middot; Electrical Power Distribution Systems</div>
       <h2>Electrical Power Distribution Systems</h2>
     </div>
     <div class="spec-list">
       <div class="spec-row">
-        <span class="num mono">A</span>
         <div>
           <h4>Core Power Systems</h4>
           <ul class="svc-list">
@@ -31,10 +29,10 @@ BODY = f"""
             <li>Cable support systems</li>
             <li>Diesel Generator System</li>
           </ul>
+          <figure class="spec-photo"><img src="assets/img/projects/up-02-sm.webp" alt="Switchboards, United Plantations seed plant" loading="lazy"><figcaption>Switchboards, United Plantations seed plant</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">B</span>
         <div>
           <h4>Control, Instrumentation &amp; Lighting</h4>
           <ul class="svc-list">
@@ -42,30 +40,30 @@ BODY = f"""
             <li>Lighting and small power points &amp; fittings</li>
             <li>Explosion-proof lighting and power system</li>
           </ul>
+          <figure class="spec-photo"><img src="assets/img/projects/sick-02-sm.webp" alt="Production hall lighting and cable trays, SICK, Senai" loading="lazy"><figcaption>Production hall lighting and cable trays, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">C</span>
         <div>
           <h4>Telecommunications &amp; ICT</h4>
           <ul class="svc-list">
             <li>Telecommunication internal &amp; infrastructure works</li>
             <li>ICT solutions and data networking</li>
           </ul>
+          <figure class="spec-photo"><img src="assets/img/projects/sick-14-sm.webp" alt="Open office, SICK, Senai" loading="lazy"><figcaption>Open office, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">D</span>
         <div>
           <h4>Building Systems</h4>
           <ul class="svc-list">
             <li>HVAC / Ventilation systems</li>
             <li>Building Automation System and SCADA</li>
           </ul>
+          <figure class="spec-photo"><img src="assets/img/projects/sick-08-sm.webp" alt="Air handling units and chilled-water pumps, SICK, Senai" loading="lazy"><figcaption>Air handling units and chilled-water pumps, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">E</span>
         <div>
           <h4>Security &amp; AV</h4>
           <ul class="svc-list">
@@ -73,6 +71,7 @@ BODY = f"""
             <li>SMATV</li>
             <li>AV and PA System</li>
           </ul>
+          <figure class="spec-photo"><img src="assets/img/projects/sick-13-sm.webp" alt="Meeting room with video conferencing, SICK, Senai" loading="lazy"><figcaption>Meeting room with video conferencing, SICK, Senai</figcaption></figure>
         </div>
       </div>
     </div>
@@ -82,7 +81,6 @@ BODY = f"""
 <section class="section section--forest" id="renewable-energy" style="--panel-img:url('../img/industries/solar.webp')">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">02 &middot; RENEWABLE ENERGY</div>
       <h2 style="max-width:18ch;">Renewable Energy Interconnection</h2>
       <p class="lead" style="color:#DFF6E7;">Our know-how in Renewable Energy (RE) Interconnection Facilities means we can supply and deliver electrical equipment and cabling built to last, keeping vital plant generation power flowing efficiently to the grid with as little downtime as possible.</p>
     </div>
@@ -94,7 +92,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/biogas.webp')">
         <div>
-          <span class="tag">RENEWABLE ENERGY</span>
+          
           <div class="headline">Biogas</div>
         </div>
         <div class="examples">
@@ -116,7 +114,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div>
-          <span class="tag">RENEWABLE ENERGY</span>
+          
           <div class="headline">Biomass</div>
         </div>
         <div class="examples">
@@ -138,7 +136,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/solar.webp')">
         <div>
-          <span class="tag">RENEWABLE ENERGY</span>
+          
           <div class="headline">Solar</div>
         </div>
         <div class="examples">

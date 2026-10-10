@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-11.webp')">
   <div class="container">
     <h1>Perkhidmatan Kami</h1>
     <p class="lead">Pengalaman industri bertahun-tahun menjadi asas kepada segala yang kami sampaikan, perkhidmatan, produk dan kerja yang membantu pelanggan mencapai matlamat perniagaan mereka. Ini merangkumi bekalan, pemasangan, pengujian dan pentauliahan untuk:</p>
@@ -12,12 +12,10 @@ BODY = f"""
 <section class="section" id="electrical-power-distribution">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">01 &middot; Sistem Pengagihan Kuasa Elektrik</div>
       <h2>Sistem Pengagihan Kuasa Elektrik</h2>
     </div>
     <div class="spec-list">
       <div class="spec-row">
-        <span class="num mono">A</span>
         <div>
           <h4>Sistem Kuasa Teras</h4>
           <ul class="svc-list">
@@ -31,10 +29,10 @@ BODY = f"""
             <li>Sistem sokongan kabel</li>
             <li>Sistem Penjana Diesel</li>
           </ul>
+          <figure class="spec-photo"><img src="../assets/img/projects/up-02-sm.webp" alt="Papan suis, loji benih United Plantations" loading="lazy"><figcaption>Papan suis, loji benih United Plantations</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">B</span>
         <div>
           <h4>Kawalan, Instrumentasi &amp; Pencahayaan</h4>
           <ul class="svc-list">
@@ -42,30 +40,30 @@ BODY = f"""
             <li>Pencahayaan dan titik kuasa kecil &amp; kelengkapan</li>
             <li>Sistem pencahayaan dan kuasa kalis letupan</li>
           </ul>
+          <figure class="spec-photo"><img src="../assets/img/projects/sick-02-sm.webp" alt="Pencahayaan dan dulang kabel dewan pengeluaran, SICK, Senai" loading="lazy"><figcaption>Pencahayaan dan dulang kabel dewan pengeluaran, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">C</span>
         <div>
           <h4>Telekomunikasi &amp; ICT</h4>
           <ul class="svc-list">
             <li>Kerja telekomunikasi dalaman &amp; infrastruktur</li>
             <li>Penyelesaian ICT dan rangkaian data</li>
           </ul>
+          <figure class="spec-photo"><img src="../assets/img/projects/sick-14-sm.webp" alt="Pejabat terbuka, SICK, Senai" loading="lazy"><figcaption>Pejabat terbuka, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">D</span>
         <div>
           <h4>Sistem Bangunan</h4>
           <ul class="svc-list">
             <li>Sistem HVAC / Pengudaraan</li>
             <li>Sistem Automasi Bangunan dan SCADA</li>
           </ul>
+          <figure class="spec-photo"><img src="../assets/img/projects/sick-08-sm.webp" alt="Unit pengendalian udara dan pam air sejuk, SICK, Senai" loading="lazy"><figcaption>Unit pengendalian udara dan pam air sejuk, SICK, Senai</figcaption></figure>
         </div>
       </div>
       <div class="spec-row">
-        <span class="num mono">E</span>
         <div>
           <h4>Keselamatan &amp; AV</h4>
           <ul class="svc-list">
@@ -73,6 +71,7 @@ BODY = f"""
             <li>SMATV</li>
             <li>Sistem AV dan PA</li>
           </ul>
+          <figure class="spec-photo"><img src="../assets/img/projects/sick-13-sm.webp" alt="Bilik mesyuarat dengan sidang video, SICK, Senai" loading="lazy"><figcaption>Bilik mesyuarat dengan sidang video, SICK, Senai</figcaption></figure>
         </div>
       </div>
     </div>
@@ -82,7 +81,6 @@ BODY = f"""
 <section class="section section--forest" id="renewable-energy" style="--panel-img:url('../img/industries/solar.webp')">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">02 &middot; Tenaga Boleh Diperbaharui</div>
       <h2 style="max-width:18ch;">Interkoneksi Tenaga Boleh Diperbaharui</h2>
       <p class="lead" style="color:#DFF6E7;">Pengetahuan dan kepakaran kami dalam Kemudahan Interkoneksi Tenaga Boleh Diperbaharui (RE) membolehkan kami membekal dan menyampaikan peralatan elektrik serta kabel yang tahan lama, memastikan kuasa janaan loji penting terus mengalir dengan cekap ke grid dengan gangguan yang seminimum mungkin.</p>
     </div>
@@ -94,7 +92,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/biogas.webp')">
         <div>
-          <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
+          
           <div class="headline">Biogas</div>
         </div>
         <div class="examples">
@@ -116,7 +114,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/biomass.webp')">
         <div>
-          <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
+          
           <div class="headline">Biojisim</div>
         </div>
         <div class="examples">
@@ -138,7 +136,7 @@ BODY = f"""
     <div class="re-block">
       <div class="re-media" style="--panel-img:url('../img/industries/solar.webp')">
         <div>
-          <span class="tag">TENAGA BOLEH DIPERBAHARUI</span>
+          
           <div class="headline">Suria</div>
         </div>
         <div class="examples">

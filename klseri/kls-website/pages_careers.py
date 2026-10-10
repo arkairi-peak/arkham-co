@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/04/KLS-01.png')">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-03.webp')">
   <div class="container">
     <h1>Careers at KLS</h1>
     <p class="lead">Join a team of specialists working across electrical engineering and renewable energy interconnection.</p>
@@ -12,7 +12,6 @@ BODY = f"""
 <section class="section">
   <div class="container grid grid-2" style="gap:48px;align-items:center;">
     <div>
-      <div class="kicker">Join Us</div>
       <h2>Careers at KLS</h2>
       <p class="lead">There's real opportunity here to work alongside experienced people in the industry. At KLS, that means staying energised, learning, innovating, and collaborating closely with our team, partners, advisors and clients. We chase excellence and keep innovating so we stay ahead of the curve on technology and the competition alike.</p>
       <p>We look for dedicated, talented people at every stage of their career, and back that with genuine opportunity. Interested in joining us? Send through your resume.</p>

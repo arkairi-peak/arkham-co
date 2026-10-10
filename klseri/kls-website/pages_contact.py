@@ -1,7 +1,7 @@
-from build import page, breadcrumb
+from build import page, breadcrumb, FORM_ACCESS_KEY, FORM_FALLBACK_EMAIL
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-12.webp')">
   <div class="container">
     <h1>Contact Us</h1>
     <p class="lead">Send us a message and our team will get back to you, or reach us directly using the details below.</p>
@@ -14,7 +14,8 @@ BODY = f"""
     <div class="card card-pad">
       <h3>Send us a message</h3>
       <p class="small" style="margin-top:-8px;margin-bottom:20px;">Fields marked <span style="color:var(--danger-600);">*</span> are required.</p>
-      <form class="form-grid" data-contact-form novalidate>
+      <form class="form-grid" data-contact-form data-form-key="{FORM_ACCESS_KEY}" data-form-fallback="{FORM_FALLBACK_EMAIL}" novalidate>
+        <input type="checkbox" name="botcheck" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="field">
           <label for="name">Full name <span class="req">*</span></label>
           <input type="text" id="name" name="name" autocomplete="name" required>

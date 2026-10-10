@@ -5,7 +5,7 @@ WAZE_BRANCH1 = f"https://www.waze.com/ul?q={quote_plus('Jalan Sahabat 16, Komple
 WAZE_BRANCH2 = f"https://www.waze.com/ul?q={quote_plus('Parkcity Commerce Square, Jalan Tun Ahmad Zaidi, 97008 Bintulu, Sarawak')}&navigate=yes"
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/melexis-02.webp')">
   <div class="container">
     <h1>Lokasi Kami</h1>
     <p class="lead">Satu ibu pejabat di Port Klang, Selangor, ditambah pejabat cawangan di Sabah dan Sarawak, merangkumi Semenanjung dan Malaysia Timur.</p>
@@ -45,7 +45,6 @@ BODY = f"""
         </div>
       </div>
     </div>
-    <p class="small" style="margin-top:18px;">Peta bagi kedua-dua pejabat cawangan diletakkan menggunakan sistem geokod Google sendiri berdasarkan alamat yang diterbitkan, KLS belum menerbitkan koordinat tepat untuk kedua-dua lokasi ini.</p>
   </div>
 </section>
 

@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/melexis-01.webp')">
   <div class="container">
     <h1>Key Projects</h1>
     <p class="lead">Every project we take on is aimed at delivering reliable, energy-efficient solutions, for the workplaces, homes and communities they ultimately serve. Decades of experience let us pair practical expertise with genuine problem-solving toward a greener energy future.</p>
@@ -12,7 +12,6 @@ BODY = f"""
 <section class="section" id="key-projects">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">HIGHLIGHTED CLIENTS</div>
       <h2>Backed by major Malaysian industrial &amp; energy names</h2>
     </div>
   </div>
@@ -32,7 +31,6 @@ BODY = f"""
 <section class="section" id="project-map">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">PROJECT MAP</div>
       <h2>Where we have worked across Malaysia</h2>
       <p class="lead">Every pin is built from the reference list below. Click a pin for its projects, or pick a location from the list.</p>
     </div>
@@ -41,7 +39,7 @@ BODY = f"""
       <div class="map-canvas" data-project-map role="application" aria-label="PROJECT MAP"></div>
       <aside class="map-panel">
         <div class="map-panel-head" data-map-summary></div>
-        <ul class="map-places" data-map-places></ul>
+        <ul class="map-places" data-map-places data-lenis-prevent></ul>
         <div class="map-note">* Pins for state-level entries are approximate. Diamonds mark KLS offices.</div>
       </aside>
     </div>
@@ -52,7 +50,6 @@ BODY = f"""
 <section class="section section--band" id="reference-list">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">PROJECT REFERENCE LIST</div>
       <h2>Browse the full project reference list</h2>
       <p class="lead">Every line below comes straight from KLS's own project reference list. Filter by category, search by client or location, or open up any client to see the individual project entries, year and location included.</p>
     </div>

@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-01.webp')">
   <div class="container">
     <h1>Company Overview</h1>
     <p class="lead">One company, one set of facts, one identity, and roughly forty years of hands-on electrical engineering and renewable energy interconnection work across Malaysia and further afield.</p>
@@ -12,18 +12,17 @@ BODY = f"""
 <section class="section" id="we-are-kls">
   <div class="container grid grid-2" style="gap:56px;align-items:center;">
     <div>
-      <div class="kicker">We Are KLS</div>
       <h2>Kejuruteraan Letrik Seri (M) Sdn Bhd</h2>
       <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, known to most simply as KLS, was incorporated in 1984 and began life as a master rewiring service provider. Growth brought a wider remit: today we supply, install, test, commission and warranty High Voltage, Low Voltage and Extra Low Voltage electrical systems across residential, commercial, industrial, infrastructure and marine developments.</p>
       <p>As one of Malaysia's established names in the field, we take the country's natural resources and the case for sustainable development seriously, and back that up with real work: a long line of Renewable Energy Interconnection contracts spanning Biogas, Biomass, Solar and Cogeneration plants.</p>
     </div>
-    <img src="assets/img/industries/biomass.webp" alt="KLS electrical engineering works" style="border-radius:10px;border:1px solid var(--line-300);">
+    <img src="assets/img/projects/sick-04.webp" alt="Production hall at SICK, Senai, one of the sites KLS has worked on" style="border-radius:10px;border:1px solid var(--line-300);">
   </div>
   <div class="container" style="margin-top:44px;">
     <div class="stat-band">
       <div class="stat-item"><b>1984</b><span>Year incorporated</span></div>
       <div class="stat-item"><b>Class A</b><span>CIDB G7 M&amp;E Contractor</span></div>
-      <div class="stat-item"><b>HV &middot; LV &middot; ELV</b><span>Electrical systems supplied, installed &amp; commissioned</span></div>
+      <div class="stat-item"><b>HV, LV, ELV</b><span>Electrical systems supplied, installed &amp; commissioned</span></div>
       <div class="stat-item"><b>5</b><span>Development sectors served</span></div>
     </div>
   </div>
@@ -32,7 +31,6 @@ BODY = f"""
 <section class="section section--band" id="our-story">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">How We Got Here</div>
       <h2>From a small rewiring outfit to a regional M&amp;E contractor</h2>
       <p class="lead">We've kept one thing constant since 1984: doing the work properly and keeping clients satisfied. Three decades on, that approach has carried us to a leading position in Malaysia's electrical engineering industry, with a long list of high-profile projects to show for it.</p>
     </div>
@@ -64,17 +62,16 @@ BODY = f"""
 <section class="section" id="philosophy">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">How We Work</div>
       <h2>What guides the work day to day</h2>
     </div>
     <div class="grid grid-2" style="gap:24px;">
       <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-02.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
+        <img src="assets/img/misc/icon-vision.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
         <h3 style="color:#fff;">Business Beyond Professionalism</h3>
         <p style="color:#DFF6E7;">We deliver every electrical and engineering solution with careful execution and a real sense of responsibility for the outcome. Each project is built to last and to serve the client's business well after handover. We aim to go beyond what's expected, backed by a genuine commitment to excellence, accountability and professionalism.</p>
       </div>
       <div class="card card-pad">
-        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-01.png" alt="" style="width:44px;margin-bottom:16px;">
+        <img src="assets/img/misc/icon-mission.png" alt="" style="width:44px;margin-bottom:16px;">
         <h3>Your Trusted Partner for Quality</h3>
         <p>It's our technical expertise and grasp of the industry that has made us a trusted partner for quality-conscious companies across the country. We hold our own work to the highest standard we can, and the relationships we've built with clients over the years reflect that, a direct result of consistent, quality work and a reputation earned rather than claimed.</p>
       </div>
@@ -85,7 +82,6 @@ BODY = f"""
 <section class="section section--band" id="mission-vision">
   <div class="container grid grid-2" style="gap:32px;">
     <div class="card card-pad">
-      <div class="kicker">Mission</div>
       <h3>Our Missions</h3>
       <ul class="svc-list" style="margin-top:16px;">
         <li>Deliver solutions and services that hold up to international standards.</li>
@@ -95,7 +91,6 @@ BODY = f"""
       </ul>
     </div>
     <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-      <div class="kicker" style="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;">Vision</div>
       <h3 style="color:#fff;">Our Vision</h3>
       <p style="color:#E9FBEF;font-size:1.08rem;margin-top:16px;">To become the engineering solution provider South East Asia (SEA) turns to first, by giving customers the best-in-class solutions they need to succeed.</p>
     </div>
@@ -105,17 +100,16 @@ BODY = f"""
 <section class="section" id="core-values">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Our Core Values</div>
       <h2>What shapes our people and our business</h2>
       <p class="lead">As a company with a reputation to keep, we hold ourselves to a set of core values that shape both our people and how we run the business. They're what let us build lasting, worthwhile relationships with clients while helping them get where they're trying to go.</p>
     </div>
     <div class="spec-list">
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="idx mono">01</span><div><h4>Excellent Quality</h4><p>Our standards don't bend. Quality sits at the center of how we work, how we manage projects, and how we run the company as a whole.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 2z"/></svg></span><span class="idx mono">02</span><div><h4>Innovation</h4><p>We keep learning and keep pushing forward, staying current with the latest technology and the industry's shifting demands.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg></span><span class="idx mono">03</span><div><h4>Teamwork</h4><p>We invest in the relationships between our people. Our culture runs on mutual respect and cooperation between management and the technical teams on the ground.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11A8 8 0 0 0 5.3 6.3L4 7.6M4 13a8 8 0 0 0 14.7 4.7L20 16.4"/><path d="M4 4v4h4M20 20v-4h-4"/></svg></span><span class="idx mono">04</span><div><h4>Adaptability</h4><p>Change is part of doing business, and we treat it that way, staying resilient through shifting financial and economic conditions rather than being thrown by them.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><span class="idx mono">05</span><div><h4>Professionalism</h4><p>We're consistent and dependable. From preparation and planning through design, execution, testing and final delivery, our team holds itself to a standard that exceeds what's expected.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-9.3-8.6C1.4 9.6 2.6 6 6 6c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.6 3.6 3.3 6.4C19 16.7 12 21 12 21z"/></svg></span><span class="idx mono">06</span><div><h4>Customer Satisfaction</h4><p>Our commitment doesn't end at handover. We back every project with ongoing guarantees and after-delivery support, including maintenance, with full client satisfaction as the goal.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Excellent Quality</h4><p>Our standards don't bend. Quality sits at the center of how we work, how we manage projects, and how we run the company as a whole.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 2z"/></svg></span><div><h4>Innovation</h4><p>We keep learning and keep pushing forward, staying current with the latest technology and the industry's shifting demands.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg></span><div><h4>Teamwork</h4><p>We invest in the relationships between our people. Our culture runs on mutual respect and cooperation between management and the technical teams on the ground.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11A8 8 0 0 0 5.3 6.3L4 7.6M4 13a8 8 0 0 0 14.7 4.7L20 16.4"/><path d="M4 4v4h4M20 20v-4h-4"/></svg></span><div><h4>Adaptability</h4><p>Change is part of doing business, and we treat it that way, staying resilient through shifting financial and economic conditions rather than being thrown by them.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><div><h4>Professionalism</h4><p>We're consistent and dependable. From preparation and planning through design, execution, testing and final delivery, our team holds itself to a standard that exceeds what's expected.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-9.3-8.6C1.4 9.6 2.6 6 6 6c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.6 3.6 3.3 6.4C19 16.7 12 21 12 21z"/></svg></span><div><h4>Customer Satisfaction</h4><p>Our commitment doesn't end at handover. We back every project with ongoing guarantees and after-delivery support, including maintenance, with full client satisfaction as the goal.</p></div></div>
     </div>
   </div>
 </section>
@@ -123,7 +117,6 @@ BODY = f"""
 <section class="section section--band" id="key-clients">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Key Clients</div>
       <h2>Organisations we work with</h2>
     </div>
     <div data-key-clients></div>
@@ -133,7 +126,6 @@ BODY = f"""
 <section class="section" id="partners-suppliers">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Partners &amp; Suppliers</div>
       <h2>Our partners &amp; suppliers</h2>
     </div>
     <div data-partners></div>
@@ -143,7 +135,6 @@ BODY = f"""
 <section class="section section--band" id="advisors-consultants">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Advisors &amp; Consultants</div>
       <h2>Our advisors &amp; consultants</h2>
     </div>
     <div data-advisors></div>

@@ -18,13 +18,18 @@ MS_DIR = os.path.join(OUT_DIR, "ms")
 os.makedirs(MS_DIR, exist_ok=True)
 
 SITE_NAME = "Kejuruteraan Letrik Seri (M) Sdn Bhd"
+SITE_URL = "https://www.klseri.com.my"
+SHARE_IMAGE = "assets/img/og/kls-share.jpg"  # 1200x630 link-preview image
+# Pages listed in sitemap.xml (each exists in English at the root and in BM under ms/)
+SITEMAP_PAGES = ["index.html", "company-overview.html", "services.html", "projects.html",
+                 "certifications.html", "careers.html", "location.html", "contact.html"]
 
 # ---------------------------------------------------------------------------
 # UI chrome strings, English / Bahasa Malaysia
 # ---------------------------------------------------------------------------
 UI = {
     "en": {
-        "contact_us": "Contact Us",
+        "contact_us": "Contact us",
         "menu": "Menu",
         "close_menu": "Close menu",
         "nav_dialog_label": "Site navigation",
@@ -38,7 +43,7 @@ UI = {
         "google_maps": "Google Maps",
         "waze": "Waze",
         "rights": "All rights reserved.",
-        "incorporated_line": "Incorporated 1984 &middot; Port Klang, Selangor, Malaysia",
+        "incorporated_line": "Incorporated in 1984, Port Klang, Selangor, Malaysia",
         "back_to_top": "Back to top",
         "whatsapp_label": "Chat with us on WhatsApp",
         "bar_call": "Call",
@@ -56,7 +61,7 @@ UI = {
         ],
     },
     "ms": {
-        "contact_us": "Hubungi Kami",
+        "contact_us": "Hubungi kami",
         "menu": "Menu",
         "close_menu": "Tutup menu",
         "nav_dialog_label": "Navigasi laman",
@@ -70,7 +75,7 @@ UI = {
         "google_maps": "Google Maps",
         "waze": "Waze",
         "rights": "Hak cipta terpelihara.",
-        "incorporated_line": "Diperbadankan 1984 &middot; Port Klang, Selangor, Malaysia",
+        "incorporated_line": "Diperbadankan pada 1984, Port Klang, Selangor, Malaysia",
         "back_to_top": "Kembali ke atas",
         "whatsapp_label": "Berbual dengan kami di WhatsApp",
         "bar_call": "Telefon",
@@ -92,7 +97,7 @@ UI = {
 # label_en, label_ms, href, sub[(en,ms,href)], preview image, caption_en, caption_ms
 NAV_ITEMS = [
     ("Home", "Laman Utama", "index.html", [],
-     "assets/img/industries/biogas.webp",
+     "assets/img/projects/sick-02.webp",
      "Electrical engineering & renewable energy since 1984",
      "Kejuruteraan elektrik & tenaga boleh diperbaharui sejak 1984",
      "assets/img/icons/home.png"),
@@ -101,29 +106,42 @@ NAV_ITEMS = [
         ("Our Story & History", "Kisah & Sejarah Kami", "company-overview.html#our-story"),
         ("Mission & Vision", "Misi & Wawasan", "company-overview.html#mission-vision"),
         ("Core Values", "Nilai Teras", "company-overview.html#core-values"),
-    ], "assets/img/industries/solar.webp",
+    ], "assets/img/projects/sick-01.webp",
      "A Class A, CIDB G7 M&E Contractor, incorporated 1984",
      "Kontraktor M&E Kelas A, CIDB G7, diperbadankan pada 1984",
      "assets/img/icons/company.png"),
+    ("Our Services", "Perkhidmatan Kami", "services.html", [
+        ("Electrical Power Distribution", "Pengagihan Kuasa Elektrik", "services.html#electrical-power-distribution"),
+        ("Renewable Energy", "Tenaga Boleh Diperbaharui", "services.html#renewable-energy"),
+    ], "assets/img/projects/sick-11.webp",
+     "HV, MV and LV systems, ACMV, fire fighting and ELV",
+     "Sistem HV, MV dan LV, ACMV, pencegahan kebakaran dan ELV",
+     "assets/img/icons/services.png"),
     ("Certifications", "Pensijilan & Lesen", "certifications.html", [],
-     "assets/img/industries/solar.webp",
+     "assets/img/projects/up-01.webp",
      "Class A, CIDB G7 credentials",
      "Kelayakan Kelas A, CIDB G7",
      "assets/img/icons/certification.png"),
     ("Project Ref", "Rujukan Projek", "projects.html", [
         ("Key Projects", "Projek Utama", "projects.html#key-projects"),
+        ("Project Map", "Peta Projek", "projects.html#project-map"),
         ("Project Reference List", "Senarai Rujukan Projek", "projects.html#reference-list"),
-    ], "assets/img/industries/biogas.webp",
+    ], "assets/img/projects/melexis-01.webp",
      "Top Glove, Sime Darby, Telekom Malaysia & more",
      "Top Glove, Sime Darby, Telekom Malaysia & banyak lagi",
      "assets/img/icons/projects.png"),
+    ("Careers", "Kerjaya", "careers.html", [],
+     "assets/img/projects/sick-03.webp",
+     "Work alongside an experienced engineering team",
+     "Bekerja bersama pasukan kejuruteraan yang berpengalaman",
+     "assets/img/icons/career.png"),
     ("Contact", "Hubungi", "contact.html", [],
-     "assets/img/industries/biomass.webp",
+     "assets/img/projects/sick-12.webp",
      "Get in touch with our team",
      "Hubungi pasukan kami",
      "assets/img/icons/contact.png"),
     ("Location", "Lokasi", "location.html", [],
-     "assets/img/industries/biomass.webp",
+     "assets/img/projects/melexis-02.webp",
      "Port Klang HQ, plus Sabah & Sarawak branches",
      "Ibu pejabat Port Klang, serta cawangan Sabah & Sarawak",
      "assets/img/icons/location.png"),
@@ -151,6 +169,13 @@ MAPS_BRANCH1_EMBED = maps_embed_url(ADDR_BRANCH1)
 MAPS_BRANCH2_SEARCH = maps_search_url(ADDR_BRANCH2)
 MAPS_BRANCH2_EMBED = maps_embed_url(ADDR_BRANCH2)
 WAZE_HQ = "https://www.waze.com/en-GB/live-map/directions?latlng=3.0133032185130992%2C101.41885042190553"
+
+# Contact form delivery (Web3Forms, https://web3forms.com). Create a free access
+# key for the inbox that should receive enquiries and paste it here, then re-run
+# the contact page scripts. While empty, the form opens the visitor's email app
+# with the message addressed to FORM_FALLBACK_EMAIL, so nothing is lost.
+FORM_ACCESS_KEY = ""
+FORM_FALLBACK_EMAIL = "info@klseri.com.my"
 
 WHATSAPP_NUMBER = "60196203780"  # +6019 620 3780, as published on klseri.com.my
 WHATSAPP_TEXT_EN = quote_plus("Hi KLS, I'd like to enquire about your services.")
@@ -222,8 +247,11 @@ def head(title, description, canonical, extra_schema="", lang="en", asset_prefix
     canonical_prefix = "ms/" if lang == "ms" else ""
     alt_links = ""
     if alt_url:
-        other_hreflang = "en" if lang == "ms" else "ms"
-        alt_links = f'<link rel="alternate" hreflang="{other_hreflang}" href="{alt_url}">\n'
+        # every page lists both language versions (plus English as the default)
+        en_url, ms_url = f"{SITE_URL}/{canonical}", f"{SITE_URL}/ms/{canonical}"
+        alt_links = (f'<link rel="alternate" hreflang="en" href="{en_url}">\n'
+                     f'<link rel="alternate" hreflang="ms" href="{ms_url}">\n'
+                     f'<link rel="alternate" hreflang="x-default" href="{en_url}">\n')
     return f"""<!DOCTYPE html>
 <html lang="{html_lang}">
 <head>
@@ -231,12 +259,19 @@ def head(title, description, canonical, extra_schema="", lang="en", asset_prefix
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{description}">
-<link rel="canonical" href="https://www.klseri.com.my/{canonical_prefix}{canonical}">
+<link rel="canonical" href="{SITE_URL}/{canonical_prefix}{canonical}">
 {alt_links}<meta property="og:type" content="website">
 <meta property="og:site_name" content="KLS">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
+<meta property="og:url" content="{SITE_URL}/{canonical_prefix}{canonical}">
+<meta property="og:locale" content="{'ms_MY' if lang == 'ms' else 'en_MY'}">
+<meta property="og:image" content="{SITE_URL}/{SHARE_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KLS, Kejuruteraan Letrik Seri: electrical engineering and renewable energy interconnection">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{SITE_URL}/{SHARE_IMAGE}">
 <link rel="icon" type="image/png" href="{asset_prefix}assets/img/logo/kls-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -278,21 +313,19 @@ def header_html(lang, asset_prefix, page_file):
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <div class="nav-overlay-body">
+  <div class="nav-overlay-body" data-lenis-prevent>
     <nav aria-label="Primary"><ul class="nav-overlay-links">
       {nav_overlay_items(lang, asset_prefix)}
     </ul></nav>
   </div>
   <div class="nav-overlay-foot">
     <span>{ADDR_HQ}</span>
-    <span>info@klseri.com.my &middot; +603 3167 1818</span>
+    <a href="mailto:info@klseri.com.my">info@klseri.com.my</a>
+    <a href="tel:+60331671818">+603 3167 1818</a>
   </div>
 </div>
 """
 
-WIPE = ("<div class=\"page-wipe\" data-page-wipe aria-hidden=\"true\"></div>\n"
-        "<script>try{if(sessionStorage.getItem('klsWipe')==='1'){document.documentElement.classList.add('wipe-in');}}catch(e){}</script>\n")
-SCROLL_PROGRESS = '<div class="scroll-progress" data-scroll-progress></div>\n'
 
 def footer_html(lang, asset_prefix):
     t = UI[lang]
@@ -353,18 +386,18 @@ def footer_html(lang, asset_prefix):
   <a class="is-primary" href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>{t['bar_enquire']}</a>
 </nav>
 
-<div class="modal-overlay" data-person-modal></div>
-<div class="modal-overlay" data-cert-modal></div>
-<div class="modal-overlay" data-list-modal></div>
+<div class="modal-overlay" data-person-modal data-lenis-prevent></div>
+<div class="modal-overlay" data-cert-modal data-lenis-prevent></div>
+<div class="modal-overlay" data-list-modal data-lenis-prevent></div>
 
 <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
 <script src="{asset_prefix}assets/js/data.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="{asset_prefix}assets/js/main.js"></script>
 <script src="{asset_prefix}assets/js/scroll.js"></script>
 <script src="{asset_prefix}assets/js/grid-bg.js"></script>
-<script src="{asset_prefix}assets/js/transitions.js"></script>
 """
 
 def breadcrumb(current, current_label, lang="en"):
@@ -377,8 +410,6 @@ def page(filename, title, description, body, schema="", lang="en", alt_url=None,
     html = (
         head(title, description, filename, schema, lang=lang, asset_prefix=asset_prefix, alt_url=alt_url)
         + "<body>\n"
-        + WIPE
-        + SCROLL_PROGRESS
         + header_html(lang, asset_prefix, filename)
         + "\n" + body + "\n"
         + footer_html(lang, asset_prefix)
@@ -389,5 +420,26 @@ def page(filename, title, description, body, schema="", lang="en", alt_url=None,
         f.write(html)
     print("wrote", ("ms/" if lang == "ms" else "") + filename)
 
+def write_sitemap():
+    """sitemap.xml (both languages, cross-linked with hreflang) and robots.txt."""
+    from datetime import date
+    today = date.today().isoformat()
+    urls = []
+    for pg in SITEMAP_PAGES:
+        en, ms = f"{SITE_URL}/{pg}", f"{SITE_URL}/ms/{pg}"
+        alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{hl}" href="{u}"/>\n'
+                       for hl, u in (("en", en), ("ms", ms), ("x-default", en)))
+        for loc in (en, ms):
+            urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{today}</lastmod>\n{alts}  </url>")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+           + "\n".join(urls) + "\n</urlset>\n")
+    with open(os.path.join(OUT_DIR, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(xml)
+    with open(os.path.join(OUT_DIR, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
+    print("wrote sitemap.xml and robots.txt")
+
 if __name__ == "__main__":
-    print("Template engine ready. Run the pages_*.py (English) and ms_pages_*.py (Bahasa Malaysia) scripts to generate pages.")
+    write_sitemap()
+    print("Now run the pages_*.py (English) and ms_pages_*.py (Bahasa Malaysia) scripts to generate the pages.")

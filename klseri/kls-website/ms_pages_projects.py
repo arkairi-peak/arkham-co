@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/melexis-01.webp')">
   <div class="container">
     <h1>Projek Utama</h1>
     <p class="lead">Setiap projek yang kami ambil bermatlamat menyampaikan penyelesaian yang boleh dipercayai dan cekap tenaga, untuk tempat kerja, rumah dan komuniti yang akhirnya menggunakannya. Pengalaman berdekad membolehkan kami menggabungkan kepakaran praktikal dengan penyelesaian masalah sebenar ke arah masa depan tenaga yang lebih hijau.</p>
@@ -12,7 +12,6 @@ BODY = f"""
 <section class="section" id="key-projects">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Pelanggan Terpilih</div>
       <h2>Disokong oleh nama industri &amp; tenaga utama Malaysia</h2>
     </div>
   </div>
@@ -32,7 +31,6 @@ BODY = f"""
 <section class="section" id="project-map">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">PETA PROJEK</div>
       <h2>Di mana kami telah bekerja di seluruh Malaysia</h2>
       <p class="lead">Setiap pin dibina daripada senarai rujukan di bawah. Klik pin untuk melihat projeknya, atau pilih lokasi daripada senarai.</p>
     </div>
@@ -41,7 +39,7 @@ BODY = f"""
       <div class="map-canvas" data-project-map role="application" aria-label="PETA PROJEK"></div>
       <aside class="map-panel">
         <div class="map-panel-head" data-map-summary></div>
-        <ul class="map-places" data-map-places></ul>
+        <ul class="map-places" data-map-places data-lenis-prevent></ul>
         <div class="map-note">* Pin bagi entri peringkat negeri adalah anggaran. Berlian menandakan pejabat KLS.</div>
       </aside>
     </div>
@@ -52,7 +50,6 @@ BODY = f"""
 <section class="section section--band" id="reference-list">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Senarai Rujukan Projek</div>
       <h2>Layari senarai rujukan projek penuh</h2>
       <p class="lead">Setiap baris di bawah datang terus daripada senarai rujukan projek KLS sendiri. Tapis mengikut kategori, cari mengikut pelanggan atau lokasi, atau buka mana-mana pelanggan untuk melihat entri projek individu berserta tahun dan lokasi.</p>
     </div>

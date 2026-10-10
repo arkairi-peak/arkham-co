@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-01.webp')">
   <div class="container">
     <h1>Ikhtisar Syarikat</h1>
     <p class="lead">Satu syarikat, satu set fakta, satu identiti, dan hampir empat puluh tahun kerja kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui secara langsung di seluruh Malaysia dan luar negara.</p>
@@ -12,18 +12,17 @@ BODY = f"""
 <section class="section" id="we-are-kls">
   <div class="container grid grid-2" style="gap:56px;align-items:center;">
     <div>
-      <div class="kicker">Kami Adalah KLS</div>
       <h2>Kejuruteraan Letrik Seri (M) Sdn Bhd</h2>
       <p class="lead">Kejuruteraan Letrik Seri (M) Sdn Bhd, atau ringkasnya KLS, diperbadankan pada tahun 1984 dan bermula sebagai penyedia perkhidmatan pendawaian semula utama. Pertumbuhan membawa skop yang lebih luas: kini kami membekal, memasang, menguji, mentauliah dan memberi waranti sistem elektrik Voltan Tinggi, Voltan Rendah dan Voltan Sangat Rendah merentasi pembangunan kediaman, komersial, industri, infrastruktur dan marin.</p>
       <p>Sebagai salah sebuah nama industri yang mantap di Malaysia, kami mengambil serius sumber semula jadi negara dan keperluan pembangunan mampan, dan menyokongnya dengan kerja sebenar: satu senarai panjang kontrak Interkoneksi Tenaga Boleh Diperbaharui merangkumi loji Biogas, Biojisim, Suria dan Kogenerasi.</p>
     </div>
-    <img src="../assets/img/industries/biomass.webp" alt="Kerja kejuruteraan elektrik KLS" style="border-radius:10px;border:1px solid var(--line-300);">
+    <img src="../assets/img/projects/sick-04.webp" alt="Dewan pengeluaran di SICK, Senai, salah satu tapak yang pernah diusahakan KLS" style="border-radius:10px;border:1px solid var(--line-300);">
   </div>
   <div class="container" style="margin-top:44px;">
     <div class="stat-band">
       <div class="stat-item"><b>1984</b><span>Tahun diperbadankan</span></div>
       <div class="stat-item"><b>Kelas A</b><span>Kontraktor M&amp;E CIDB G7</span></div>
-      <div class="stat-item"><b>HV &middot; LV &middot; ELV</b><span>Sistem elektrik dibekal, dipasang &amp; ditauliah</span></div>
+      <div class="stat-item"><b>HV, LV, ELV</b><span>Sistem elektrik dibekal, dipasang &amp; ditauliah</span></div>
       <div class="stat-item"><b>5</b><span>Sektor pembangunan diservis</span></div>
     </div>
   </div>
@@ -32,7 +31,6 @@ BODY = f"""
 <section class="section section--band" id="our-story">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Bagaimana Kami Sampai Ke Sini</div>
       <h2>Daripada operasi pendawaian kecil kepada kontraktor M&amp;E serantau</h2>
       <p class="lead">Satu perkara kekal sama sejak 1984: melakukan kerja dengan betul dan memastikan pelanggan berpuas hati. Tiga dekad kemudian, pendekatan itu membawa kami ke kedudukan terkemuka dalam industri kejuruteraan elektrik Malaysia, dengan senarai panjang projek berprofil tinggi sebagai bukti.</p>
     </div>
@@ -64,17 +62,16 @@ BODY = f"""
 <section class="section" id="philosophy">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Cara Kami Bekerja</div>
       <h2>Apa yang menerajui kerja seharian kami</h2>
     </div>
     <div class="grid grid-2" style="gap:24px;">
       <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-02.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
+        <img src="../assets/img/misc/icon-vision.png" alt="" style="width:44px;filter:invert(1);margin-bottom:16px;">
         <h3 style="color:#fff;">Perniagaan Melangkaui Profesionalisme</h3>
         <p style="color:#DFF6E7;">Kami menyampaikan setiap penyelesaian elektrik dan kejuruteraan dengan pelaksanaan yang teliti dan rasa tanggungjawab sebenar terhadap hasilnya. Setiap projek dibina untuk bertahan lama dan terus memberi manfaat kepada perniagaan pelanggan selepas penyerahan. Kami sentiasa berusaha melangkaui jangkaan, disokong oleh komitmen sebenar terhadap kecemerlangan, akauntabiliti dan profesionalisme.</p>
       </div>
       <div class="card card-pad">
-        <img src="https://www.klseri.com.my/wp-content/uploads/2021/02/Icon-01.png" alt="" style="width:44px;margin-bottom:16px;">
+        <img src="../assets/img/misc/icon-mission.png" alt="" style="width:44px;margin-bottom:16px;">
         <h3>Rakan Dipercayai Anda untuk Kualiti</h3>
         <p>Kepakaran teknikal dan pemahaman kami terhadap industri inilah yang menjadikan kami rakan dipercayai bagi syarikat yang mengutamakan kualiti di seluruh negara. Kami memastikan kerja kami sendiri memenuhi standard tertinggi yang boleh dicapai, dan hubungan yang kami bina dengan pelanggan sepanjang tahun mencerminkan itu, hasil langsung daripada kerja berkualiti yang konsisten dan reputasi yang diperoleh, bukan sekadar didakwa.</p>
       </div>
@@ -85,7 +82,6 @@ BODY = f"""
 <section class="section section--band" id="mission-vision">
   <div class="container grid grid-2" style="gap:32px;">
     <div class="card card-pad">
-      <div class="kicker">Misi</div>
       <h3>Misi Kami</h3>
       <ul class="svc-list" style="margin-top:16px;">
         <li>Menyampaikan penyelesaian dan perkhidmatan yang memenuhi standard antarabangsa.</li>
@@ -95,7 +91,6 @@ BODY = f"""
       </ul>
     </div>
     <div class="card card-pad" style="background:var(--brand-800);color:#fff;border:0;">
-      <div class="kicker" style="background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3);color:#fff;">Wawasan</div>
       <h3 style="color:#fff;">Wawasan Kami</h3>
       <p style="color:#E9FBEF;font-size:1.08rem;margin-top:16px;">Menjadi penyedia penyelesaian kejuruteraan pilihan utama Asia Tenggara (SEA), dengan memberikan pelanggan penyelesaian terbaik dalam kelasnya untuk mereka berjaya.</p>
     </div>
@@ -105,17 +100,16 @@ BODY = f"""
 <section class="section" id="core-values">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Nilai Teras Kami</div>
       <h2>Apa yang membentuk warga kerja dan perniagaan kami</h2>
       <p class="lead">Sebagai syarikat yang menjaga reputasinya, kami berpegang kepada satu set nilai teras yang membentuk warga kerja dan cara kami menguruskan perniagaan. Nilai inilah yang membolehkan kami membina hubungan yang berkekalan dan bernilai dengan pelanggan, sambil membantu mereka mencapai matlamat masing-masing.</p>
     </div>
     <div class="spec-list">
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span><span class="idx mono">01</span><div><h4>Kualiti Cemerlang</h4><p>Standard kami tidak berganjak. Kualiti kekal menjadi teras kepada cara kami bekerja, menguruskan projek, dan menjalankan syarikat secara keseluruhan.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 2z"/></svg></span><span class="idx mono">02</span><div><h4>Inovasi</h4><p>Kami terus belajar dan terus bergerak maju, kekal relevan dengan teknologi terkini dan tuntutan industri yang sentiasa berubah.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg></span><span class="idx mono">03</span><div><h4>Kerja Berpasukan</h4><p>Kami melabur dalam hubungan antara warga kerja kami. Budaya kami berteraskan rasa hormat bersama dan kerjasama antara pihak pengurusan dan pasukan teknikal di lapangan.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11A8 8 0 0 0 5.3 6.3L4 7.6M4 13a8 8 0 0 0 14.7 4.7L20 16.4"/><path d="M4 4v4h4M20 20v-4h-4"/></svg></span><span class="idx mono">04</span><div><h4>Keupayaan Beradaptasi</h4><p>Perubahan adalah sebahagian daripada perniagaan, dan kami mengiktirafnya begitu, kekal tabah menghadapi keadaan kewangan dan ekonomi yang berubah, bukan terjejas olehnya.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><span class="idx mono">05</span><div><h4>Profesionalisme</h4><p>Kami konsisten dan boleh diharap. Daripada persediaan dan perancangan sehingga reka bentuk, pelaksanaan, pengujian dan penyerahan akhir, pasukan kami mengekalkan standard yang melangkaui jangkaan.</p></div></div>
-      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-9.3-8.6C1.4 9.6 2.6 6 6 6c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.6 3.6 3.3 6.4C19 16.7 12 21 12 21z"/></svg></span><span class="idx mono">06</span><div><h4>Kepuasan Pelanggan</h4><p>Komitmen kami tidak berakhir selepas penyerahan. Setiap projek disokong dengan jaminan berterusan dan sokongan selepas penyerahan, termasuk penyelenggaraan, dengan matlamat kepuasan penuh pelanggan.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l7 4v6c0 5-3 8-7 10-4-2-7-5-7-10V6l7-4z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h4>Kualiti Cemerlang</h4><p>Standard kami tidak berganjak. Kualiti kekal menjadi teras kepada cara kami bekerja, menguruskan projek, dan menjalankan syarikat secara keseluruhan.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 22h4M12 2a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 2z"/></svg></span><div><h4>Inovasi</h4><p>Kami terus belajar dan terus bergerak maju, kekal relevan dengan teknologi terkini dan tuntutan industri yang sentiasa berubah.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg></span><div><h4>Kerja Berpasukan</h4><p>Kami melabur dalam hubungan antara warga kerja kami. Budaya kami berteraskan rasa hormat bersama dan kerjasama antara pihak pengurusan dan pasukan teknikal di lapangan.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 11A8 8 0 0 0 5.3 6.3L4 7.6M4 13a8 8 0 0 0 14.7 4.7L20 16.4"/><path d="M4 4v4h4M20 20v-4h-4"/></svg></span><div><h4>Keupayaan Beradaptasi</h4><p>Perubahan adalah sebahagian daripada perniagaan, dan kami mengiktirafnya begitu, kekal tabah menghadapi keadaan kewangan dan ekonomi yang berubah, bukan terjejas olehnya.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg></span><div><h4>Profesionalisme</h4><p>Kami konsisten dan boleh diharap. Daripada persediaan dan perancangan sehingga reka bentuk, pelaksanaan, pengujian dan penyerahan akhir, pasukan kami mengekalkan standard yang melangkaui jangkaan.</p></div></div>
+      <div class="value-row"><span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.3-9.3-8.6C1.4 9.6 2.6 6 6 6c2 0 3.3 1.1 4 2 .7-.9 2-2 4-2 3.4 0 4.6 3.6 3.3 6.4C19 16.7 12 21 12 21z"/></svg></span><div><h4>Kepuasan Pelanggan</h4><p>Komitmen kami tidak berakhir selepas penyerahan. Setiap projek disokong dengan jaminan berterusan dan sokongan selepas penyerahan, termasuk penyelenggaraan, dengan matlamat kepuasan penuh pelanggan.</p></div></div>
     </div>
   </div>
 </section>
@@ -123,7 +117,6 @@ BODY = f"""
 <section class="section section--band" id="key-clients">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Pelanggan Utama</div>
       <h2>Organisasi yang bekerjasama dengan kami</h2>
     </div>
     <div data-key-clients></div>
@@ -133,7 +126,6 @@ BODY = f"""
 <section class="section" id="partners-suppliers">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Rakan Kongsi &amp; Pembekal</div>
       <h2>Rakan kongsi &amp; pembekal kami</h2>
     </div>
     <div data-partners></div>
@@ -143,7 +135,6 @@ BODY = f"""
 <section class="section section--band" id="advisors-consultants">
   <div class="container">
     <div class="section-head">
-      <div class="kicker">Penasihat &amp; Perunding</div>
       <h2>Penasihat &amp; perunding kami</h2>
     </div>
     <div data-advisors></div>

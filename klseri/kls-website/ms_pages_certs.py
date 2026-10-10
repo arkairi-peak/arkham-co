@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/up-01.webp')">
   <div class="container">
     <h1>Pensijilan &amp; Lesen</h1>
     <p class="lead">Layari koleksi penuh pensijilan &amp; lesen KLS, kelayakan di sebalik dakwaan kami untuk menyampaikan penyelesaian yang tepat bagi perniagaan anda.</p>

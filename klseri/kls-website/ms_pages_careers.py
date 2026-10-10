@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero" style="--panel-img:url('https://www.klseri.com.my/wp-content/uploads/2021/04/KLS-01.png')">
+<section class="page-hero" style="--panel-img:url('../img/projects/sick-03.webp')">
   <div class="container">
     <h1>Kerjaya di KLS</h1>
     <p class="lead">Sertai pasukan pakar yang menerajui kejuruteraan elektrik dan interkoneksi tenaga boleh diperbaharui.</p>
@@ -12,7 +12,6 @@ BODY = f"""
 <section class="section">
   <div class="container grid grid-2" style="gap:48px;align-items:center;">
     <div>
-      <div class="kicker">Sertai Kami</div>
       <h2>Kerjaya di KLS</h2>
       <p class="lead">Terdapat peluang sebenar untuk bekerja bersama individu berpengalaman dalam industri ini. Di KLS, itu bermakna sentiasa bersemangat untuk belajar, berinovasi, dan bekerjasama rapat dengan pasukan, rakan kongsi, penasihat dan pelanggan kami. Kami mengejar kecemerlangan dan terus berinovasi supaya kekal mendahului dari segi teknologi mahupun persaingan.</p>
       <p>Kami mencari individu yang berdedikasi dan berbakat pada setiap peringkat kerjaya, dan menyokongnya dengan peluang sebenar. Berminat menyertai kami? Hantarkan resume anda.</p>

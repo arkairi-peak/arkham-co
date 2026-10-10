@@ -1,7 +1,7 @@
 from build import page, breadcrumb
 
 BODY = f"""
-<section class="page-hero">
+<section class="page-hero" style="--panel-img:url('../img/projects/up-01.webp')">
   <div class="container">
     <h1>Certifications &amp; Licenses</h1>
     <p class="lead">Browse KLS's full set of certifications &amp; licenses, the credentials behind our claim to deliver the right solution for your business.</p>
